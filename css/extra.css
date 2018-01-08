@@ -70,14 +70,10 @@
 
 @media only screen and (min-width: 76.25em) {
   .md-main__inner {
-    max-width: 90%;
-  }
-  .md-sidebar--primary {
-    left: 3%;
+    max-width: 130rem;
   }
   .md-sidebar--secondary {
-    right: 3%;
-    margin-left: 0;
+    margin-left: 107rem;
     -webkit-transform: none;
     transform: none;
   }
