@@ -1,0 +1,1973 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://opensciencegrid.github.io/technology/software/development-process/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.2.6">
+    
+    
+      
+        <title>Development Process - OSG Technology Area</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.6525f7f6.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/itb.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+  </head>
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://opensciencegrid.github.io/technology/" title="OSG Technology Area" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                OSG Technology Area
+              </span>
+              <span class="md-header-nav__topic">
+                Development Process
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/opensciencegrid/technology/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    OSG Technology Area
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/opensciencegrid/technology/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Software
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Software
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Development Process
+      </label>
+    
+    <a href="./" title="Development Process" class="md-nav__link md-nav__link--active">
+      Development Process
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-development-cycle" title="Overall Development Cycle" class="md-nav__link">
+    Overall Development Cycle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-guidelines" title="Versioning Guidelines" class="md-nav__link">
+    Versioning Guidelines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-procedures" title="Build Procedures" class="md-nav__link">
+    Build Procedures
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-packages-for-multiple-osg-release-series" title="Building packages for multiple OSG release series" class="md-nav__link">
+    Building packages for multiple OSG release series
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merging-changes-from-one-release-series-to-another" title="Merging changes from one release series to another" class="md-nav__link">
+    Merging changes from one release series to another
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-procedures" title="Testing Procedures" class="md-nav__link">
+    Testing Procedures
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-standard-4-tests-defined" title="The "Standard 4" tests, defined" class="md-nav__link">
+    The "Standard 4" tests, defined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-cross-series-test-defined" title="The "Cross-Series" test, defined" class="md-nav__link">
+    The "Cross-Series" test, defined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-long-tail-tests-defined" title="The "Long Tail" tests, defined" class="md-nav__link">
+    The "Long Tail" tests, defined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-full-set-of-tests-defined" title="The "full set of tests", defined" class="md-nav__link">
+    The "full set of tests", defined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-tests-in-vm-universe" title="Running the tests in VM Universe" class="md-nav__link">
+    Running the tests in VM Universe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promoting-a-package-to-testing" title="Promoting a Package to Testing" class="md-nav__link">
+    Promoting a Package to Testing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparing-a-good-promotion-request" title="Preparing a Good Promotion Request" class="md-nav__link">
+    Preparing a Good Promotion Request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promoting" title="Promoting" class="md-nav__link">
+    Promoting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../koji-workflow/" title="Koji Workflow" class="md-nav__link">
+      Koji Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new-team-member/" title="New Team Member" class="md-nav__link">
+      New Team Member
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../repository-management/" title="Repository Management" class="md-nav__link">
+      Repository Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ce-test-scaling/" title="CE Scale Testing" class="md-nav__link">
+      CE Scale Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rpm-development-guide/" title="RPM Development Guide" class="md-nav__link">
+      RPM Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../quilt/" title="Using Quilt" class="md-nav__link">
+      Using Quilt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../upcoming-to-main/" title="Upcoming to Main" class="md-nav__link">
+      Upcoming to Main
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/software-support/" title="Software Support" class="md-nav__link">
+      Software Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../effort-tracking/" title="Effort Tracking" class="md-nav__link">
+      Effort Tracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../release-planning/" title="Release Planning" class="md-nav__link">
+      Release Planning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../globus-mass-update-procedure/" title="Globus Mass Update Procedure" class="md-nav__link">
+      Globus Mass Update Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git-software-development/" title="Git Software Development Process" class="md-nav__link">
+      Git Software Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../osg-build-tools/" title="OSG Build Tools" class="md-nav__link">
+      OSG Build Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../resurrecting-epel-packages/" title="Resurrecting Epel Packages" class="md-nav__link">
+      Resurrecting Epel Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../koji-mass-rebuilds/" title="Koji Mass Rebuilds" class="md-nav__link">
+      Koji Mass Rebuilds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../create-vo-client/" title="Creating the VO Client Package" class="md-nav__link">
+      Creating the VO Client Package
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pki-overview/" title="PKI Overview" class="md-nav__link">
+      PKI Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ipv6-testing/" title="IPv6 Testing" class="md-nav__link">
+      IPv6 Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Release
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Release
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/cut-sw-release/" title="How to Cut a Release" class="md-nav__link">
+      How to Cut a Release
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/cut-data-release/" title="How to Cut a Data Release" class="md-nav__link">
+      How to Cut a Data Release
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/release-policy/" title="Release Policy" class="md-nav__link">
+      Release Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/release-schedule/" title="Release Schedule" class="md-nav__link">
+      Release Schedule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/new-release-series/" title="New Release Series" class="md-nav__link">
+      New Release Series
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/old-release-removal/" title="Old Release Series Removal" class="md-nav__link">
+      Old Release Series Removal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/itb-testing/" title="ITB Prerelease Testing" class="md-nav__link">
+      ITB Prerelease Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/empty-pkgs/" title="Empty Packages" class="md-nav__link">
+      Empty Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/acceptance-testing/" title="Acceptance Testing" class="md-nav__link">
+      Acceptance Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Policy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Policy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/gums-retire/" title="GUMS Retirement" class="md-nav__link">
+      GUMS Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/bestman2-retire/" title="BeStMan2 Retirement" class="md-nav__link">
+      BeStMan2 Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/voms-admin-retire/" title="VOMS Admin Retirement" class="md-nav__link">
+      VOMS Admin Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/release-series/" title="Release Series Support" class="md-nav__link">
+      Release Series Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/globus-toolkit/" title="Globus Toolkit Support" class="md-nav__link">
+      Globus Toolkit Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/external-oasis-repos/" title="OASIS Repository Mirroring" class="md-nav__link">
+      OASIS Repository Mirroring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/flexible-release-model/" title="Flexible Release Model" class="md-nav__link">
+      Flexible Release Model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-restore-recipe/" title="Koji Restore Recipe" class="md-nav__link">
+      Koji Restore Recipe
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-hub-setup/" title="Koji-Hub Setup" class="md-nav__link">
+      Koji-Hub Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-inf-overview/" title="Koji Infrastructure Overview" class="md-nav__link">
+      Koji Infrastructure Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-policy-writing/" title="Koji Policy Writing" class="md-nav__link">
+      Koji Policy Writing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/madison-itb/" title="Madison ITB" class="md-nav__link">
+      Madison ITB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/writing-documentation/" title="Writing Documentation" class="md-nav__link">
+      Writing Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/reviewing-documentation/" title="Reviewing Documentation" class="md-nav__link">
+      Reviewing Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/style-guide/" title="Markdown Style Guide" class="md-nav__link">
+      Markdown Style Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/markdown-migration/" title="Migrating Documents to Markdown" class="md-nav__link">
+      Migrating Documents to Markdown
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Historical Information
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Historical Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-initial-install/" title="Koji Initial Install" class="md-nav__link">
+      Koji Initial Install
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Historical Transitions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Historical Transitions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projects/sha2-support/" title="SHA-2 Support" class="md-nav__link">
+      SHA-2 Support
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Meetings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Meetings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180108/" title="January 8, 2018" class="md-nav__link">
+      January 8, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180102/" title="January 2, 2018" class="md-nav__link">
+      January 2, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171218/" title="December 18, 2017" class="md-nav__link">
+      December 18, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171211/" title="December 11, 2017" class="md-nav__link">
+      December 11, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171204/" title="December 4, 2017" class="md-nav__link">
+      December 4, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171127/" title="November 27, 2017" class="md-nav__link">
+      November 27, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171120/" title="November 20, 2017" class="md-nav__link">
+      November 20, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171113/" title="November 13, 2017" class="md-nav__link">
+      November 13, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171106/" title="November 6, 2017" class="md-nav__link">
+      November 6, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171030/" title="October 30, 2017" class="md-nav__link">
+      October 30, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171023/" title="October 23, 2017" class="md-nav__link">
+      October 23, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171016/" title="October 16, 2017" class="md-nav__link">
+      October 16, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171009/" title="October 9, 2017" class="md-nav__link">
+      October 9, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171002/" title="October 2, 2017" class="md-nav__link">
+      October 2, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170925/" title="September 25, 2017" class="md-nav__link">
+      September 25, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170918/" title="September 18, 2017" class="md-nav__link">
+      September 18, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170911/" title="September 11, 2017" class="md-nav__link">
+      September 11, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170905/" title="September 5, 2017" class="md-nav__link">
+      September 5, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170828/" title="August 28, 2017" class="md-nav__link">
+      August 28, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170814/" title="August 14, 2017" class="md-nav__link">
+      August 14, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170807/" title="August 7, 2017" class="md-nav__link">
+      August 7, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170731/" title="July 31, 2017" class="md-nav__link">
+      July 31, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170724/" title="July 24, 2017" class="md-nav__link">
+      July 24, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170717/" title="July 17, 2017" class="md-nav__link">
+      July 17, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170710/" title="July 10, 2017" class="md-nav__link">
+      July 10, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170703/" title="July 3, 2017" class="md-nav__link">
+      July 3, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170626/" title="June 26, 2017" class="md-nav__link">
+      June 26, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170619/" title="June 19, 2017" class="md-nav__link">
+      June 19, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170612/" title="June 12, 2017" class="md-nav__link">
+      June 12, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170605/" title="June 6, 2017" class="md-nav__link">
+      June 6, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170530/" title="May 30, 2017" class="md-nav__link">
+      May 30, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170522/" title="May 22, 2017" class="md-nav__link">
+      May 22, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170515/" title="May 15, 2017" class="md-nav__link">
+      May 15, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170508/" title="May 8, 2017" class="md-nav__link">
+      May 8, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170501/" title="May 1, 2017" class="md-nav__link">
+      May 1, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170424/" title="April 24, 2017" class="md-nav__link">
+      April 24, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170417/" title="April 17, 2017" class="md-nav__link">
+      April 17, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170227/" title="February 27, 2017" class="md-nav__link">
+      February 27, 2017
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-development-cycle" title="Overall Development Cycle" class="md-nav__link">
+    Overall Development Cycle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-guidelines" title="Versioning Guidelines" class="md-nav__link">
+    Versioning Guidelines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-procedures" title="Build Procedures" class="md-nav__link">
+    Build Procedures
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-packages-for-multiple-osg-release-series" title="Building packages for multiple OSG release series" class="md-nav__link">
+    Building packages for multiple OSG release series
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merging-changes-from-one-release-series-to-another" title="Merging changes from one release series to another" class="md-nav__link">
+    Merging changes from one release series to another
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-procedures" title="Testing Procedures" class="md-nav__link">
+    Testing Procedures
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-standard-4-tests-defined" title="The "Standard 4" tests, defined" class="md-nav__link">
+    The "Standard 4" tests, defined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-cross-series-test-defined" title="The "Cross-Series" test, defined" class="md-nav__link">
+    The "Cross-Series" test, defined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-long-tail-tests-defined" title="The "Long Tail" tests, defined" class="md-nav__link">
+    The "Long Tail" tests, defined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-full-set-of-tests-defined" title="The "full set of tests", defined" class="md-nav__link">
+    The "full set of tests", defined
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-tests-in-vm-universe" title="Running the tests in VM Universe" class="md-nav__link">
+    Running the tests in VM Universe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#promoting-a-package-to-testing" title="Promoting a Package to Testing" class="md-nav__link">
+    Promoting a Package to Testing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparing-a-good-promotion-request" title="Preparing a Good Promotion Request" class="md-nav__link">
+    Preparing a Good Promotion Request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promoting" title="Promoting" class="md-nav__link">
+    Promoting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/opensciencegrid/technology/edit/master/docs/software/development-process.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="software-development-process">Software Development Process<a class="headerlink" href="#software-development-process" title="Permanent link">&para;</a></h1>
+<p>This page is for the OSG Software team and other contributors to the OSG software stack. It is meant to be the central source for all development processes for the Software team. (But right now, it is just a starting point.)</p>
+<h2 id="overall-development-cycle">Overall Development Cycle<a class="headerlink" href="#overall-development-cycle" title="Permanent link">&para;</a></h2>
+<p>For a typical update to an existing package, the overall development cycle is roughly as follows:</p>
+<ol>
+<li>Download the new upstream source (tarball, source RPM, checkout) into <a href="../rpm-development-guide#upstream-source-cache">the UW AFS upstream area</a></li>
+<li>In <a href="../rpm-development-guide#revision-control-system">a checkout of our packaging code</a>, update <a href="../rpm-development-guide#upstream">the reference to the upstream file</a> and, as needed, <a href="../rpm-development-guide#osg">the RPM spec file</a></li>
+<li>Use <a href="../osg-build-tools#osg-build">osg-build</a> to perform a scratch build of the updated package</li>
+<li>Verify that the build succeeded; if not, redo previous steps until success</li>
+<li>Optionally, lightly test the new RPM(s); if there are problems, redo previous steps until success</li>
+<li>Use <a href="../osg-build-tools#osg-build">osg-build</a> to perform an official build of the updated package (which will go into the development repos)</li>
+<li>Perform standard developer testing of the new RPM(s) — see below for details</li>
+<li>Obtain permission from the Software manager to promote the package</li>
+<li>Promote the package to testing — see below for details</li>
+</ol>
+<h2 id="versioning-guidelines">Versioning Guidelines<a class="headerlink" href="#versioning-guidelines" title="Permanent link">&para;</a></h2>
+<p>OSG-owned software should contain three digits, X.Y.Z, where X represents the major version, Y the minor version, and Z the maintenance version. New releases of software should increment one of the major, minor, or maintenance according to the following guidelines:</p>
+<ul>
+<li><strong>Major:</strong> Major new software, typically (but not limited to) full rewrites, new architectures, major new features; can certainly break backward compatibility (but should provide a smooth upgrade path). Worthy of introduction into Upcoming.</li>
+<li><strong>Minor:</strong> Notable changes to the software, including significant feature changes, API changes, etc.; may break compatibility, but must provide an upgrade path from other versions within the same Major series.</li>
+<li><strong>Maintenance:</strong> Bug fixes, minor feature tweaks, etc.; must not break compatibility with other versions within the same Major.Minor series.</li>
+</ul>
+<p>If you are unsure about which version number to increment in a software update, consult the Software Manager.</p>
+<h2 id="build-procedures">Build Procedures<a class="headerlink" href="#build-procedures" title="Permanent link">&para;</a></h2>
+<h3 id="building-packages-for-multiple-osg-release-series">Building packages for multiple OSG release series<a class="headerlink" href="#building-packages-for-multiple-osg-release-series" title="Permanent link">&para;</a></h3>
+<p>The OSG Software team supports multiple release series, independent but in parallel to a large degree. In many cases, a single package is the same across release series, and therefore we want to build the package once and share it among the series. The procedure below suggests a way to accomplish this task.</p>
+<p>Current definitions:</p>
+<ul>
+<li>maintenance: OSG 3.3 ( <strong>branches/osg-3.3</strong> )</li>
+<li>current: OSG 3.4 ( <strong>trunk</strong> )</li>
+</ul>
+<!--
+- future: OSG 3.5 ( *branches/osg-3.5* )
+-->
+
+<p>Procedure:</p>
+<ol>
+<li>Make changes to <strong>trunk</strong></li>
+<li>Optionally, make and test a scratch build from <strong>trunk</strong></li>
+<li>Commit the changes</li>
+<li>Make an official build from <strong>trunk</strong> (e.g.: <code>osg-build koji &lt;PACKAGE&gt;</code>)</li>
+<li>Perform the standard 4 tests for the <strong>current</strong> series (see below)</li>
+<li>Merge the relevant commits from <strong>trunk</strong> into the <strong>maintenance</strong> branch (see below for tips)</li>
+<li>Optionally, make and test a scratch build from the <strong>maintenance</strong> branch</li>
+<li>Commit the merge</li>
+<li>Make an official build from the <strong>maintenance</strong> branch (e.g.: <code>osg-build koji --repo=3.3 &lt;PACKAGE&gt;</code>)</li>
+<li>Perform the standard 4 tests for the <strong>maintenance</strong> series (see below)</li>
+<li>As needed (or directed by the Software manager), perform the cross-series tests (see below)</li>
+</ol>
+<p><strong>Note:</strong> Do not change the RPM Release number in the <strong>maintenance</strong> branch before rebuilding; the %dist tag will differ automatically, and hence the <strong>maintenance</strong> and <strong>current</strong> NVRs will not conflict.</p>
+<!--
+1. Make changes to the *trunk*
+2. Optionally, make and test a scratch build from the *trunk*
+3. Commit the changes
+4. Make an official build from the *trunk* (e.g.: `osg-build koji <PACKAGE>`)
+5. Perform the standard 4 tests for the *current* series (see below)
+6. Merge the relevant commits from the *trunk* into the *future* branch (see below for tips)
+7. Optionally, make and test a scratch build from the *future* branch
+8. Commit the merge
+9. Make an official build from the *future* branch (e.g.: `osg-build koji --repo=3.4 <PACKAGE>`)
+10. Perform install tests for the *future* series (see below)
+11. As needed (or directed by the Software manager), perform the cross-series tests (see below)
+-->
+
+<h3 id="merging-changes-from-one-release-series-to-another">Merging changes from one release series to another<a class="headerlink" href="#merging-changes-from-one-release-series-to-another" title="Permanent link">&para;</a></h3>
+<p>These instructions assume that you are merging from <code>trunk</code> to <code>branches/osg-3.3</code>. They also assume that the current directory you are in is a checkout of <code>branches/osg-3.3</code>. I will use <code>$pkg</code> to refer to the name of your package.</p>
+<p>First, you will need the commit numbers for your changes:</p>
+<div class="codehilite"><pre><span></span>svn log \^/native/redhat/trunk/$pkg | less
+</pre></div>
+
+
+<p>Write down the commits you want to merge.</p>
+<p>If you only have one commit, merge that commit with -c as follows:</p>
+<div class="codehilite"><pre><span></span>svn merge -c $commit_num \^/native/redhat/trunk/$pkg $pkg
+</pre></div>
+
+
+<p>Where <code>$commit_num</code> is the SVN revision number of that commit (e.g. 17000). Merging an individual change like this is referred to as "cherry-picking".</p>
+<p>If you have a range of commits and you wish to merge all commits within that range, then do the following:</p>
+<div class="codehilite"><pre><span></span>svn merge -r $start_num:$end_num \^/native/redhat/trunk/$pkg $pkg
+</pre></div>
+
+
+<p>Where <code>$start_num</code> is the SVN revision of the commit <em>BEFORE</em> your first commit, and <code>$end_num</code> is the SVN revision of your last commit in that range. <strong>Note:</strong> Be very careful when merging a range from trunk into the maintenance branch so that you do not introduce more changes to the maintenance branch than are necessary.</p>
+<p>If you have multiple commits but they are not contiguous (i.e. there are commits made by you or someone else in that range that you do not want to merge), you will need to cherry-pick each individual commit.</p>
+<div class="codehilite"><pre><span></span>svn merge -c $commit1 \^/native/redhat/trunk/$pkg $pkg
+svn merge -c $commit2 \^/native/redhat/trunk/$pkg $pkg
+...
+</pre></div>
+
+
+<p>Where <code>$commit1</code>, <code>$commit2</code> are the commit numbers of the individual changes.</p>
+<p>Note that merge tracking in recent versions of SVN (1.5 or newer) should prevent commits from accidentally being merged multiple times. You should still look out for conflicts and examine the changes via <code>svn diff</code> before committing the merge.</p>
+<h2 id="testing-procedures">Testing Procedures<a class="headerlink" href="#testing-procedures" title="Permanent link">&para;</a></h2>
+<p>Before promoting a package to a testing repository, each build must be tested lightly from the development repos to make sure that it is not completely broken, thereby wasting time during acceptance testing. Normally, the person who builds a package performs the development testing.</p>
+<p><strong>If you are not doing your own development testing for a package</strong>, contact the Software Manager and/or leave a comment in the associated ticket; otherwise, your package may never be promoted to testing and hence never released.</p>
+<h3 id="the-standard-4-tests-defined">The "Standard 4" tests, defined<a class="headerlink" href="#the-standard-4-tests-defined" title="Permanent link">&para;</a></h3>
+<p>In most cases, the Software manager will ask a developer to perform the “standard 4” tests on an updated package in a release series before promotion. This is a shorthand description for a standard set of 4 test runs:</p>
+<ul>
+<li>Fresh install on el6</li>
+<li>Fresh install on el7</li>
+<li>Update install on el6</li>
+<li>Update install on el7</li>
+</ul>
+<p>An “update install” is a fresh install of the relevant package (or better yet, metapackage that includes it) <strong>from the production repository</strong>, followed by an update to the new build <strong>from the development repository</strong>.</p>
+<p>For each test run, the amount of functional testing required will vary.</p>
+<ul>
+<li>For very simple changes, it may be sufficient to verify that each installation succeeds and that the expected files are in place</li>
+<li>For some changes, it may be sufficient to run osg-test on the resulting installation</li>
+<li>For some changes, it will be necessary to perform careful functional tests of the affected component(s)</li>
+</ul>
+<p>If you have questions, check with the Software Manager to determine the amount of testing that is required per test run.</p>
+<h3 id="the-cross-series-test-defined">The "Cross-Series" test, defined<a class="headerlink" href="#the-cross-series-test-defined" title="Permanent link">&para;</a></h3>
+<p>The cross-series test may need to be run for packages that have been built for multiple release series of the OSG software stack (i.e. 3.3 and 3.4):</p>
+<ul>
+<li>On el6, install from the 3.3 repositories, then update from the 3.4 repositories</li>
+<li>On el7, install from the 3.3 repositories, then update from the 3.4 repositories</li>
+</ul>
+<p>Viewed another way, this test is similar to the update installs, above, except from 3.3-release to 3.4-development.</p>
+<h3 id="the-long-tail-tests-defined">The "Long Tail" tests, defined<a class="headerlink" href="#the-long-tail-tests-defined" title="Permanent link">&para;</a></h3>
+<p>These tests may need to be run when updating a package that's also in the old, unsupported (3.2) branch. They will consist of:</p>
+<ul>
+<li>Install from 3.2-release and update to 3.4-development (on el6 only)</li>
+</ul>
+<h3 id="the-full-set-of-tests-defined">The "full set of tests", defined<a class="headerlink" href="#the-full-set-of-tests-defined" title="Permanent link">&para;</a></h3>
+<p>All of the tests mentioned above.</p>
+<h3 id="running-the-tests-in-vm-universe">Running the tests in VM Universe<a class="headerlink" href="#running-the-tests-in-vm-universe" title="Permanent link">&para;</a></h3>
+<p>In the case that the package you're testing is covered by osg-tested-internal, you can run the full set of tests in a manual VM universe test run. Make sure you meet the <a href="https://github.com/opensciencegrid/vm-test-runs">pre-requisites</a> required to submit VM Universe jobs on <code>osghost.chtc.wisc.edu</code>. After that's done, you can prepare the test suite by running:</p>
+<div class="codehilite"><pre><span></span><span class="go">osg-run-tests &#39;Testing <span style="color:red">&lt;change x&gt;</span>&#39;</span>
+</pre></div>
+
+
+<p>After you <code>cd</code> into the directory specified in the output of the previous command, you will need to edit the <code>*.yaml</code> files in <code>parameters.d</code> to reflect the tests that you will want to run i.e. clean installs, upgrade installs and upgrade installs between OSG versions.</p>
+<p>Once you're satisfied with your list of parameters, submit the dag:</p>
+<div class="codehilite"><pre><span></span><span class="go">condor_submit_dag master-run.dag</span>
+</pre></div>
+
+
+<h2 id="promoting-a-package-to-testing">Promoting a Package to Testing<a class="headerlink" href="#promoting-a-package-to-testing" title="Permanent link">&para;</a></h2>
+<p>Once development and development testing is complete, the final OSG Software step is to promote the package(s) to our testing repositories. After that, the Release team takes over with acceptance testing and ultimately release. Of course if they discover problems, the ticket(s) will be returned to OSG Software for further development, essentially restarting the development cycle.</p>
+<h3 id="preparing-a-good-promotion-request">Preparing a Good Promotion Request<a class="headerlink" href="#preparing-a-good-promotion-request" title="Permanent link">&para;</a></h3>
+<p>Developers must obtain permission from the OSG Software manager to promote a package from development to testing. A promotion request goes into at least one affected JIRA ticket and will be answered there as well. Below are some tips for writing a good promotion request:</p>
+<ul>
+<li>Make sure that relevant information about goals, history, and resolution is in the associated ticket(s)</li>
+<li>Include globs for the NVRs to be promoted (or a detailed list, if it is that complicated, which it almost never is)</li>
+<li>If you ran automated tests:<ul>
+<li>Link to the results page(s)</li>
+<li>Verify that relevant tests ran successfully (as opposed to being skipped or failing) – briefly summarize your findings</li>
+<li>Note whether the automated tests are just regression tests or actually test the current change(s)</li>
+<li>If there are <strong>any</strong> failures, explain why they are not important to the promotion request</li>
+</ul>
+</li>
+<li>If you ran manual tests:<ul>
+<li>Summarize your tests and findings</li>
+<li>If there were failures, explain why they are not important to the promotion request</li>
+</ul>
+</li>
+<li>If there are critical build dependencies that we typically check, include reports from the <code>built-against-pkgs</code> tool<ul>
+<li>Note: This step is really just for known, specific cases, like the {HTCondor, HTCondor-CE, BLAHP} set and the {BeStMan, GUMS, VOMS Admin, etc.} Java set</li>
+<li>Occasionally, the OSG Software manager will request the tool to be run for other cases</li>
+</ul>
+</li>
+<li>If other packages depend on the to-be-promoted package, explain whether the dependent packages must be rebuilt or, if not, why not</li>
+</ul>
+<p>For example (hypothetical promotion request for HTCondor-CE):</p>
+<blockquote>
+<p>May I promote <code>htcondor-ce-2.3.4-2.osg3*.el*</code>? I ran a complete set of automated tests <span style="color:red">&lt;LINK THE PRECEDING TEXT OR SEPARATELY HERE></span>; the HTCondor-CE tests ran and passed in all cases. There were some spurious failures of RSV in the All condition for RHEL 6, but this is a known failure case that is independent of HTCondor-CE. I also did a few spot checks manually (one VM each for SL 6 and SL 7), and in each case setting <code>use_frobnosticator = true</code> in the configuration resulted in the expected behavior as defined in the description field above. The <code>built-against-pkgs</code> tool shows that I built against all the latest HTCondor and BLAHP builds, see below. <span style="color:red">&lt;JIRA-formatted table comes after></span></p>
+</blockquote>
+<h3 id="promoting">Promoting<a class="headerlink" href="#promoting" title="Permanent link">&para;</a></h3>
+<p>Follow these steps to request promotion, promote a package, and note the promotion in JIRA:</p>
+<ol>
+<li>Make sure the package update has at least one associated JIRA ticket; if there is no ticket, at least create one for releasing the package(s)</li>
+<li>Obtain permission to promote the package(s) from the Software manager (see above)</li>
+<li>Use <a href="../osg-build-tools#osg-promote">osg-promote</a> to promote the package(s) from development to testing</li>
+<li>Comment on the associated JIRA ticket(s) with osg-promote’s JIRA-formatted output (or at least the build NVRs) and, if you know, suggestions for acceptance testing</li>
+<li>Mark each associated JIRA ticket as “Ready For Testing” and (done automatically for you:) set the Assignee to “Unassigned”</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../koji-workflow/" title="Koji Workflow" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Koji Workflow
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.cae2244d.js"></script>
+      
+      <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

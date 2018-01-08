@@ -1,0 +1,2165 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://opensciencegrid.github.io/technology/documentation/markdown-migration/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.2.6">
+    
+    
+      
+        <title>Migrating Documents to Markdown - OSG Technology Area</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.6525f7f6.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/itb.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+  </head>
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://opensciencegrid.github.io/technology/" title="OSG Technology Area" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                OSG Technology Area
+              </span>
+              <span class="md-header-nav__topic">
+                Migrating Documents to Markdown
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/opensciencegrid/technology/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    OSG Technology Area
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/opensciencegrid/technology/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Software
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Software
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/development-process/" title="Development Process" class="md-nav__link">
+      Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/koji-workflow/" title="Koji Workflow" class="md-nav__link">
+      Koji Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/new-team-member/" title="New Team Member" class="md-nav__link">
+      New Team Member
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/repository-management/" title="Repository Management" class="md-nav__link">
+      Repository Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/ce-test-scaling/" title="CE Scale Testing" class="md-nav__link">
+      CE Scale Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/rpm-development-guide/" title="RPM Development Guide" class="md-nav__link">
+      RPM Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/quilt/" title="Using Quilt" class="md-nav__link">
+      Using Quilt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/upcoming-to-main/" title="Upcoming to Main" class="md-nav__link">
+      Upcoming to Main
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/software-support/" title="Software Support" class="md-nav__link">
+      Software Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/effort-tracking/" title="Effort Tracking" class="md-nav__link">
+      Effort Tracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/release-planning/" title="Release Planning" class="md-nav__link">
+      Release Planning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/globus-mass-update-procedure/" title="Globus Mass Update Procedure" class="md-nav__link">
+      Globus Mass Update Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/git-software-development/" title="Git Software Development Process" class="md-nav__link">
+      Git Software Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/osg-build-tools/" title="OSG Build Tools" class="md-nav__link">
+      OSG Build Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/resurrecting-epel-packages/" title="Resurrecting Epel Packages" class="md-nav__link">
+      Resurrecting Epel Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/koji-mass-rebuilds/" title="Koji Mass Rebuilds" class="md-nav__link">
+      Koji Mass Rebuilds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/create-vo-client/" title="Creating the VO Client Package" class="md-nav__link">
+      Creating the VO Client Package
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/pki-overview/" title="PKI Overview" class="md-nav__link">
+      PKI Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/ipv6-testing/" title="IPv6 Testing" class="md-nav__link">
+      IPv6 Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Release
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Release
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/cut-sw-release/" title="How to Cut a Release" class="md-nav__link">
+      How to Cut a Release
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/cut-data-release/" title="How to Cut a Data Release" class="md-nav__link">
+      How to Cut a Data Release
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/release-policy/" title="Release Policy" class="md-nav__link">
+      Release Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/release-schedule/" title="Release Schedule" class="md-nav__link">
+      Release Schedule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/new-release-series/" title="New Release Series" class="md-nav__link">
+      New Release Series
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/old-release-removal/" title="Old Release Series Removal" class="md-nav__link">
+      Old Release Series Removal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/itb-testing/" title="ITB Prerelease Testing" class="md-nav__link">
+      ITB Prerelease Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/empty-pkgs/" title="Empty Packages" class="md-nav__link">
+      Empty Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../release/acceptance-testing/" title="Acceptance Testing" class="md-nav__link">
+      Acceptance Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Policy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Policy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/gums-retire/" title="GUMS Retirement" class="md-nav__link">
+      GUMS Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/bestman2-retire/" title="BeStMan2 Retirement" class="md-nav__link">
+      BeStMan2 Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/voms-admin-retire/" title="VOMS Admin Retirement" class="md-nav__link">
+      VOMS Admin Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/release-series/" title="Release Series Support" class="md-nav__link">
+      Release Series Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/globus-toolkit/" title="Globus Toolkit Support" class="md-nav__link">
+      Globus Toolkit Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/external-oasis-repos/" title="OASIS Repository Mirroring" class="md-nav__link">
+      OASIS Repository Mirroring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/flexible-release-model/" title="Flexible Release Model" class="md-nav__link">
+      Flexible Release Model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-restore-recipe/" title="Koji Restore Recipe" class="md-nav__link">
+      Koji Restore Recipe
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-hub-setup/" title="Koji-Hub Setup" class="md-nav__link">
+      Koji-Hub Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-inf-overview/" title="Koji Infrastructure Overview" class="md-nav__link">
+      Koji Infrastructure Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-policy-writing/" title="Koji Policy Writing" class="md-nav__link">
+      Koji Policy Writing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/madison-itb/" title="Madison ITB" class="md-nav__link">
+      Madison ITB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../writing-documentation/" title="Writing Documentation" class="md-nav__link">
+      Writing Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reviewing-documentation/" title="Reviewing Documentation" class="md-nav__link">
+      Reviewing Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../style-guide/" title="Markdown Style Guide" class="md-nav__link">
+      Markdown Style Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Migrating Documents to Markdown
+      </label>
+    
+    <a href="./" title="Migrating Documents to Markdown" class="md-nav__link md-nav__link--active">
+      Migrating Documents to Markdown
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-git-repository" title="Choosing the git repository" class="md-nav__link">
+    Choosing the git repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-twiki-conversion" title="Automatic TWiki conversion" class="md-nav__link">
+    Automatic TWiki conversion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-docker" title="Using docker" class="md-nav__link">
+    Using docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-the-git-repository" title="Preparing the git repository" class="md-nav__link">
+    Preparing the git repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previewing-the-document-tree" title="Previewing the document tree" class="md-nav__link">
+    Previewing the document tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-documents" title="Converting documents" class="md-nav__link">
+    Converting documents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-conversion" title="Troubleshooting conversion" class="md-nav__link">
+    Troubleshooting conversion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-without-docker" title="Conversion without Docker" class="md-nav__link">
+    Conversion without Docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements_1" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-the-git-repository_1" title="Preparing the git repository" class="md-nav__link">
+    Preparing the git repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archiving-the-twiki-document" title="Archiving the TWiki document" class="md-nav__link">
+    Archiving the TWiki document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initial-conversion-with-pandoc" title="Initial conversion with Pandoc" class="md-nav__link">
+    Initial conversion with Pandoc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previewing-your-documents-with-mkdocs" title="Previewing your document(s) with Mkdocs" class="md-nav__link">
+    Previewing your document(s) with Mkdocs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completing-the-conversion" title="Completing the conversion" class="md-nav__link">
+    Completing the conversion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archiving-documents" title="Archiving Documents" class="md-nav__link">
+    Archiving Documents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-the-pull-request" title="Submitting the pull request" class="md-nav__link">
+    Submitting the pull request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-the-pull-request" title="After the pull request" class="md-nav__link">
+    After the pull request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reviewing-pull-requests" title="Reviewing pull requests" class="md-nav__link">
+    Reviewing pull requests
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Historical Information
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Historical Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-initial-install/" title="Koji Initial Install" class="md-nav__link">
+      Koji Initial Install
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Historical Transitions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Historical Transitions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projects/sha2-support/" title="SHA-2 Support" class="md-nav__link">
+      SHA-2 Support
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Meetings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Meetings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180108/" title="January 8, 2018" class="md-nav__link">
+      January 8, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180102/" title="January 2, 2018" class="md-nav__link">
+      January 2, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171218/" title="December 18, 2017" class="md-nav__link">
+      December 18, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171211/" title="December 11, 2017" class="md-nav__link">
+      December 11, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171204/" title="December 4, 2017" class="md-nav__link">
+      December 4, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171127/" title="November 27, 2017" class="md-nav__link">
+      November 27, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171120/" title="November 20, 2017" class="md-nav__link">
+      November 20, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171113/" title="November 13, 2017" class="md-nav__link">
+      November 13, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171106/" title="November 6, 2017" class="md-nav__link">
+      November 6, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171030/" title="October 30, 2017" class="md-nav__link">
+      October 30, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171023/" title="October 23, 2017" class="md-nav__link">
+      October 23, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171016/" title="October 16, 2017" class="md-nav__link">
+      October 16, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171009/" title="October 9, 2017" class="md-nav__link">
+      October 9, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171002/" title="October 2, 2017" class="md-nav__link">
+      October 2, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170925/" title="September 25, 2017" class="md-nav__link">
+      September 25, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170918/" title="September 18, 2017" class="md-nav__link">
+      September 18, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170911/" title="September 11, 2017" class="md-nav__link">
+      September 11, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170905/" title="September 5, 2017" class="md-nav__link">
+      September 5, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170828/" title="August 28, 2017" class="md-nav__link">
+      August 28, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170814/" title="August 14, 2017" class="md-nav__link">
+      August 14, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170807/" title="August 7, 2017" class="md-nav__link">
+      August 7, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170731/" title="July 31, 2017" class="md-nav__link">
+      July 31, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170724/" title="July 24, 2017" class="md-nav__link">
+      July 24, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170717/" title="July 17, 2017" class="md-nav__link">
+      July 17, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170710/" title="July 10, 2017" class="md-nav__link">
+      July 10, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170703/" title="July 3, 2017" class="md-nav__link">
+      July 3, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170626/" title="June 26, 2017" class="md-nav__link">
+      June 26, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170619/" title="June 19, 2017" class="md-nav__link">
+      June 19, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170612/" title="June 12, 2017" class="md-nav__link">
+      June 12, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170605/" title="June 6, 2017" class="md-nav__link">
+      June 6, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170530/" title="May 30, 2017" class="md-nav__link">
+      May 30, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170522/" title="May 22, 2017" class="md-nav__link">
+      May 22, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170515/" title="May 15, 2017" class="md-nav__link">
+      May 15, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170508/" title="May 8, 2017" class="md-nav__link">
+      May 8, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170501/" title="May 1, 2017" class="md-nav__link">
+      May 1, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170424/" title="April 24, 2017" class="md-nav__link">
+      April 24, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170417/" title="April 17, 2017" class="md-nav__link">
+      April 17, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170227/" title="February 27, 2017" class="md-nav__link">
+      February 27, 2017
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-git-repository" title="Choosing the git repository" class="md-nav__link">
+    Choosing the git repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-twiki-conversion" title="Automatic TWiki conversion" class="md-nav__link">
+    Automatic TWiki conversion
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-docker" title="Using docker" class="md-nav__link">
+    Using docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-the-git-repository" title="Preparing the git repository" class="md-nav__link">
+    Preparing the git repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previewing-the-document-tree" title="Previewing the document tree" class="md-nav__link">
+    Previewing the document tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#converting-documents" title="Converting documents" class="md-nav__link">
+    Converting documents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-conversion" title="Troubleshooting conversion" class="md-nav__link">
+    Troubleshooting conversion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conversion-without-docker" title="Conversion without Docker" class="md-nav__link">
+    Conversion without Docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements_1" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preparing-the-git-repository_1" title="Preparing the git repository" class="md-nav__link">
+    Preparing the git repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archiving-the-twiki-document" title="Archiving the TWiki document" class="md-nav__link">
+    Archiving the TWiki document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initial-conversion-with-pandoc" title="Initial conversion with Pandoc" class="md-nav__link">
+    Initial conversion with Pandoc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#previewing-your-documents-with-mkdocs" title="Previewing your document(s) with Mkdocs" class="md-nav__link">
+    Previewing your document(s) with Mkdocs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completing-the-conversion" title="Completing the conversion" class="md-nav__link">
+    Completing the conversion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archiving-documents" title="Archiving Documents" class="md-nav__link">
+    Archiving Documents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-the-pull-request" title="Submitting the pull request" class="md-nav__link">
+    Submitting the pull request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-the-pull-request" title="After the pull request" class="md-nav__link">
+    After the pull request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reviewing-pull-requests" title="Reviewing pull requests" class="md-nav__link">
+    Reviewing pull requests
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/opensciencegrid/technology/edit/master/docs/documentation/markdown-migration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="migrating-to-markdown">Migrating to Markdown<a class="headerlink" href="#migrating-to-markdown" title="Permanent link">&para;</a></h1>
+<p>As part of the TWiki retirement (the read-only target date of Oct 1, 2017, with a shutdown date in 2018), we will need to convert the OSG Software and Release3 docs from TWiki syntax to <a href="https://guides.github.com/features/mastering-markdown/">Markdown</a>. The following document outlines the conversion process and conventions.</p>
+<h2 id="choosing-the-git-repository">Choosing the git repository<a class="headerlink" href="#choosing-the-git-repository" title="Permanent link">&para;</a></h2>
+<p>First you will need to choose which git repoository you will be working with:</p>
+<table>
+<thead>
+<tr>
+<th align="left">If you are converting a document from...</th>
+<th align="left">Use this github repository...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">SoftwareTeam</td>
+<td align="left"><a href="https://www.github.com/opensciencegrid/technology/">technology</a></td>
+</tr>
+<tr>
+<td align="left">Release3</td>
+<td align="left"><a href="https://www.github.com/opensciencegrid/docs/">docs</a></td>
+</tr>
+</tbody>
+</table>
+<p>Once you've chosen the target repository for your document, move onto the next section and pick your conversion method.</p>
+<h2 id="automatic-twiki-conversion">Automatic TWiki conversion<a class="headerlink" href="#automatic-twiki-conversion" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are only archiving the documents, skip to this <a href="#archiving-documents">section</a>.</p>
+</div>
+<p>Choose one of the following methods for converting TWiki documents:</p>
+<ul>
+<li>Using our own <a href="#using-docker">docker conversion image</a> (recommended)</li>
+<li>Directly using pandoc and mkdocs <a href="#conversion-without-docker">on your own machine</a></li>
+</ul>
+<h3 id="using-docker">Using docker<a class="headerlink" href="#using-docker" title="Permanent link">&para;</a></h3>
+<p>The twiki-converter docker image can be used to preview the document tree via a <a href="http://www.mkdocs.org/#getting-started">mkdocs</a> development server, archive TWiki documents, and convert documents to Markdown via <a href="http://pandoc.org/">pandoc</a>. The image is available on <code>osghost</code>, otherwise, it is availble on <a href="https://hub.docker.com/r/opensciencegrid/docker-twiki-converter/">dockerhub</a>.</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> docker pull opensciencegrid/docker-twiki-converter
+</pre></div>
+
+
+<h4 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h4>
+<p>To perform a document migration using docker, you will need the following tools and accounts:</p>
+<ul>
+<li><a href="https://help.github.com/articles/fork-a-repo/">Fork</a> and <a href="https://help.github.com/articles/cloning-a-repository/">clone</a> the repository that you chose in the <a href="#choosing-the-git-repository">above section</a></li>
+<li>A host with a running docker service</li>
+<li><code>sudo</code> or membership in the <code>docker</code> group</li>
+</ul>
+<p>If you cannot install the above tools locally, they are available on <code>osghost</code>. Speak with Brian L for access.</p>
+<h4 id="preparing-the-git-repository">Preparing the git repository<a class="headerlink" href="#preparing-the-git-repository" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>cd</code> into your local git repository</li>
+<li>
+<p>Add <code>opensciencegrid/technology</code> as the upstream remote repository for merging upstream changes:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> git remote add upstream https://www.github.com/opensciencegrid/<span style="color:red">&lt;REPOSITORY&gt;</span>.git
+</pre></div>
+
+
+</li>
+<li>
+<p>Create a branch for the document you plan to convert:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> git branch <span style="color:red">&lt;BRANCH NAME&gt;</span> master
+</pre></div>
+
+
+</li>
+<li>
+<p>Change to the branch you just created</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> git checkout <span style="color:red">&lt;BRANCH NAME&gt;</span>
+</pre></div>
+
+
+</li>
+</ol>
+<h4 id="previewing-the-document-tree">Previewing the document tree<a class="headerlink" href="#previewing-the-document-tree" title="Permanent link">&para;</a></h4>
+<p>When starting a twiki-converter docker container, it expects your local github repository to be mounted in <code>/source</code> so that any changes made to the repository are reflected in the mkdocs development server. To start a docker container based off of the twiki-converter docker image:</p>
+<ol>
+<li>
+<p>Create a container from the image with the following command:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> docker run -d -v <span style="color:red">&lt;PATH TO LOCAL GITHUB REPO&gt;</span>:/source -p <span class="m">8000</span> opensciencegrid/docker-twiki-converter
+</pre></div>
+
+
+<p>The above command should return the container ID, which will be used in subsequent commands. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the docker container exits immediately, remove the <code>-d</code> option for details. If you see permission denied errors, you may need to disable SELinux or put it in permissive mode.</p>
+</div>
+</li>
+<li>
+<p>To find the port that your development server is listening on, use the container ID (you should only need the first few chars of the ID) returned from the previous command:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> docker port <span style="color:red">&lt;CONTAINER ID&gt;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Access the development server in your browser via <code>http://osghost.chtc.wisc.edu:&lt;PORT&gt;</code> or <code>localhost:&lt;PORT&gt;</code> for containers run on <code>osghost</code> or locally, respectively. <code>osghost</code> has a restrictive firewall so if you have issues accessing your container from outside of the UW-Madison campus, use an SSH tunnel to map the <code>osghost</code> port to a local port.</p>
+</li>
+</ol>
+<h4 id="converting-documents">Converting documents<a class="headerlink" href="#converting-documents" title="Permanent link">&para;</a></h4>
+<p>The docker image contains a convenience script, <code>convert-twiki</code> for saving archives and converting them to Markdown. To run the script in a running container, run the following command:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> docker <span class="nb">exec</span> <span style="color:red">&lt;CONTAINER ID&gt;</span> convert-twiki <span style="color:red">&lt;TWIKI URL&gt;</span>
+</pre></div>
+
+
+<p>Where <span style="color:red"><CONTAINER ID></span> is the docker container ID and <span style="color:red"><TWIKI URL></span> is the link to the TWiki document that you want to convert, e.g. https://twiki.opensciencegrid.org/bin/view/SoftwareTeam/SoftwareDevelopmentProcess . This will result in an archive of the twiki doc, <code>archive/SoftwareDevelopmentProcess</code>, in your local repo and a converted copy, <code>SoftwareDevelopmentProcess.md</code>, placed into the root of your local github repository.  If the twiki url is for a specific revision of the document, a <code>.rNN</code> will be included in the output filenames.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the above command does not complete quickly, it means that Pandoc is having an issue with a specific section of the document. See <a href="#troubleshooting-conversion">Troubleshooting conversion</a> for next steps.</p>
+</div>
+<p>To see the converted document in your browser:</p>
+<ol>
+<li>Rename, move the converted document into a folder in <code>docs/</code>.<ul>
+<li>Document file names should be lowercase, <code>-</code> delimited, and descriptive but concise, e.g. <code>markdown-migration.md</code> or <code>cutting-release.md</code></li>
+<li>It's not important to get the name/location correct on the first try as this can be discussed in the pull request</li>
+</ul>
+</li>
+<li><code>sudo chown</code> the archived and converted documents to be owned by you</li>
+<li>Add the document to the <code>pages:</code> section of <code>mkdocs.yml</code> in <a href="http://titlecase.com/">title case</a>, e.g. <code>- Migrating Documents to Markdown: 'software/markdown-migration.md'</code></li>
+<li>Refresh the document tree in your browser</li>
+</ol>
+<p>Once you can view the converted document in your browser, move onto the <a href="#completing-the-conversion">next section</a></p>
+<h4 id="troubleshooting-conversion">Troubleshooting conversion<a class="headerlink" href="#troubleshooting-conversion" title="Permanent link">&para;</a></h4>
+<p>Pandoc sometimes has issues converting documents and requires manual intervention by removing whichever section is causing issues in the conversion.</p>
+<ol>
+<li>Copy the archive of the document into the root of your git repository</li>
+<li>
+<p>Kill the process in the docker container:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> docker <span class="nb">exec</span> <span style="color:red">&lt;CONTAINER ID&gt;</span> pkill -9 pandoc
+</pre></div>
+
+
+</li>
+<li>
+<p>Remove a section from the copy of the archive to find the problematic section (recommendation: use a binary search strategy)</p>
+</li>
+<li>
+<p>Run pandoc manually:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> docker <span class="nb">exec</span> <span style="color:red">&lt;CONTAINER ID&gt;</span> pandoc -f twiki -t markdown_github <span style="color:red">&lt;ARCHIVE COPY&gt;</span> &gt; <span style="color:red">&lt;MARKDOWN FILE&gt;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Repeat steps 2-4 until you've narrowed down the problematic section</p>
+</li>
+<li>Manually convert the offending section</li>
+</ol>
+<h3 id="conversion-without-docker">Conversion without Docker<a class="headerlink" href="#conversion-without-docker" title="Permanent link">&para;</a></h3>
+<p>If you've already used the <a href="#using-docker">docker method</a>, skip to the section about <a href="#completing-the-conversion">completing the conversion</a>. </p>
+<h4 id="requirements_1">Requirements<a class="headerlink" href="#requirements_1" title="Permanent link">&para;</a></h4>
+<p>This method requires the following:</p>
+<ul>
+<li><a href="https://help.github.com/articles/fork-a-repo/">Fork</a> and <a href="https://help.github.com/articles/cloning-a-repository/">clone</a> the repository that you chose in the <a href="#choosing-the-git-repository">above section</a></li>
+<li>pandoc (&gt; 1.16)</li>
+<li>mkdocs</li>
+<li>MarkdownHighlight</li>
+<li>pygments</li>
+</ul>
+<h4 id="preparing-the-git-repository_1">Preparing the git repository<a class="headerlink" href="#preparing-the-git-repository_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li><code>cd</code> into your local git repository</li>
+<li>
+<p>Add <code>opensciencegrid/technology</code> as the upstream remote repository for merging upstream changes:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> git remote add upstream https://www.github.com/opensciencegrid/<span style="color:red">&lt;REPOSITORY&gt;</span>.git
+</pre></div>
+
+
+</li>
+<li>
+<p>Create a branch for the document you plan to convert:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> git branch <span style="color:red">&lt;BRANCH NAME&gt;</span> master
+</pre></div>
+
+
+</li>
+<li>
+<p>Change to the branch you just created</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> git checkout <span style="color:red">&lt;BRANCH NAME&gt;</span>
+</pre></div>
+
+
+</li>
+</ol>
+<h4 id="archiving-the-twiki-document">Archiving the TWiki document<a class="headerlink" href="#archiving-the-twiki-document" title="Permanent link">&para;</a></h4>
+<p>Follow the instructions for <a href="#archiving-documents">archival</a> then continue to the next section to convert the document with pandoc.</p>
+<h4 id="initial-conversion-with-pandoc">Initial conversion with Pandoc<a class="headerlink" href="#initial-conversion-with-pandoc" title="Permanent link">&para;</a></h4>
+<p><a href="http://pandoc.org/">Pandoc</a> is a tool that's useful for automated conversion of markdown languages. <a href="http://pandoc.org/installing.html">Once installed</a> (alternatively, run pandoc <a href="#using-docker">via docker</a>), run the following command to convert TWiki to Markdown:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> pandoc -f twiki -t markdown_github <span style="color:red">&lt;TWIKI FILE&gt;</span> &gt; <span style="color:red">&lt;MARKDOWN FILE&gt;</span>
+</pre></div>
+
+
+<p>Where <code>&lt;TWIKI FILE&gt;</code> is the path to initial document in raw TWiki and <code>&lt;MARKDOWN FILE&gt;</code> is the path to the resulting document in GitHub Markdown.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don't see output from the above command quickly, it means that Pandoc is having an issue with a specific section of the document. Stop the command (or docker container), find and temporarily remove the offending section, convert the remainder of the document with Pandoc, and manually convert the offending section.</p>
+</div>
+<h4 id="previewing-your-documents-with-mkdocs">Previewing your document(s) with Mkdocs<a class="headerlink" href="#previewing-your-documents-with-mkdocs" title="Permanent link">&para;</a></h4>
+<p><a href="http://www.mkdocs.org/">Mkdocs</a> has a development mode that can be used to preview documents as you work on them and is available via package manager or <code>pip</code>. <a href="http://www.mkdocs.org/#installation">Once installed</a>, add your document(s) to the <code>pages</code> section of <code>mkdocs.yml</code> and launch the mkdocs server with the following command from the dir containing <code>mkdocs.yml</code>:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> <span class="nv">PYTHONPATH</span><span class="o">=</span>src/ mkdocs serve
+</pre></div>
+
+
+<p>Access the server at <code>http://127.0.0.1:8000</code> and navigate to the document you're working on. It's useful to open the original TWiki doc in an adjacent tab or window to quickly compare the two.</p>
+<h2 id="completing-the-conversion">Completing the conversion<a class="headerlink" href="#completing-the-conversion" title="Permanent link">&para;</a></h2>
+<p>Manual review of the automatically converted documents are required since the automatic conversion process isn't perfect. This section contains a list of problems commonly encountered in automatically converted documents.</p>
+<p>Visit the <a href="../../documentation/writing-documentation#style-guide">style guide</a> to ensure that the document meets all style guidelines.</p>
+<h2 id="archiving-documents">Archiving Documents<a class="headerlink" href="#archiving-documents" title="Permanent link">&para;</a></h2>
+<p>If the document is slated for archival (check if it says "yes" in the  "archived" column of the spreadsheet), just download the document to the <code>archive</code> folder of your local git repository:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> <span class="nb">cd</span> technology/
+<span class="gp">user@host $</span> curl <span class="s1">&#39;<span style="color:red">&lt;TWIKI URL&gt;</span>?raw=text&#39;</span> <span class="p">|</span> iconv -f windows-1252 &gt; archive/<span style="color:red">&lt;TWIKI TITLE&gt;</span>
+</pre></div>
+
+
+<p>For example:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> <span class="nb">cd</span> technology
+<span class="gp">user@host $</span> curl <span class="s1">&#39;https://twiki.opensciencegrid.org/bin/view/Documentation/Release3/SHA2Compliance?raw=text&#39;</span> <span class="p">|</span> iconv -f windows-1252 &gt; archive/SHA2Compliance
+</pre></div>
+
+
+<p>After downloading the document, continue onto the next section to walk through pull request submission.</p>
+<h2 id="submitting-the-pull-request">Submitting the pull request<a class="headerlink" href="#submitting-the-pull-request" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Stage the archived raw TWiki (as well as the converted Markdown document(s) and <code>mkdocs.yml</code> if you are converting the document):</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> git add mkdocs.yml archive/<span style="color:red">&lt;TWIKI ARCHIVE&gt;</span> <span style="color:red">&lt;PATH TO CONVERTED DOC&gt;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Commit and push your changes to your GitHub repo:</p>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> git commit -m <span class="s2">&quot;<span style="color:red">&lt;COMMIT MSG&gt;</span>&quot;</span>
+<span class="gp">user@host $</span> git push origin <span style="color:red">&lt;BRANCH NAME&gt;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Open your browser and navigate to your GitHub fork</p>
+</li>
+<li>
+<p>Submit a pull request containing with the following body:</p>
+<div class="codehilite"><pre><span></span><span class="c"><span style="color:red">&lt;LINK TO TWIKI DOCUMENT&gt;</span></span>
+
+<span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">Enter</span> <span class="n">date</span> <span class="n">into</span> &quot;<span class="n">Migrated</span>&quot; <span class="n">column</span> <span class="n">of</span> <span class="n">google</span> <span class="n">sheet</span>
+</pre></div>
+
+
+<ul>
+<li>
+<p>If you are migrating a document, also add this task:</p>
+<div class="codehilite"><pre><span></span>- [ ] Add migration header to TWiki document
+</pre></div>
+
+
+</li>
+<li>
+<p>If you are archiving a document, add this task:</p>
+<div class="codehilite"><pre><span></span>- [ ] Move TWiki document to the trash
+</pre></div>
+
+
+</li>
+</ul>
+</li>
+</ol>
+<p>See an example pull request <a href="https://github.com/opensciencegrid/technology/pull/98">here</a>.</p>
+<h2 id="after-the-pull-request">After the pull request<a class="headerlink" href="#after-the-pull-request" title="Permanent link">&para;</a></h2>
+<p>After the pull request is merged, replace the contents of TWiki document with the div if you're migrating the document, linking to the location of the migrated document:</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;border: 1px solid black; margin: 1em 0; padding: 1em; background-color: #FFDDDD; font-weight: 600;&quot;</span><span class="nt">&gt;</span>
+This document has been migrated to !GitHub (<span class="nt">&lt;LINK</span> <span class="err">TO</span> <span class="err">GITHUB</span> <span class="err">DOCUMENT</span><span class="nt">&gt;</span>). If you wish to see the old TWiki document, use the TWiki history below.
+
+Background:
+
+At the end of year (2017), the TWiki will be retired in favor of !GitHub. You can find the various TWiki webs and their new !GitHub locations listed below:
+
+   * Release3: https://opensciencegrid.github.io/docs ([[https://github.com/opensciencegrid/docs/tree/master/archive][archive]])
+   * !SoftwareTeam: https://opensciencegrid.github.io/technology ([[https://github.com/opensciencegrid/technology/tree/master/archive][archive]])
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+
+<p>If you are archiving a document, move it to the trash instead. Once the document has been updated or trashed, add the date to the spreadsheet and go back to your pull request and mark your tasks as complete. For example, if you completed the migration of a document:</p>
+<div class="codehilite"><pre><span></span>- [X] Enter date into &quot;Migrated&quot; column of google sheet
+- [X] Add migration div to TWiki document
+</pre></div>
+
+
+<p>Currently, we do not recommend changing backlinks (links on other twiki pages that refer to the Twiki page you are migrating) to point at the new GitHub URL.  This is to provide a simple reminder to users that the migration will occur, and also is likely low priority regardless as all pages will eventually migrate to GitHub.  This advice may change in the future as we gain experience with this transition.</p>
+<h2 id="reviewing-pull-requests">Reviewing pull requests<a class="headerlink" href="#reviewing-pull-requests" title="Permanent link">&para;</a></h2>
+<p>To review pull requests, <code>cd</code> into the dir containing your git repository and check out the requester's branch, which the twiki-converter container should automatically notice. Here's an example checking out Brian's <code>cut-sw-release</code> branch of the technology repository:</p>
+<div class="codehilite"><pre><span></span><span class="gp">#</span> Add the requester<span class="s1">&#39;s repo as a remote if you haven&#39;</span>t already
+<span class="gp">user@host $</span> git remote add blin https://www.github.com/brianhlin/technology.git
+<span class="gp">user@host $</span> git fetch --all
+<span class="gp">user@host $</span> git checkout blin/cut-sw-release
+</pre></div>
+
+
+<p>Refresh your browser and navigate to the document in the request.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../style-guide/" title="Markdown Style Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Markdown Style Guide
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../infrastructure/koji-initial-install/" title="Koji Initial Install" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Koji Initial Install
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.cae2244d.js"></script>
+      
+      <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

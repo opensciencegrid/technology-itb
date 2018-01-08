@@ -1,0 +1,2287 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://opensciencegrid.github.io/technology/release/cut-sw-release/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.2.6">
+    
+    
+      
+        <title>How to Cut a Release - OSG Technology Area</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.6525f7f6.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/itb.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+  </head>
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://opensciencegrid.github.io/technology/" title="OSG Technology Area" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                OSG Technology Area
+              </span>
+              <span class="md-header-nav__topic">
+                How to Cut a Release
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/opensciencegrid/technology/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    OSG Technology Area
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/opensciencegrid/technology/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Software
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Software
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/development-process/" title="Development Process" class="md-nav__link">
+      Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/koji-workflow/" title="Koji Workflow" class="md-nav__link">
+      Koji Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/new-team-member/" title="New Team Member" class="md-nav__link">
+      New Team Member
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/repository-management/" title="Repository Management" class="md-nav__link">
+      Repository Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/ce-test-scaling/" title="CE Scale Testing" class="md-nav__link">
+      CE Scale Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/rpm-development-guide/" title="RPM Development Guide" class="md-nav__link">
+      RPM Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/quilt/" title="Using Quilt" class="md-nav__link">
+      Using Quilt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/upcoming-to-main/" title="Upcoming to Main" class="md-nav__link">
+      Upcoming to Main
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/software-support/" title="Software Support" class="md-nav__link">
+      Software Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/effort-tracking/" title="Effort Tracking" class="md-nav__link">
+      Effort Tracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/release-planning/" title="Release Planning" class="md-nav__link">
+      Release Planning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/globus-mass-update-procedure/" title="Globus Mass Update Procedure" class="md-nav__link">
+      Globus Mass Update Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/git-software-development/" title="Git Software Development Process" class="md-nav__link">
+      Git Software Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/osg-build-tools/" title="OSG Build Tools" class="md-nav__link">
+      OSG Build Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/resurrecting-epel-packages/" title="Resurrecting Epel Packages" class="md-nav__link">
+      Resurrecting Epel Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/koji-mass-rebuilds/" title="Koji Mass Rebuilds" class="md-nav__link">
+      Koji Mass Rebuilds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/create-vo-client/" title="Creating the VO Client Package" class="md-nav__link">
+      Creating the VO Client Package
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/pki-overview/" title="PKI Overview" class="md-nav__link">
+      PKI Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/ipv6-testing/" title="IPv6 Testing" class="md-nav__link">
+      IPv6 Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Release
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Release
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        How to Cut a Release
+      </label>
+    
+    <a href="./" title="How to Cut a Release" class="md-nav__link md-nav__link--active">
+      How to Cut a Release
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pick-the-version-number" title="Pick the Version Number" class="md-nav__link">
+    Pick the Version Number
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#day-0-generate-preliminary-release-list" title="Day 0: Generate Preliminary Release List" class="md-nav__link">
+    Day 0: Generate Preliminary Release List
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-update-the-osg-version-rpm" title="Step 1: Update the osg-version RPM" class="md-nav__link">
+    Step 1: Update the osg-version RPM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-promote-osg-version-and-generate-the-release-list" title="Step 2: Promote osg-version and generate the release list" class="md-nav__link">
+    Step 2: Promote osg-version and generate the release list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#day-1-verify-pre-release-and-generate-tarballs" title="Day 1: Verify Pre-Release and Generate Tarballs" class="md-nav__link">
+    Day 1: Verify Pre-Release and Generate Tarballs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-verify-pre-release" title="Step 1: Verify Pre-Release" class="md-nav__link">
+    Step 1: Verify Pre-Release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-test-pre-release-in-vm-universe" title="Step 2: Test Pre-Release in VM Universe" class="md-nav__link">
+    Step 2: Test Pre-Release in VM Universe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-regenerate-the-build-repositories" title="Step 3: Regenerate the build repositories" class="md-nav__link">
+    Step 3: Regenerate the build repositories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-the-client-tarballs" title="Step 4: Create the client tarballs" class="md-nav__link">
+    Step 4: Create the client tarballs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-briefly-test-the-client-tarballs" title="Step 5: Briefly test the client tarballs" class="md-nav__link">
+    Step 5: Briefly test the client tarballs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-update-the-uw-afs-installation-of-the-tarball-client" title="Step 6: Update the UW AFS installation of the tarball client" class="md-nav__link">
+    Step 6: Update the UW AFS installation of the tarball client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-wait" title="Step 7: Wait" class="md-nav__link">
+    Step 7: Wait
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#day-2-pushing-the-release" title="Day 2: Pushing the Release" class="md-nav__link">
+    Day 2: Pushing the Release
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-push-from-pre-release-to-release" title="Step 1: Push from pre-release to release" class="md-nav__link">
+    Step 1: Push from pre-release to release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-upload-the-client-tarballs" title="Step 2: Upload the client tarballs" class="md-nav__link">
+    Step 2: Upload the client tarballs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-a-cs-machine" title="On a CS machine" class="md-nav__link">
+    On a CS machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-jumpgridiuedu" title="On jump.grid.iu.edu" class="md-nav__link">
+    On jump.grid.iu.edu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-repo1repo2-as-root" title="On repo1/repo2 (as root)" class="md-nav__link">
+    On repo1/repo2 (as root)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-install-the-tarballs-into-oasis" title="Step 3: Install the tarballs into OASIS" class="md-nav__link">
+    Step 3: Install the tarballs into OASIS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-remove-old-uw-afs-installations-of-the-tarball-client" title="Step 4: Remove old UW AFS installations of the tarball client" class="md-nav__link">
+    Step 4: Remove old UW AFS installations of the tarball client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-update-the-docker-wn-client" title="Step 5: Update the Docker WN client" class="md-nav__link">
+    Step 5: Update the Docker WN client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-announce-the-release" title="Step 6: Announce the release" class="md-nav__link">
+    Step 6: Announce the release
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cut-data-release/" title="How to Cut a Data Release" class="md-nav__link">
+      How to Cut a Data Release
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../release-policy/" title="Release Policy" class="md-nav__link">
+      Release Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../release-schedule/" title="Release Schedule" class="md-nav__link">
+      Release Schedule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new-release-series/" title="New Release Series" class="md-nav__link">
+      New Release Series
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../old-release-removal/" title="Old Release Series Removal" class="md-nav__link">
+      Old Release Series Removal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../itb-testing/" title="ITB Prerelease Testing" class="md-nav__link">
+      ITB Prerelease Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../empty-pkgs/" title="Empty Packages" class="md-nav__link">
+      Empty Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../acceptance-testing/" title="Acceptance Testing" class="md-nav__link">
+      Acceptance Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Policy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Policy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/gums-retire/" title="GUMS Retirement" class="md-nav__link">
+      GUMS Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/bestman2-retire/" title="BeStMan2 Retirement" class="md-nav__link">
+      BeStMan2 Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/voms-admin-retire/" title="VOMS Admin Retirement" class="md-nav__link">
+      VOMS Admin Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/release-series/" title="Release Series Support" class="md-nav__link">
+      Release Series Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/globus-toolkit/" title="Globus Toolkit Support" class="md-nav__link">
+      Globus Toolkit Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/external-oasis-repos/" title="OASIS Repository Mirroring" class="md-nav__link">
+      OASIS Repository Mirroring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/flexible-release-model/" title="Flexible Release Model" class="md-nav__link">
+      Flexible Release Model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-restore-recipe/" title="Koji Restore Recipe" class="md-nav__link">
+      Koji Restore Recipe
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-hub-setup/" title="Koji-Hub Setup" class="md-nav__link">
+      Koji-Hub Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-inf-overview/" title="Koji Infrastructure Overview" class="md-nav__link">
+      Koji Infrastructure Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-policy-writing/" title="Koji Policy Writing" class="md-nav__link">
+      Koji Policy Writing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/madison-itb/" title="Madison ITB" class="md-nav__link">
+      Madison ITB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/writing-documentation/" title="Writing Documentation" class="md-nav__link">
+      Writing Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/reviewing-documentation/" title="Reviewing Documentation" class="md-nav__link">
+      Reviewing Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/style-guide/" title="Markdown Style Guide" class="md-nav__link">
+      Markdown Style Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/markdown-migration/" title="Migrating Documents to Markdown" class="md-nav__link">
+      Migrating Documents to Markdown
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Historical Information
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Historical Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-initial-install/" title="Koji Initial Install" class="md-nav__link">
+      Koji Initial Install
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Historical Transitions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Historical Transitions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projects/sha2-support/" title="SHA-2 Support" class="md-nav__link">
+      SHA-2 Support
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Meetings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Meetings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180108/" title="January 8, 2018" class="md-nav__link">
+      January 8, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180102/" title="January 2, 2018" class="md-nav__link">
+      January 2, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171218/" title="December 18, 2017" class="md-nav__link">
+      December 18, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171211/" title="December 11, 2017" class="md-nav__link">
+      December 11, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171204/" title="December 4, 2017" class="md-nav__link">
+      December 4, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171127/" title="November 27, 2017" class="md-nav__link">
+      November 27, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171120/" title="November 20, 2017" class="md-nav__link">
+      November 20, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171113/" title="November 13, 2017" class="md-nav__link">
+      November 13, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171106/" title="November 6, 2017" class="md-nav__link">
+      November 6, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171030/" title="October 30, 2017" class="md-nav__link">
+      October 30, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171023/" title="October 23, 2017" class="md-nav__link">
+      October 23, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171016/" title="October 16, 2017" class="md-nav__link">
+      October 16, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171009/" title="October 9, 2017" class="md-nav__link">
+      October 9, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171002/" title="October 2, 2017" class="md-nav__link">
+      October 2, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170925/" title="September 25, 2017" class="md-nav__link">
+      September 25, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170918/" title="September 18, 2017" class="md-nav__link">
+      September 18, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170911/" title="September 11, 2017" class="md-nav__link">
+      September 11, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170905/" title="September 5, 2017" class="md-nav__link">
+      September 5, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170828/" title="August 28, 2017" class="md-nav__link">
+      August 28, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170814/" title="August 14, 2017" class="md-nav__link">
+      August 14, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170807/" title="August 7, 2017" class="md-nav__link">
+      August 7, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170731/" title="July 31, 2017" class="md-nav__link">
+      July 31, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170724/" title="July 24, 2017" class="md-nav__link">
+      July 24, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170717/" title="July 17, 2017" class="md-nav__link">
+      July 17, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170710/" title="July 10, 2017" class="md-nav__link">
+      July 10, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170703/" title="July 3, 2017" class="md-nav__link">
+      July 3, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170626/" title="June 26, 2017" class="md-nav__link">
+      June 26, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170619/" title="June 19, 2017" class="md-nav__link">
+      June 19, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170612/" title="June 12, 2017" class="md-nav__link">
+      June 12, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170605/" title="June 6, 2017" class="md-nav__link">
+      June 6, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170530/" title="May 30, 2017" class="md-nav__link">
+      May 30, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170522/" title="May 22, 2017" class="md-nav__link">
+      May 22, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170515/" title="May 15, 2017" class="md-nav__link">
+      May 15, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170508/" title="May 8, 2017" class="md-nav__link">
+      May 8, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170501/" title="May 1, 2017" class="md-nav__link">
+      May 1, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170424/" title="April 24, 2017" class="md-nav__link">
+      April 24, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170417/" title="April 17, 2017" class="md-nav__link">
+      April 17, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170227/" title="February 27, 2017" class="md-nav__link">
+      February 27, 2017
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pick-the-version-number" title="Pick the Version Number" class="md-nav__link">
+    Pick the Version Number
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#day-0-generate-preliminary-release-list" title="Day 0: Generate Preliminary Release List" class="md-nav__link">
+    Day 0: Generate Preliminary Release List
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-update-the-osg-version-rpm" title="Step 1: Update the osg-version RPM" class="md-nav__link">
+    Step 1: Update the osg-version RPM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-promote-osg-version-and-generate-the-release-list" title="Step 2: Promote osg-version and generate the release list" class="md-nav__link">
+    Step 2: Promote osg-version and generate the release list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#day-1-verify-pre-release-and-generate-tarballs" title="Day 1: Verify Pre-Release and Generate Tarballs" class="md-nav__link">
+    Day 1: Verify Pre-Release and Generate Tarballs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-verify-pre-release" title="Step 1: Verify Pre-Release" class="md-nav__link">
+    Step 1: Verify Pre-Release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-test-pre-release-in-vm-universe" title="Step 2: Test Pre-Release in VM Universe" class="md-nav__link">
+    Step 2: Test Pre-Release in VM Universe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-regenerate-the-build-repositories" title="Step 3: Regenerate the build repositories" class="md-nav__link">
+    Step 3: Regenerate the build repositories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-the-client-tarballs" title="Step 4: Create the client tarballs" class="md-nav__link">
+    Step 4: Create the client tarballs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-briefly-test-the-client-tarballs" title="Step 5: Briefly test the client tarballs" class="md-nav__link">
+    Step 5: Briefly test the client tarballs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-update-the-uw-afs-installation-of-the-tarball-client" title="Step 6: Update the UW AFS installation of the tarball client" class="md-nav__link">
+    Step 6: Update the UW AFS installation of the tarball client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-wait" title="Step 7: Wait" class="md-nav__link">
+    Step 7: Wait
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#day-2-pushing-the-release" title="Day 2: Pushing the Release" class="md-nav__link">
+    Day 2: Pushing the Release
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-push-from-pre-release-to-release" title="Step 1: Push from pre-release to release" class="md-nav__link">
+    Step 1: Push from pre-release to release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-upload-the-client-tarballs" title="Step 2: Upload the client tarballs" class="md-nav__link">
+    Step 2: Upload the client tarballs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-a-cs-machine" title="On a CS machine" class="md-nav__link">
+    On a CS machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-jumpgridiuedu" title="On jump.grid.iu.edu" class="md-nav__link">
+    On jump.grid.iu.edu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-repo1repo2-as-root" title="On repo1/repo2 (as root)" class="md-nav__link">
+    On repo1/repo2 (as root)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-install-the-tarballs-into-oasis" title="Step 3: Install the tarballs into OASIS" class="md-nav__link">
+    Step 3: Install the tarballs into OASIS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-remove-old-uw-afs-installations-of-the-tarball-client" title="Step 4: Remove old UW AFS installations of the tarball client" class="md-nav__link">
+    Step 4: Remove old UW AFS installations of the tarball client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-update-the-docker-wn-client" title="Step 5: Update the Docker WN client" class="md-nav__link">
+    Step 5: Update the Docker WN client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-announce-the-release" title="Step 6: Announce the release" class="md-nav__link">
+    Step 6: Announce the release
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/opensciencegrid/technology/edit/master/docs/release/cut-sw-release.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are performing a data release, please follow the instructions <a href="../cut-data-release">here</a></p>
+</div>
+<h1 id="how-to-cut-a-software-release">How to Cut a Software Release<a class="headerlink" href="#how-to-cut-a-software-release" title="Permanent link">&para;</a></h1>
+<p>This document details the process for releasing new OSG Release version(s). This document does NOT discuss the policy for deciding what goes into a release, which can be found <a href="../release-policy/">here</a>.</p>
+<p>Due to the length of time that this process takes, it is recommended to do the release over three or more days to allow for errors to be corrected and tests to be run.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li>User certificate registered with OSG's koji with build and release team privileges</li>
+<li>An account on UW CS machines (e.g. <code>library</code>, <code>ingwe</code>) to access UW's AFS</li>
+<li><code>release-tools</code> scripts in your <code>PATH</code> (<a href="https://github.com/opensciencegrid/release-tools">GitHub</a>)</li>
+<li><code>osg-build</code> scripts in your <code>PATH</code> (installed via OSG yum repos or <a href="https://github.com/opensciencegrid/osg-build">source</a>)</li>
+</ul>
+<h2 id="pick-the-version-number">Pick the Version Number<a class="headerlink" href="#pick-the-version-number" title="Permanent link">&para;</a></h2>
+<p>The rest of this document makes references to <code>&lt;VERSION(S)&gt;</code> and <code>&lt;NON-UPCOMING VERSIONS(S)&gt;</code>, which refer to a space-delimited list of OSG version(s) and that same list minus <code>upcoming</code> (e.g. <code>3.3.28 3.4.3 upcoming</code> and <code>3.3.28 3.4.3</code>). If you are unsure about either the version or revision, please consult the release manager.</p>
+<h2 id="day-0-generate-preliminary-release-list">Day 0: Generate Preliminary Release List<a class="headerlink" href="#day-0-generate-preliminary-release-list" title="Permanent link">&para;</a></h2>
+<p>The release manager often needs a tentative list of packages to be released. This is done by finding the package differences between osg-testing and the current release.</p>
+<h3 id="step-1-update-the-osg-version-rpm">Step 1: Update the osg-version RPM<a class="headerlink" href="#step-1-update-the-osg-version-rpm" title="Permanent link">&para;</a></h3>
+<p>For each release (excluding upcoming), update the version number in the osg-version RPM's spec file and build it in koji:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># If building for the latest release out of trunk</span>
+osg-build koji osg-version
+<span class="c1"># If building for an older release out of a branch:</span>
+<span class="nv">MAJOR_VERSION</span><span class="o">=</span>&lt;MAJOR VERSION&gt;
+osg-build koji --repo<span class="o">=</span><span class="nv">$MAJOR_VERSION</span> osg-version
+</pre></div>
+
+
+<p>Where <code>&lt;MAJOR VERSION&gt;</code> is of the format <code>x.y</code> (e.g. <code>3.2</code>).</p>
+<h3 id="step-2-promote-osg-version-and-generate-the-release-list">Step 2: Promote osg-version and generate the release list<a class="headerlink" href="#step-2-promote-osg-version-and-generate-the-release-list" title="Permanent link">&para;</a></h3>
+<p>Run <code>0-generate-pkg-list</code> from a machine that has your koji-registered user certificate:</p>
+<div class="codehilite"><pre><span></span><span class="nv">VERSIONS</span><span class="o">=</span>&lt;VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+git clone https://github.com/opensciencegrid/release-tools.git
+<span class="nb">cd</span> release-tools
+<span class="m">0</span>-generate-pkg-list <span class="nv">$VERSIONS</span>
+</pre></div>
+
+
+<h2 id="day-1-verify-pre-release-and-generate-tarballs">Day 1: Verify Pre-Release and Generate Tarballs<a class="headerlink" href="#day-1-verify-pre-release-and-generate-tarballs" title="Permanent link">&para;</a></h2>
+<p>This section is to be performed 1-2 days before the release (as designated by the release manager) to perform last checks of the release and create the client tarballs.</p>
+<h3 id="step-1-verify-pre-release">Step 1: Verify Pre-Release<a class="headerlink" href="#step-1-verify-pre-release" title="Permanent link">&para;</a></h3>
+<p>Compare the list of packages already in pre-release to the final list for the release put together by the OSG Release Coordinator (who should have updated <code>release-list</code> in git). To do this, run the <code>1-verify-prerelease</code> script from git:</p>
+<div class="codehilite"><pre><span></span><span class="nv">VERSIONS</span><span class="o">=</span>&lt;VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+<span class="m">1</span>-verify-prerelease <span class="nv">$VERSIONS</span>
+</pre></div>
+
+
+<p>If there are any discrepancies consult the release manager. You may have to tag or untag packages with the <code>osg-koji</code> tool.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please verify that the <code>osg-version</code> RPM is in your set of packages for the release! Also verify that if there is a new version of the <code>osg-tested-internal</code> RPM, then it is included in the release as well!</p>
+</div>
+<h3 id="step-2-test-pre-release-in-vm-universe">Step 2: Test Pre-Release in VM Universe<a class="headerlink" href="#step-2-test-pre-release-in-vm-universe" title="Permanent link">&para;</a></h3>
+<p>To test pre-release, you will be kicking off a manual VM universe test run from <code>osghost.chtc.wisc.edu</code>.</p>
+<ol>
+<li>Ensure that you meet the <a href="https://github.com/opensciencegrid/vm-test-runs">pre-requisites</a> for submitting VM universe test runs</li>
+<li>
+<p>Prepare the test suite by running:</p>
+<div class="codehilite"><pre><span></span>osg-run-tests &#39;Testing OSG pre-release&#39;
+</pre></div>
+
+
+</li>
+<li>
+<p><code>cd</code> into the directory specified in the output of the previous command</p>
+</li>
+<li><code>cd</code> into <code>parameters.d</code> and remove all files within it except for <code>osg33.yaml</code> and <code>osg34.yaml</code></li>
+<li>
+<p>Edit <code>osg33.yaml</code> so that it reads:</p>
+<div class="codehilite"><pre><span></span><span class="nt">platforms</span><span class="o">:</span>
+  <span class="nt">-</span> <span class="nt">centos_6_x86_64</span>
+  <span class="nt">-</span> <span class="nt">rhel_6_x86_64</span>
+  <span class="nt">-</span> <span class="nt">sl_6_x86_64</span>
+  <span class="nt">-</span> <span class="nt">centos_7_x86_64</span>
+  <span class="nt">-</span> <span class="nt">rhel_7_x86_64</span>
+  <span class="nt">-</span> <span class="nt">sl_7_x86_64</span>
+
+<span class="nt">sources</span><span class="o">:</span>
+  <span class="nt">-</span> <span class="nt">opensciencegrid</span><span class="p">:</span><span class="nd">master</span><span class="o">;</span> <span class="nt">3</span><span class="p">.</span><span class="nc">3</span><span class="o">;</span> <span class="nt">osg-prerelease</span>
+  <span class="nt">-</span> <span class="nt">opensciencegrid</span><span class="p">:</span><span class="nd">master</span><span class="o">;</span> <span class="nt">3</span><span class="p">.</span><span class="nc">3</span><span class="o">;</span> <span class="nt">osg</span> <span class="o">&gt;</span> <span class="nt">osg-prerelease</span>
+
+<span class="nt">package_sets</span><span class="o">:</span>
+  <span class="nt">-</span> <span class="nt">label</span><span class="o">:</span> <span class="nt">All</span> <span class="o">(</span><span class="nt">java</span><span class="o">)</span>
+    <span class="nt">selinux</span><span class="o">:</span> <span class="nt">True</span>
+    <span class="nt">osg_java</span><span class="o">:</span> <span class="nt">True</span>
+    <span class="nt">rng</span><span class="o">:</span> <span class="nt">True</span>
+    <span class="nt">packages</span><span class="o">:</span>
+      <span class="nt">-</span> <span class="nt">osg-tested-internal</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Edit <code>osg34.yaml</code> so that it reads:</p>
+<div class="codehilite"><pre><span></span><span class="nt">platforms</span><span class="o">:</span>
+  <span class="nt">-</span> <span class="nt">centos_6_x86_64</span>
+  <span class="nt">-</span> <span class="nt">rhel_6_x86_64</span>
+  <span class="nt">-</span> <span class="nt">sl_6_x86_64</span>
+  <span class="nt">-</span> <span class="nt">centos_7_x86_64</span>
+  <span class="nt">-</span> <span class="nt">rhel_7_x86_64</span>
+  <span class="nt">-</span> <span class="nt">sl_7_x86_64</span>
+
+<span class="nt">sources</span><span class="o">:</span>
+  <span class="nt">-</span> <span class="nt">opensciencegrid</span><span class="p">:</span><span class="nd">master</span><span class="o">;</span> <span class="nt">3</span><span class="p">.</span><span class="nc">4</span><span class="o">;</span> <span class="nt">osg-prerelease</span>
+  <span class="nt">-</span> <span class="nt">opensciencegrid</span><span class="p">:</span><span class="nd">master</span><span class="o">;</span> <span class="nt">3</span><span class="p">.</span><span class="nc">4</span><span class="o">;</span> <span class="nt">osg</span> <span class="o">&gt;</span> <span class="nt">osg-prerelease</span>
+  <span class="nt">-</span> <span class="nt">opensciencegrid</span><span class="p">:</span><span class="nd">master</span><span class="o">;</span> <span class="nt">3</span><span class="p">.</span><span class="nc">3</span><span class="o">;</span> <span class="nt">osg</span> <span class="o">&gt;</span> <span class="nt">3</span><span class="p">.</span><span class="nc">4</span><span class="o">/</span><span class="nt">osg-prerelease</span>
+  <span class="nt">-</span> <span class="nt">opensciencegrid</span><span class="p">:</span><span class="nd">master</span><span class="o">;</span> <span class="nt">3</span><span class="p">.</span><span class="nc">4</span><span class="o">;</span> <span class="nt">osg-prerelease</span><span class="o">,</span> <span class="nt">osg-upcoming-prerelease</span><span class="o">,</span> <span class="nt">osg-upcoming</span>
+  <span class="nt">-</span> <span class="nt">opensciencegrid</span><span class="p">:</span><span class="nd">master</span><span class="o">;</span> <span class="nt">3</span><span class="p">.</span><span class="nc">4</span><span class="o">;</span> <span class="nt">osg</span> <span class="o">&gt;</span> <span class="nt">osg-prerelease</span><span class="o">,</span> <span class="nt">osg-upcoming-prerelease</span><span class="o">,</span> <span class="nt">osg-upcoming</span>
+
+<span class="nt">package_sets</span><span class="o">:</span>
+  <span class="nt">-</span> <span class="nt">label</span><span class="o">:</span> <span class="nt">All</span>
+    <span class="nt">selinux</span><span class="o">:</span> <span class="nt">True</span>
+    <span class="nt">osg_java</span><span class="o">:</span> <span class="nt">False</span>
+    <span class="nt">packages</span><span class="o">:</span>
+      <span class="nt">-</span> <span class="nt">osg-tested-internal</span>
+</pre></div>
+
+
+<p>If you are not releasing packages into <code>upcoming</code>, delete the <code>upcoming</code>-related lines in the <code>sources</code> section.</p>
+</li>
+<li>
+<p><code>cd</code> back into the root directory of the test run (e.g. <code>cd ..</code>)</p>
+</li>
+<li>Submit the DAG:<div class="codehilite"><pre><span></span>condor_submit_dag master-run.dag
+</pre></div>
+
+
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there are failures, consult the release-manager before proceeding.</p>
+</div>
+<h3 id="step-3-regenerate-the-build-repositories">Step 3: Regenerate the build repositories<a class="headerlink" href="#step-3-regenerate-the-build-repositories" title="Permanent link">&para;</a></h3>
+<p>To avoid 404 errors when retrieving packages, it's necessary to regenerate the build repositories. Run the following script from a machine with your koji-registered user certificate:</p>
+<div class="codehilite"><pre><span></span><span class="nv">NON_UPCOMING_VERSIONS</span><span class="o">=</span>&lt;NON-UPCOMING VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+<span class="m">1</span>-regen-repos <span class="nv">$NON_UPCOMING_VERSIONS</span>
+</pre></div>
+
+
+<h3 id="step-4-create-the-client-tarballs">Step 4: Create the client tarballs<a class="headerlink" href="#step-4-create-the-client-tarballs" title="Permanent link">&para;</a></h3>
+<p>Create the client tarballs as root on an EL7 fermicloud machine using the relevant script from git:</p>
+<div class="codehilite"><pre><span></span><span class="nv">NON_UPCOMING_VERSIONS</span><span class="o">=</span>&lt;NON-UPCOMING VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+git clone https://github.com/opensciencegrid/release-tools.git
+<span class="nb">cd</span> release-tools
+./1-client-tarballs <span class="nv">$NON_UPCOMING_VERSIONS</span>
+</pre></div>
+
+
+<h3 id="step-5-briefly-test-the-client-tarballs">Step 5: Briefly test the client tarballs<a class="headerlink" href="#step-5-briefly-test-the-client-tarballs" title="Permanent link">&para;</a></h3>
+<p>As an <strong>unprivileged user</strong>, extract each tarball into a separate directory. Make sure osg-post-install works. Make sure <code>osgrun osg-version</code> works by running the following tests, replacing <code>&lt;NON-UPCOMING VERSION(S)</code> with the appropriate version numbers:</p>
+<div class="codehilite"><pre><span></span><span class="nv">NON_UPCOMING_VERSIONS</span><span class="o">=</span>&lt;NON-UPCOMING VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+
+dotest <span class="o">()</span> <span class="o">{</span>
+    <span class="nv">file</span><span class="o">=</span><span class="nv">$dir</span>/<span class="nv">$client</span>-<span class="nv">$ver</span>-1.<span class="nv">$rhel</span>.<span class="nv">$arch</span>.tar.gz
+    <span class="k">if</span> <span class="o">[</span> -e <span class="nv">$file</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">&quot;Testing </span><span class="nv">$client</span><span class="s2">-</span><span class="nv">$ver</span><span class="s2">-1.</span><span class="nv">$rhel</span><span class="s2">.</span><span class="nv">$arch</span><span class="s2">...&quot;</span>
+        <span class="nv">size</span><span class="o">=</span><span class="k">$(</span>du -m <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="p">|</span> cut -f <span class="m">1</span><span class="k">)</span>
+        <span class="k">if</span> <span class="o">[</span> <span class="nv">$size</span> -gt <span class="nv">$max_size</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+            <span class="nb">echo</span> -e <span class="s2">&quot;\e[1;33mWARNING: </span><span class="nv">$client</span><span class="s2">-</span><span class="nv">$ver</span><span class="s2">-1.</span><span class="nv">$rhel</span><span class="s2">.</span><span class="nv">$arch</span><span class="s2"> is too big. Check with release manager.\e[0m&quot;</span>
+        <span class="k">fi</span>
+        mkdir -p <span class="nv">$rhel</span>-<span class="nv">$arch</span>
+        <span class="nb">pushd</span> <span class="nv">$rhel</span>-<span class="nv">$arch</span>
+        tar xzf ../<span class="nv">$file</span>
+        <span class="nv">$client</span>/osg/osg-post-install
+        <span class="nv">$client</span>/osgrun osg-version
+        <span class="nb">popd</span>
+        rm -rf <span class="nv">$rhel</span>-<span class="nv">$arch</span>
+    <span class="k">else</span>
+        <span class="nb">echo</span> -e <span class="s2">&quot;\e[1;31mERROR: </span><span class="nv">$client</span><span class="s2">-</span><span class="nv">$ver</span><span class="s2">-1.</span><span class="nv">$rhel</span><span class="s2">.</span><span class="nv">$arch</span><span class="s2"> tarball is missing.\e[0m&quot;</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="nb">pushd</span> /tmp
+
+<span class="k">for</span> ver in <span class="nv">$NON_UPCOMING_VERSIONS</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">major_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ver</span><span class="p">%.*</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nv">clients</span><span class="o">=</span><span class="s2">&quot;osg-wn-client&quot;</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$major_version</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;3.4&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nv">clients</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$clients</span><span class="s2"> osg-afs-client&quot;</span>
+    <span class="k">fi</span>
+    <span class="k">for</span> client in <span class="nv">$clients</span><span class="p">;</span> <span class="k">do</span>
+        <span class="nv">rhels</span><span class="o">=</span><span class="s2">&quot;el6 el7&quot;</span>
+        <span class="k">for</span> rhel in <span class="nv">$rhels</span><span class="p">;</span> <span class="k">do</span>
+            <span class="nv">max_size</span><span class="o">=</span><span class="m">24</span>
+            <span class="k">if</span> <span class="o">[</span> <span class="nv">$rhel</span> <span class="o">=</span> <span class="s2">&quot;el7&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                <span class="nv">max_size</span><span class="o">=</span><span class="m">32</span>
+            <span class="k">fi</span>
+            <span class="nv">archs</span><span class="o">=</span><span class="s2">&quot;x86_64&quot;</span>
+            <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$major_version</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;3.3&quot;</span> -a <span class="nv">$rhel</span> <span class="o">=</span> <span class="s2">&quot;el6&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                <span class="nv">archs</span><span class="o">=</span><span class="s2">&quot;i386 </span><span class="nv">$archs</span><span class="s2">&quot;</span>
+            <span class="k">fi</span>
+            <span class="k">for</span> arch in <span class="nv">$archs</span><span class="p">;</span> <span class="k">do</span>
+                <span class="nv">dir</span><span class="o">=</span>tarballs/<span class="nv">$major_version</span>/<span class="nv">$arch</span>
+                dotest
+            <span class="k">done</span>
+        <span class="k">done</span>
+    <span class="k">done</span>
+<span class="k">done</span>
+
+<span class="nb">popd</span>
+</pre></div>
+
+
+<p>If you have time, try some of the binaries, such as grid-proxy-init.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We need to automate this and have it run on the proper architectures and version of RHEL.</p>
+</div>
+<h3 id="step-6-update-the-uw-afs-installation-of-the-tarball-client">Step 6: Update the UW AFS installation of the tarball client<a class="headerlink" href="#step-6-update-the-uw-afs-installation-of-the-tarball-client" title="Permanent link">&para;</a></h3>
+<p>The UW keeps an install of the tarball client in <code>/p/vdt/workspace/tarball-client</code> on the UW's AFS. To update it, run the following commands:</p>
+<div class="codehilite"><pre><span></span><span class="nv">NON_UPCOMING_VERSIONS</span><span class="o">=</span>&lt;NON-UPCOMING VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+<span class="k">for</span> ver in <span class="nv">$NON_UPCOMING_VERSIONS</span><span class="p">;</span> <span class="k">do</span>
+    /p/vdt/workspace/tarball-client/afs-install-tarball-client <span class="nv">$ver</span>
+<span class="k">done</span>
+</pre></div>
+
+
+<h3 id="step-7-wait">Step 7: Wait<a class="headerlink" href="#step-7-wait" title="Permanent link">&para;</a></h3>
+<p>Wait for clearance. The OSG Release Coordinator (in consultation with the Software Team and any testers) need to sign off on the update before it is released. If you are releasing things over two days, this is a good place to stop for the day.</p>
+<h2 id="day-2-pushing-the-release">Day 2: Pushing the Release<a class="headerlink" href="#day-2-pushing-the-release" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the second phase of the release, try to complete it earlier in the day rather than later. The GOC would like to send out the release announcement prior to 3 p.m. Eastern time.</p>
+</div>
+<h3 id="step-1-push-from-pre-release-to-release">Step 1: Push from pre-release to release<a class="headerlink" href="#step-1-push-from-pre-release-to-release" title="Permanent link">&para;</a></h3>
+<p>This script moves the packages into release, clones releases into new version-specific release repos, locks the repos and regenerates them. Afterwards, it produces <code>*release-note*</code> files that should be used to update the release note pages. Clone it from the github repo and run the script:</p>
+<div class="codehilite"><pre><span></span><span class="nv">VERSIONS</span><span class="o">=</span>&lt;VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+<span class="m">2</span>-create-release &lt;VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+</pre></div>
+
+
+<ol>
+<li><code>*.txt</code> files are also created and it should be verified that they've been moved to /p/vdt/public/html/release-info/ on UW's AFS.</li>
+<li>For each release version, use the <code>*release-note*</code> files to update the relevant sections of the release note pages.</li>
+</ol>
+<h3 id="step-2-upload-the-client-tarballs">Step 2: Upload the client tarballs<a class="headerlink" href="#step-2-upload-the-client-tarballs" title="Permanent link">&para;</a></h3>
+<p>Ask Tim Theisen, Brian Lin, or someone with privileges on the <code>opensciencegrid.org</code> repo servers to upload the tarballs with the following procedure:</p>
+<h4 id="on-a-cs-machine">On a CS machine<a class="headerlink" href="#on-a-cs-machine" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="nv">NON_UPCOMING_VERSIONS</span><span class="o">=</span>&lt;NON-UPCOMING VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+<span class="k">for</span> ver in <span class="nv">$NON_UPCOMING_VERSIONS</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">major_ver</span><span class="o">=</span><span class="sb">`</span>sed <span class="s1">&#39;s/.[0-9]*$//&#39;</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$ver</span><span class="sb">`</span>
+    <span class="nb">cd</span> /p/vdt/public/html/tarball-client
+    ssh jump.grid.iu.edu mkdir /tmp/<span class="nv">$ver</span>/
+    scp -p <span class="nv">$major_ver</span>/*/osg-wn-client-<span class="nv">$ver</span>*gz jump.grid.iu.edu:/tmp/<span class="nv">$ver</span>/
+<span class="k">done</span>
+</pre></div>
+
+
+<h4 id="on-jumpgridiuedu">On jump.grid.iu.edu<a class="headerlink" href="#on-jumpgridiuedu" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="nv">NON_UPCOMING_VERSIONS</span><span class="o">=</span>&lt;NON-UPCOMING VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+<span class="k">for</span> ver in <span class="nv">$NON_UPCOMING_VERSIONS</span><span class="p">;</span> <span class="k">do</span>
+    scp -pr /tmp/<span class="nv">$ver</span> repo1:/tmp/
+    scp -pr /tmp/<span class="nv">$ver</span> repo2:/tmp/
+    rm -rf /tmp/<span class="nv">$ver</span>
+<span class="k">done</span>
+</pre></div>
+
+
+<h4 id="on-repo1repo2-as-root">On repo1/repo2 (as root)<a class="headerlink" href="#on-repo1repo2-as-root" title="Permanent link">&para;</a></h4>
+<p>You can ssh to repo1 and repo2 from jump.grid.iu.edu; you will need to do this procedure on both systems.</p>
+<div class="codehilite"><pre><span></span>sudo su -
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nv">NON_UPCOMING_VERSIONS</span><span class="o">=</span>&lt;NON-UPCOMING VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+<span class="k">for</span> ver in <span class="nv">$NON_UPCOMING_VERSIONS</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">major_ver</span><span class="o">=</span><span class="sb">`</span>sed <span class="s1">&#39;s/.[0-9]*$//&#39;</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$ver</span><span class="sb">`</span>
+    mv /tmp/<span class="nv">$ver</span> /usr/local/repo/tarball-install/<span class="nv">$major_ver</span>/
+    rm -f /usr/local/repo/tarball-install/<span class="nv">$major_ver</span>/*latest*
+<span class="k">done</span>
+/root/mk-sims.sh
+<span class="k">for</span> ver in <span class="nv">$NON_UPCOMING_VERSIONS</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">major_ver</span><span class="o">=</span><span class="sb">`</span>sed <span class="s1">&#39;s/.[0-9]*$//&#39;</span> <span class="o">&lt;&lt;&lt;</span> <span class="nv">$ver</span><span class="sb">`</span>
+    ls -l /usr/local/repo/tarball-install/<span class="nv">$major_ver</span>/*latest* <span class="c1"># verify the symlinks are correct</span>
+<span class="k">done</span>
+</pre></div>
+
+
+<h3 id="step-3-install-the-tarballs-into-oasis">Step 3: Install the tarballs into OASIS<a class="headerlink" href="#step-3-install-the-tarballs-into-oasis" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must be an OASIS manager of the <code>mis</code> VO to do these steps. Known managers as of 2014-07-22: Mat, Tim C, Tim T, Brian L. </p>
+</div>
+<p>Get the uploader script from Git and run it with <code>osgrun</code> from the UW AFS install of the tarball client you made earlier. On a UW CSL machine:</p>
+<div class="codehilite"><pre><span></span><span class="nv">NON_UPCOMING_VERSIONS</span><span class="o">=</span>&lt;NON-UPCOMING VERSION<span class="o">(</span>S<span class="o">)</span>&gt;
+<span class="nb">cd</span> /tmp
+git clone --depth <span class="m">1</span> file:///p/vdt/workspace/git/repo/tarball-client.git
+<span class="k">for</span> ver in <span class="nv">$NON_UPCOMING_VERSIONS</span><span class="p">;</span> <span class="k">do</span>
+    /p/vdt/workspace/tarball-client/current/sys/osgrun /tmp/tarball-client/upload-tarballs-to-oasis <span class="nv">$ver</span>
+<span class="k">done</span>
+</pre></div>
+
+
+<p>The script will automatically ssh you to oasis-login.opensciencegrid.org and give you instructions to complete the process.</p>
+<h3 id="step-4-remove-old-uw-afs-installations-of-the-tarball-client">Step 4: Remove old UW AFS installations of the tarball client<a class="headerlink" href="#step-4-remove-old-uw-afs-installations-of-the-tarball-client" title="Permanent link">&para;</a></h3>
+<p>To keep space usage down, remove tarball client installations and symlinks under <code>/p/vdt/workspace/tarball-client</code> on UW's AFS that are more than 2 months old. The following command will remove them:</p>
+<div class="codehilite"><pre><span></span>find /p/vdt/workspace/tarball-client -maxdepth <span class="m">1</span> -mtime +60 -name <span class="m">3</span><span class="se">\*</span> -ls -exec rm -rf <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+
+
+<h3 id="step-5-update-the-docker-wn-client">Step 5: Update the Docker WN client<a class="headerlink" href="#step-5-update-the-docker-wn-client" title="Permanent link">&para;</a></h3>
+<p>Update the GitHub repo at <a href="https://github.com/opensciencegrid/docker-osg-wn">opensciencegrid/docker-osg-wn</a> using the <code>update-all</code> script found in <a href="https://github.com/opensciencegrid/docker-osg-wn-scripts">opensciencegrid/docker-osg-wn-scripts</a>. This requires push access to the <code>opensciencegrid/docker-osg-wn</code> repo.</p>
+<p>Instructions for using the script:</p>
+<div class="codehilite"><pre><span></span>git clone git@github.com:opensciencegrid/docker-osg-wn-scripts.git
+git clone git@github.com:opensciencegrid/docker-osg-wn.git
+docker-osg-wn-scripts/update-all docker-osg-wn
+<span class="nb">cd</span> docker-osg-wn
+<span class="c1"># Verify everything looks fine and run the &#39;git push&#39; command</span>
+<span class="c1"># that &#39;update-all&#39; should have printed</span>
+</pre></div>
+
+
+<h3 id="step-6-announce-the-release">Step 6: Announce the release<a class="headerlink" href="#step-6-announce-the-release" title="Permanent link">&para;</a></h3>
+<p>The following instructions are meant for the release manager (or interim release manager). If you are not the release manager, let the release manager know that they can announce the release.</p>
+<ol>
+<li>
+<p>The release manager writes the release announcement and send it out. Here is a sample, replace <code>&lt;HIGHLIGHTED TEXT&gt;</code> with the appropriate values:</p>
+<div class="codehilite"><pre><span></span> Subject: Announcing OSG Software version &lt;VERSION(S)&gt;
+
+ We are pleased to announce OSG Software version &lt;VERSION(S)&gt;!
+
+ This is the new OSG Software distributed via RPMs for:
+
+ * Scientific Linux 6 and 7
+ * CentOS 6 and 7
+ * Red Hat Enterprise Linux 6 and 7
+
+ This release affects the &lt;SET OF METAPACKAGES (client, compute element, etc...)&gt;. Changes include:
+
+ * Major change 1
+ * Major change 2
+ * Major change 3
+
+ Release notes and pointers to more documentation can be found at:
+
+ &lt;LINK TO RELEASE NOTES&gt;
+
+ Need help? Let us know:
+
+ https://www.opensciencegrid.org/bin/view/Documentation/Release3/HelpProcedure
+
+ We welcome feedback on this release
+</pre></div>
+
+
+</li>
+<li>
+<p>The release manager emails the announcement to <code>vdt-discuss@opensciencegrid.org</code></p>
+</li>
+<li>The release manager asks the GOC to distribute the announcement by <a href="https://ticket.opensciencegrid.org/goc/other">opening a ticket</a></li>
+<li>The release manager closes the tickets marked 'Ready for Release' in the release's JIRA filter using the 'bulk change' function. Uncheck the box that reads "Send mail for this update"</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../software/ipv6-testing/" title="IPv6 Testing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                IPv6 Testing
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../cut-data-release/" title="How to Cut a Data Release" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                How to Cut a Data Release
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.cae2244d.js"></script>
+      
+      <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

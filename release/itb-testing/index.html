@@ -1,0 +1,1947 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://opensciencegrid.github.io/technology/release/itb-testing/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.2.6">
+    
+    
+      
+        <title>ITB Prerelease Testing - OSG Technology Area</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.6525f7f6.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../css/itb.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+  </head>
+  
+    <body>
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://opensciencegrid.github.io/technology/" title="OSG Technology Area" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                OSG Technology Area
+              </span>
+              <span class="md-header-nav__topic">
+                ITB Prerelease Testing
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/opensciencegrid/technology/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    OSG Technology Area
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/opensciencegrid/technology/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Software
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Software
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/development-process/" title="Development Process" class="md-nav__link">
+      Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/koji-workflow/" title="Koji Workflow" class="md-nav__link">
+      Koji Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/new-team-member/" title="New Team Member" class="md-nav__link">
+      New Team Member
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/repository-management/" title="Repository Management" class="md-nav__link">
+      Repository Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/ce-test-scaling/" title="CE Scale Testing" class="md-nav__link">
+      CE Scale Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/rpm-development-guide/" title="RPM Development Guide" class="md-nav__link">
+      RPM Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/quilt/" title="Using Quilt" class="md-nav__link">
+      Using Quilt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/upcoming-to-main/" title="Upcoming to Main" class="md-nav__link">
+      Upcoming to Main
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/software-support/" title="Software Support" class="md-nav__link">
+      Software Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/effort-tracking/" title="Effort Tracking" class="md-nav__link">
+      Effort Tracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/release-planning/" title="Release Planning" class="md-nav__link">
+      Release Planning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/globus-mass-update-procedure/" title="Globus Mass Update Procedure" class="md-nav__link">
+      Globus Mass Update Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/git-software-development/" title="Git Software Development Process" class="md-nav__link">
+      Git Software Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/osg-build-tools/" title="OSG Build Tools" class="md-nav__link">
+      OSG Build Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/resurrecting-epel-packages/" title="Resurrecting Epel Packages" class="md-nav__link">
+      Resurrecting Epel Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/koji-mass-rebuilds/" title="Koji Mass Rebuilds" class="md-nav__link">
+      Koji Mass Rebuilds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/create-vo-client/" title="Creating the VO Client Package" class="md-nav__link">
+      Creating the VO Client Package
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/pki-overview/" title="PKI Overview" class="md-nav__link">
+      PKI Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/ipv6-testing/" title="IPv6 Testing" class="md-nav__link">
+      IPv6 Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Release
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Release
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cut-sw-release/" title="How to Cut a Release" class="md-nav__link">
+      How to Cut a Release
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cut-data-release/" title="How to Cut a Data Release" class="md-nav__link">
+      How to Cut a Data Release
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../release-policy/" title="Release Policy" class="md-nav__link">
+      Release Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../release-schedule/" title="Release Schedule" class="md-nav__link">
+      Release Schedule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new-release-series/" title="New Release Series" class="md-nav__link">
+      New Release Series
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../old-release-removal/" title="Old Release Series Removal" class="md-nav__link">
+      Old Release Series Removal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        ITB Prerelease Testing
+      </label>
+    
+    <a href="./" title="ITB Prerelease Testing" class="md-nav__link md-nav__link--active">
+      ITB Prerelease Testing
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gathering-information" title="Gathering Information" class="md-nav__link">
+    Gathering Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-htcondor-prerelease" title="Installing HTCondor Prerelease" class="md-nav__link">
+    Installing HTCondor Prerelease
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-a-prerelease-of-the-osg-software-stack" title="Installing a Prerelease of the OSG Software Stack" class="md-nav__link">
+    Installing a Prerelease of the OSG Software Stack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-tests" title="Running Tests" class="md-nav__link">
+    Running Tests
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-i-submitting-jobs-directly" title="Part Ⅰ: Submitting jobs directly" class="md-nav__link">
+    Part Ⅰ: Submitting jobs directly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-ii-submitting-jobs-using-htcondor-c" title="Part Ⅱ: Submitting jobs using HTCondor-C" class="md-nav__link">
+    Part Ⅱ: Submitting jobs using HTCondor-C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-iii-submitting-jobs-from-a-glideinwms-vo-frontend" title="Part Ⅲ: Submitting jobs from a GlideinWMS VO Frontend" class="md-nav__link">
+    Part Ⅲ: Submitting jobs from a GlideinWMS VO Frontend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../empty-pkgs/" title="Empty Packages" class="md-nav__link">
+      Empty Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../acceptance-testing/" title="Acceptance Testing" class="md-nav__link">
+      Acceptance Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Policy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Policy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/gums-retire/" title="GUMS Retirement" class="md-nav__link">
+      GUMS Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/bestman2-retire/" title="BeStMan2 Retirement" class="md-nav__link">
+      BeStMan2 Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/voms-admin-retire/" title="VOMS Admin Retirement" class="md-nav__link">
+      VOMS Admin Retirement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/release-series/" title="Release Series Support" class="md-nav__link">
+      Release Series Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/globus-toolkit/" title="Globus Toolkit Support" class="md-nav__link">
+      Globus Toolkit Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/external-oasis-repos/" title="OASIS Repository Mirroring" class="md-nav__link">
+      OASIS Repository Mirroring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/flexible-release-model/" title="Flexible Release Model" class="md-nav__link">
+      Flexible Release Model
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Infrastructure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Infrastructure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-restore-recipe/" title="Koji Restore Recipe" class="md-nav__link">
+      Koji Restore Recipe
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-hub-setup/" title="Koji-Hub Setup" class="md-nav__link">
+      Koji-Hub Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-inf-overview/" title="Koji Infrastructure Overview" class="md-nav__link">
+      Koji Infrastructure Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-policy-writing/" title="Koji Policy Writing" class="md-nav__link">
+      Koji Policy Writing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/madison-itb/" title="Madison ITB" class="md-nav__link">
+      Madison ITB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/writing-documentation/" title="Writing Documentation" class="md-nav__link">
+      Writing Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/reviewing-documentation/" title="Reviewing Documentation" class="md-nav__link">
+      Reviewing Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/style-guide/" title="Markdown Style Guide" class="md-nav__link">
+      Markdown Style Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/markdown-migration/" title="Migrating Documents to Markdown" class="md-nav__link">
+      Migrating Documents to Markdown
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Historical Information
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Historical Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../infrastructure/koji-initial-install/" title="Koji Initial Install" class="md-nav__link">
+      Koji Initial Install
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Historical Transitions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Historical Transitions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projects/sha2-support/" title="SHA-2 Support" class="md-nav__link">
+      SHA-2 Support
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Meetings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Meetings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180108/" title="January 8, 2018" class="md-nav__link">
+      January 8, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180102/" title="January 2, 2018" class="md-nav__link">
+      January 2, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171218/" title="December 18, 2017" class="md-nav__link">
+      December 18, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171211/" title="December 11, 2017" class="md-nav__link">
+      December 11, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171204/" title="December 4, 2017" class="md-nav__link">
+      December 4, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171127/" title="November 27, 2017" class="md-nav__link">
+      November 27, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171120/" title="November 20, 2017" class="md-nav__link">
+      November 20, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171113/" title="November 13, 2017" class="md-nav__link">
+      November 13, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171106/" title="November 6, 2017" class="md-nav__link">
+      November 6, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171030/" title="October 30, 2017" class="md-nav__link">
+      October 30, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171023/" title="October 23, 2017" class="md-nav__link">
+      October 23, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171016/" title="October 16, 2017" class="md-nav__link">
+      October 16, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171009/" title="October 9, 2017" class="md-nav__link">
+      October 9, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20171002/" title="October 2, 2017" class="md-nav__link">
+      October 2, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170925/" title="September 25, 2017" class="md-nav__link">
+      September 25, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170918/" title="September 18, 2017" class="md-nav__link">
+      September 18, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170911/" title="September 11, 2017" class="md-nav__link">
+      September 11, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170905/" title="September 5, 2017" class="md-nav__link">
+      September 5, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170828/" title="August 28, 2017" class="md-nav__link">
+      August 28, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170814/" title="August 14, 2017" class="md-nav__link">
+      August 14, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170807/" title="August 7, 2017" class="md-nav__link">
+      August 7, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170731/" title="July 31, 2017" class="md-nav__link">
+      July 31, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170724/" title="July 24, 2017" class="md-nav__link">
+      July 24, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170717/" title="July 17, 2017" class="md-nav__link">
+      July 17, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170710/" title="July 10, 2017" class="md-nav__link">
+      July 10, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170703/" title="July 3, 2017" class="md-nav__link">
+      July 3, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170626/" title="June 26, 2017" class="md-nav__link">
+      June 26, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170619/" title="June 19, 2017" class="md-nav__link">
+      June 19, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170612/" title="June 12, 2017" class="md-nav__link">
+      June 12, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170605/" title="June 6, 2017" class="md-nav__link">
+      June 6, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170530/" title="May 30, 2017" class="md-nav__link">
+      May 30, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170522/" title="May 22, 2017" class="md-nav__link">
+      May 22, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170515/" title="May 15, 2017" class="md-nav__link">
+      May 15, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170508/" title="May 8, 2017" class="md-nav__link">
+      May 8, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170501/" title="May 1, 2017" class="md-nav__link">
+      May 1, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170424/" title="April 24, 2017" class="md-nav__link">
+      April 24, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170417/" title="April 17, 2017" class="md-nav__link">
+      April 17, 2017
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2017/TechArea20170227/" title="February 27, 2017" class="md-nav__link">
+      February 27, 2017
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gathering-information" title="Gathering Information" class="md-nav__link">
+    Gathering Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-htcondor-prerelease" title="Installing HTCondor Prerelease" class="md-nav__link">
+    Installing HTCondor Prerelease
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-a-prerelease-of-the-osg-software-stack" title="Installing a Prerelease of the OSG Software Stack" class="md-nav__link">
+    Installing a Prerelease of the OSG Software Stack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-tests" title="Running Tests" class="md-nav__link">
+    Running Tests
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-i-submitting-jobs-directly" title="Part Ⅰ: Submitting jobs directly" class="md-nav__link">
+    Part Ⅰ: Submitting jobs directly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-ii-submitting-jobs-using-htcondor-c" title="Part Ⅱ: Submitting jobs using HTCondor-C" class="md-nav__link">
+    Part Ⅱ: Submitting jobs using HTCondor-C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-iii-submitting-jobs-from-a-glideinwms-vo-frontend" title="Part Ⅲ: Submitting jobs from a GlideinWMS VO Frontend" class="md-nav__link">
+    Part Ⅲ: Submitting jobs from a GlideinWMS VO Frontend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/opensciencegrid/technology/edit/master/docs/release/itb-testing.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="testing-osg-software-prereleases-on-the-madison-itb-site">Testing OSG Software Prereleases on the Madison ITB Site<a class="headerlink" href="#testing-osg-software-prereleases-on-the-madison-itb-site" title="Permanent link">&para;</a></h1>
+<p>This document contains basic recipes for testing a OSG software prereleases on the Madison ITB site, which includes
+HTCondor prerelease builds and full OSG software stack prereleases from Yum.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>The following items are known prerequisites to using this recipe.  If you are not running the Ansible commands from
+osghost, there are almost certainly other prerequisites that are not listed below.  And even using osghost for Ansible
+and itb-submit for the submissions, there may be other prerequisites missing.  Please improve this document by adding
+other prerequisites as they are identified!</p>
+<ul>
+<li>A checkout of the osgitb directory from our local git instance (not GitHub)</li>
+<li>Your X.509 DN in the <code>osgitb/unmanaged/htcondor-ce/grid-mapfile</code> file and (via Ansible) on <code>itb-ce1</code> and <code>itb-ce2</code></li>
+</ul>
+<h2 id="gathering-information">Gathering Information<a class="headerlink" href="#gathering-information" title="Permanent link">&para;</a></h2>
+<p>Technically skippable, this section is about checking on the state of the ITB machines before making changes.  The plan
+is to keep the ITB machines generally up-to-date independently, so those steps are not listed here.  And honestly, the
+steps below are just some ideas; do whatever makes sense for the given update.</p>
+<p>The commands can be run as-is from within the <code>osgitb</code> directory from git.</p>
+<ol>
+<li>
+<p>Check OS versions for all current ITB hosts:</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible current -i inventory -f 20 -o -m command -a &#39;cat /etc/redhat-release&#39;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Check the date and time on all hosts (in case NTP stops working):</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible current -i inventory -f 20 -o -m command -a &#39;date&#39;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Check software versions for certain hosts (e.g., for the <code>condor</code> package on hosts in the <code>workers</code> group):</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible workers -i inventory -f 20 -o -m command -a &#39;rpm -q condor&#39;</span>
+</pre></div>
+
+
+</li>
+</ol>
+<h2 id="installing-htcondor-prerelease">Installing HTCondor Prerelease<a class="headerlink" href="#installing-htcondor-prerelease" title="Permanent link">&para;</a></h2>
+<p>Use this section to install a new version of HTCondor, specifically a prerelease build from the development or
+upcoming-development repository, on the test hosts.</p>
+<ol>
+<li>
+<p>Obtain the NVR of the HTCondor prerelease build from OSG to test.  Do this by talking to Tim&nbsp;T. and checking
+   Koji.</p>
+</li>
+<li>
+<p>Shut down HTCondor and HTCondor-CE on prerelease machines:</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible &#39;testing:&amp;ces&#39; -i inventory -bK -f 20 -m service -a &#39;name=condor-ce state=stopped&#39;</span>
+<span class="go">ansible &#39;testing:&amp;condor&#39; -i inventory -bK -f 20 -m service -a &#39;name=condor state=stopped&#39;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Install new version of HTCondor on prerelease machines:</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible &#39;testing:&amp;condor&#39; -i inventory -bK -f 10 -m command -a &#39;yum --enablerepo=osg-development --assumeyes update condor&#39;</span>
+</pre></div>
+
+
+<p>or, if you need to install an NVR that is “earlier” (in the RPM sense) than what is currently installed:</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible &#39;testing:&amp;condor&#39; -i inventory -bK -f 10 -m command -a &#39;yum --enablerepo=osg-development --assumeyes downgrade condor condor-classads condor-python condor-procd blahp&#39;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Verify correct RPM versions across the site:</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible condor -i inventory -f 20 -o -m command -a &#39;rpm -q condor&#39;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Restart HTCondor and HTCondor-CE on prerelease machines:</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible &#39;testing:&amp;condor&#39; -i inventory -bK -f 20 -m service -a &#39;name=condor state=started&#39;</span>
+<span class="go">ansible &#39;testing:&amp;ces&#39; -i inventory -bK -f 20 -m service -a &#39;name=condor-ce state=started&#39;</span>
+</pre></div>
+
+
+</li>
+</ol>
+<h2 id="installing-a-prerelease-of-the-osg-software-stack">Installing a Prerelease of the OSG Software Stack<a class="headerlink" href="#installing-a-prerelease-of-the-osg-software-stack" title="Permanent link">&para;</a></h2>
+<p>Use this section to install new versions of all OSG software from a prerelease repository in Yum.</p>
+<ol>
+<li>
+<p>Check with the Release Manager to make sure that the prerelease repository has been populated with the desired
+   package versions.</p>
+</li>
+<li>
+<p>Make sure that software is generally up-to-date on the hosts&nbsp;— see
+   <a href="../../infrastructure/madison-itb">the MadisonITB page</a> for more details</p>
+<p>It may be desirable to update only non-OSG software at this stage, in which case one could simply disable the OSG
+repositories by adding command-line options to the <code>yum update</code> commands.</p>
+</li>
+<li>
+<p>Install new software on prerelease hosts:</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible testing -i inventory -bK -f 20 -m command -a &#39;yum --enablerepo=osg-prerelease --assumeyes update&#39;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Read the Yum output carefully, and follow up on any warnings, etc.</p>
+</li>
+<li>
+<p>If the <code>osg-configure</code> package was updated on any host(s), run the <code>osg-configure</code> command on the host(s):</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible testing -i inventory -bK -f 20 -m command -a &#39;osg-configure -v&#39; -l [HOST(S)]</span>
+<span class="go">ansible testing -i inventory -bK -f 20 -m command -a &#39;osg-configure -c&#39; -l [HOST(S)]</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Verify OSG software updates by inspecting the Yum output carefully or examining specific package versions:</p>
+<div class="codehilite"><pre><span></span><span class="go">ansible current -i inventory -f 20 -o -m command -a &#39;rpm -q osg-wn-client&#39;</span>
+</pre></div>
+
+
+<p>Use an inventory group and package names that best fit the situation.</p>
+</li>
+</ol>
+<h2 id="running-tests">Running Tests<a class="headerlink" href="#running-tests" title="Permanent link">&para;</a></h2>
+<p>For the first two test workflows, use your personal space on <code>itb-submit</code>.  Copy or checkout the <code>osgitb/htcondor-tests</code>
+directory to get the test directories.</p>
+<h3 id="part-i-submitting-jobs-directly">Part Ⅰ: Submitting jobs directly<a class="headerlink" href="#part-i-submitting-jobs-directly" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Change into the <code>1-direct-jobs</code> subdirectory</p>
+</li>
+<li>
+<p>If there are old result files in the directory, remove them:</p>
+<div class="codehilite"><pre><span></span><span class="go">make distclean</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Submit the test workflow</p>
+<div class="codehilite"><pre><span></span><span class="go">condor_submit_dag test.dag</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Monitor the jobs until they are complete or stuck</p>
+<p>In the initial test runs, the entire workflow ran in a few minutes.  If the DAG or jobs exit immediately, go on
+hold, or otherwise fail, then you have some troubleshooting to do!  Keep trying steps 2 and 3 until you get a clean
+run (or one or more HTCondor bug tickets).</p>
+</li>
+<li>
+<p>Check the final output file:</p>
+<div class="codehilite"><pre><span></span><span class="go">cat count-by-hostnames.txt</span>
+</pre></div>
+
+
+<p>You should see a reasonable distribution of jobs by hostname, keeping in mind the different number of cores per
+machine and the fact that HTCondor can and will reuse claims to process many jobs on a single host.  Especially
+watch out for a case in which no jobs run on the newly updated hosts (at the time of writing: <code>itb-data[456]</code>).</p>
+</li>
+<li>
+<p>(Optional) Clean up, using the <code>make clean</code> or <code>make distclean</code> commands.  Use the <code>clean</code> target to remove
+   intermediate result and log files generated by a workflow run but preserve the final output file; use the <code>distclean</code>
+   target to remove all workflow-generated files (plus Emacs backup files).</p>
+</li>
+</ol>
+<h3 id="part-ii-submitting-jobs-using-htcondor-c">Part Ⅱ: Submitting jobs using HTCondor-C<a class="headerlink" href="#part-ii-submitting-jobs-using-htcondor-c" title="Permanent link">&para;</a></h3>
+<p>If direct submissions fail, there is probably no point to doing this step.</p>
+<ol>
+<li>
+<p>Change into the <code>2-htcondor-c-jobs</code> subdirectory</p>
+</li>
+<li>
+<p>If there are old result files in the directory, remove them:</p>
+<div class="codehilite"><pre><span></span><span class="go">make distclean</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Get a proxy for your X.509 credentials</p>
+<div class="codehilite"><pre><span></span><span class="go">voms-proxy-init</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Submit the test workflow</p>
+<div class="codehilite"><pre><span></span><span class="go">condor_submit_dag test.dag</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Monitor the jobs until they are complete or stuck</p>
+<p>In the initial test runs, the entire workflow ran in 10 minutes or less; generally, this test takes longer than the
+direct submission test, because of the layers of indirection.  Also, status updates from the CEs back to the submit
+host are infrequent.  For direct information about the CEs, log in to <code>itb-ce1</code> and <code>itb-ce2</code> to check status; don’t
+forget to check both <code>condor_ce_q</code> and <code>condor_q</code> on the CEs, probably in that order.</p>
+<p>If the DAG or jobs exit immediately, go on hold, or otherwise fail, then you have some troubleshooting to do!  Keep
+trying steps 2 and 3 until you get a clean run (or one or more HTCondor bug tickets).</p>
+</li>
+<li>
+<p>Check the final output file:</p>
+<div class="codehilite"><pre><span></span><span class="go">cat count-by-hostnames.txt</span>
+</pre></div>
+
+
+<p>Again, look for a reasonable distribution of jobs by hostname.</p>
+</li>
+<li>
+<p>(Optional) Clean up, using the <code>make clean</code> or <code>make distclean</code> commands.</p>
+</li>
+</ol>
+<h3 id="part-iii-submitting-jobs-from-a-glideinwms-vo-frontend">Part Ⅲ: Submitting jobs from a GlideinWMS VO Frontend<a class="headerlink" href="#part-iii-submitting-jobs-from-a-glideinwms-vo-frontend" title="Permanent link">&para;</a></h3>
+<p>For this workflow, use your personal space on <code>glidein3.chtc.wisc.edu</code>.  Copy or checkout the <code>osgitb/htcondor-tests</code>
+directory to get the test directories.  Again, if previous steps fail, do not bother with this step.</p>
+<ol>
+<li>
+<p>Change into the <code>3-frontend-jobs</code> subdirectory</p>
+</li>
+<li>
+<p>If there are old result files in the directory, remove them:</p>
+<div class="codehilite"><pre><span></span><span class="go">make distclean</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Submit the test workflow</p>
+<div class="codehilite"><pre><span></span><span class="go">condor_submit_dag test.dag</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Monitor the jobs until they are complete or stuck</p>
+<p>This workflow could take much longer than the first two, maybe an hour or so.  Also, unless there are active
+glideins, it will take 10 minutes or longer for the first glideins to appear and start matching jobs.  Thus it is
+helpful to monitor <code>condor_q -totals</code> until all of the jobs are submitted (there should be 2001), then switch to
+monitoring <code>condor_status</code> until glideins start appearing.  After the first jobs start running and finishing, it is
+probably safe to ignore the rest of the run.  If the jobs do not appear in the local queue, if glideins do not
+appear, or if jobs do not start running on the glideins, it is time to start troubleshooting.</p>
+</li>
+<li>
+<p>Check the final output file:</p>
+<div class="codehilite"><pre><span></span><span class="go">cat count-by-hostnames.txt</span>
+</pre></div>
+
+
+<p>The distribution of jobs per execute node may be more skewed than in the first two workflows, due to the way in
+which pilots ramp up over time and how HTCondor allocates jobs to slots.</p>
+</li>
+<li>
+<p>(Optional) Clean up, using the <code>make clean</code> or <code>make distclean</code> commands.</p>
+</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../old-release-removal/" title="Old Release Series Removal" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Old Release Series Removal
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../empty-pkgs/" title="Empty Packages" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Empty Packages
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.cae2244d.js"></script>
+      
+      <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
