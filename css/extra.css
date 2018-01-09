@@ -68,13 +68,11 @@
 .codehilite .vi { color: #bb60d5 } /* Name.Variable.Instance */
 .codehilite .il { color: #40a070 } /* Literal.Number.Integer.Long */
 
-@media only screen and (min-width: 76.25em) {
-  .md-main__inner {
-    max-width: 130rem;
-  }
-  .md-sidebar--secondary {
-    margin-left: 107rem;
-    -webkit-transform: none;
-    transform: none;
-  }
+.wy-nav-content {
+    max-width: 90%;
 }
+
+code, tt {
+    font-size: 100%;
+}
+
