@@ -23,6 +23,10 @@
       
         <meta name="lang:search.language" content="en">
       
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
         <meta name="lang:search.result.none" content="No matching documents">
       
         <meta name="lang:search.result.one" content="1 matching document">
@@ -31,8 +35,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.5.2">
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.6.0">
     
     
       
@@ -61,14 +65,30 @@
     
   </head>
   
-  
     <body dir="ltr">
   
     <svg class="md-svg">
       <defs>
         
         
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
         
       </defs>
     </svg>
@@ -251,60 +271,19 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../development-process/" title="Development Process" class="md-nav__link">
-      Development Process
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Packaging
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Packaging
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../koji-workflow/" title="Koji Workflow" class="md-nav__link">
-      Koji Workflow
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../new-team-member/" title="New Team Member" class="md-nav__link">
-      New Team Member
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../repository-management/" title="Repository Management" class="md-nav__link">
-      Repository Management
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ce-test-scaling/" title="CE Scale Testing" class="md-nav__link">
-      CE Scale Testing
-    </a>
-  </li>
-
         
           
           
@@ -314,6 +293,18 @@
   <li class="md-nav__item">
     <a href="../rpm-development-guide/" title="RPM Development Guide" class="md-nav__link">
       RPM Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../osg-build-tools/" title="OSG Build Tools" class="md-nav__link">
+      OSG Build Tools
     </a>
   </li>
 
@@ -348,8 +339,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../policy/software-support/" title="Software Support" class="md-nav__link">
-      Software Support
+    <a href="../koji-workflow/" title="Koji Workflow" class="md-nav__link">
+      Koji Workflow
     </a>
   </li>
 
@@ -360,8 +351,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../effort-tracking/" title="Effort Tracking" class="md-nav__link">
-      Effort Tracking
+    <a href="../create-vo-client/" title="Creating the VO Client Package" class="md-nav__link">
+      Creating the VO Client Package
     </a>
   </li>
 
@@ -372,8 +363,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../release-planning/" title="Release Planning" class="md-nav__link">
-      Release Planning
+    <a href="../repository-management/" title="Repository Management" class="md-nav__link">
+      Repository Management
     </a>
   </li>
 
@@ -386,30 +377,6 @@
   <li class="md-nav__item">
     <a href="../globus-mass-update-procedure/" title="Globus Mass Update Procedure" class="md-nav__link">
       Globus Mass Update Procedure
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../git-software-development/" title="Git Software Development Process" class="md-nav__link">
-      Git Software Development Process
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../osg-build-tools/" title="OSG Build Tools" class="md-nav__link">
-      OSG Build Tools
     </a>
   </li>
 
@@ -438,14 +405,64 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../create-vo-client/" title="Creating the VO Client Package" class="md-nav__link">
-      Creating the VO Client Package
+    <a href="../development-process/" title="Development Process" class="md-nav__link">
+      Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git-software-development/" title="Git Software Development Process" class="md-nav__link">
+      Git Software Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ce-test-scaling/" title="CE Scale Testing" class="md-nav__link">
+      CE Scale Testing
     </a>
   </li>
 
@@ -582,6 +599,59 @@
   <li class="md-nav__item">
     <a href="../ipv6-testing/" title="IPv6 Testing" class="md-nav__link">
       IPv6 Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/software-support/" title="Software Support" class="md-nav__link">
+      Software Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../effort-tracking/" title="Effort Tracking" class="md-nav__link">
+      Effort Tracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../release-planning/" title="Release Planning" class="md-nav__link">
+      Release Planning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../new-team-member/" title="New Team Member" class="md-nav__link">
+      New Team Member
     </a>
   </li>
 
@@ -976,6 +1046,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../documentation/new-doc-area/" title="Creating a New Area" class="md-nav__link">
+      Creating a New Area
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../documentation/markdown-migration/" title="Migrating Documents to Markdown" class="md-nav__link">
       Migrating Documents to Markdown
     </a>
@@ -1077,6 +1159,30 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180205/" title="February 5, 2018" class="md-nav__link">
+      February 5, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180129/" title="January 29, 2018" class="md-nav__link">
+      January 29, 2018
+    </a>
+  </li>
+
         
           
           
@@ -1686,22 +1792,22 @@
 <p>If the requesting user is authenticated as a Grid Admin for the requested domain and VO (which must be specified on the command-line if multiple VOs can issue certs for the requested domain), OIM approves the request and sends the <code>Request ID#</code> back to <code>osg-gridadmin-cert-request</code>.</p>
 <p>Upon successful request, <code>osg-gridadmin-cert-request</code> sends an approval of the certificate to OIM, which is authenticatd and authorized as before, and OIM turns around and sends a request to CILogon. CILogon issues the certificate(s), sending it back to OIM, and OIM tells <code>osg-gridadmin-cert-request</code> that the certificate has been issued successfully.</p>
 <p>At this point, <code>osg-gridadmin-cert-request</code> sends a retrieval request and OIM sends the certificate(s) back to the client.</p>
-<p><img alt="osg-gridadmin-cert-request" src="../../images/osg-gridadmin-cert-request.png" /></p>
+<p><img alt="osg-gridadmin-cert-request" src="../../img/osg-gridadmin-cert-request.png" /></p>
 <h3 id="osg-cert-request">osg-cert-request<a class="headerlink" href="#osg-cert-request" title="Permanent link">&para;</a></h3>
 <p><code>osg-cert-request</code> is a tool for non-Grid Admin users to request host certificates, one at a time. The user can provide their own CSR or a hostname, for which a CSR is generated and forwarded to OIM with the rest of the request. OIM responds with the <code>Request ID#</code>, creates a ticket, and sends e-mails to the user and the Grid Admins of the requested domain + VO.</p>
-<p><img alt="osg-cert-request" src="../../images/osg-cert-request.png" /></p>
+<p><img alt="osg-cert-request" src="../../img/osg-cert-request.png" /></p>
 <h3 id="osg-cert-retrieve">osg-cert-retrieve<a class="headerlink" href="#osg-cert-retrieve" title="Permanent link">&para;</a></h3>
 <p><code>osg-cert-retrieve</code> is used to retrieve host certificates associated with a specific <code>Request ID#</code> that have been issued (i.e. approved certificate request) by a Grid Admin. OIM responds to the retrieval request with the certificate(s) of the specified <code>Request ID#</code>.</p>
-<p><img alt="osg-cert-retrieve" src="../../images/osg-cert-retrieve.png" /></p>
+<p><img alt="osg-cert-retrieve" src="../../img/osg-cert-retrieve.png" /></p>
 <h3 id="osg-cert-revoke">osg-cert-revoke<a class="headerlink" href="#osg-cert-revoke" title="Permanent link">&para;</a></h3>
 <p><code>osg-cert-revoke</code> is a tool for Grid Admins to revoke user or host certificates. With either a <code>Request ID#</code> or certificate serial number, the tool obtains the user's SSL credentials and sends the revocation request to OIM. OIM authenticates the user's request and if authorized, sends a revocation request to CILogon. If CILogon has successfully received the request, a successful response is forwarded to OIM, which is then forwarded back to the client tool. Revocation requests themselves are handled manually by CILogon CA administrators within one business day.</p>
-<p><img alt="osg-cert-revoke" src="../../images/osg-cert-revoke.png" /></p>
+<p><img alt="osg-cert-revoke" src="../../img/osg-cert-revoke.png" /></p>
 <h3 id="osg-user-cert-renew">osg-user-cert-renew<a class="headerlink" href="#osg-user-cert-renew" title="Permanent link">&para;</a></h3>
 <p><code>osg-user-cert-renew</code> is used to expiring certificates. The user provides either the certificate serial number or <code>Request ID#</code> and the password that's used to encrypt their new private key. The tool combines those inputs with the user's SSL credentials to generate the renewal request that is sent to OIM, which is forwarded onto CILogon as a user cert request. If successful, OIM responds with the <code>Request ID#</code> and <code>osg-user-cert-renew</code> sends a retrieval request to OIM. If the retrieval request succeeds, OIM responds with requested certificate.</p>
-<p><img alt="osg-user-cert-renew" src="../../images/osg-user-cert-renew.png" /></p>
+<p><img alt="osg-user-cert-renew" src="../../img/osg-user-cert-renew.png" /></p>
 <h3 id="osg-user-cert-revoke">osg-user-cert-revoke<a class="headerlink" href="#osg-user-cert-revoke" title="Permanent link">&para;</a></h3>
 <p><code>osg-user-cert-revoke</code> is a simple wrapper that calls <code>osg-cert-revoke --user</code>.</p>
-<p><img alt="osg-user-cert-revoke" src="../../images/osg-user-cert-revoke.png" /></p>
+<p><img alt="osg-user-cert-revoke" src="../../img/osg-user-cert-revoke.png" /></p>
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="http://confluence.grid.iu.edu/display/CENTRAL/OIM+Rest+API+Guide">OIM REST API</a></li>
@@ -1725,7 +1831,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../create-vo-client/" title="Creating the VO Client Package" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ce-test-scaling/" title="CE Scale Testing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1734,7 +1840,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Creating the VO Client Package
+                CE Scale Testing
               </span>
             </div>
           </a>
@@ -1776,7 +1882,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.f041762f.js"></script>
+      <script src="../../assets/javascripts/application.9fb73e57.js"></script>
       
       <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
       

@@ -23,6 +23,10 @@
       
         <meta name="lang:search.language" content="en">
       
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
         <meta name="lang:search.result.none" content="No matching documents">
       
         <meta name="lang:search.result.one" content="1 matching document">
@@ -31,8 +35,8 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.5.2">
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.6.0">
     
     
       
@@ -61,14 +65,30 @@
     
   </head>
   
-  
     <body dir="ltr">
   
     <svg class="md-svg">
       <defs>
         
         
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
         
       </defs>
     </svg>
@@ -250,61 +270,22 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../development-process/" title="Development Process" class="md-nav__link">
-      Development Process
-    </a>
-  </li>
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Packaging
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Packaging
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../koji-workflow/" title="Koji Workflow" class="md-nav__link">
-      Koji Workflow
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../new-team-member/" title="New Team Member" class="md-nav__link">
-      New Team Member
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../repository-management/" title="Repository Management" class="md-nav__link">
-      Repository Management
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ce-test-scaling/" title="CE Scale Testing" class="md-nav__link">
-      CE Scale Testing
-    </a>
-  </li>
-
         
           
           
@@ -382,6 +363,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#git-hosted-upstream-files" title="Git Hosted Upstream Files" class="md-nav__link">
+    Git Hosted Upstream Files
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -435,6 +423,26 @@
   <a href="#upstream" title="upstream" class="md-nav__link">
     upstream
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cached-files" title="Cached files" class="md-nav__link">
+    Cached files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-repos-osg-build-1112" title="Git repos (OSG-Build 1.11.2+)" class="md-nav__link">
+    Git repos (OSG-Build 1.11.2+)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -631,6 +639,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../osg-build-tools/" title="OSG Build Tools" class="md-nav__link">
+      OSG Build Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../quilt/" title="Using Quilt" class="md-nav__link">
       Using Quilt
     </a>
@@ -646,6 +666,167 @@
     <a href="../upcoming-to-main/" title="Upcoming to Main" class="md-nav__link">
       Upcoming to Main
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../koji-workflow/" title="Koji Workflow" class="md-nav__link">
+      Koji Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../create-vo-client/" title="Creating the VO Client Package" class="md-nav__link">
+      Creating the VO Client Package
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../repository-management/" title="Repository Management" class="md-nav__link">
+      Repository Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../globus-mass-update-procedure/" title="Globus Mass Update Procedure" class="md-nav__link">
+      Globus Mass Update Procedure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../resurrecting-epel-packages/" title="Resurrecting Epel Packages" class="md-nav__link">
+      Resurrecting Epel Packages
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../koji-mass-rebuilds/" title="Koji Mass Rebuilds" class="md-nav__link">
+      Koji Mass Rebuilds
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../development-process/" title="Development Process" class="md-nav__link">
+      Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../git-software-development/" title="Git Software Development Process" class="md-nav__link">
+      Git Software Development Process
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ce-test-scaling/" title="CE Scale Testing" class="md-nav__link">
+      CE Scale Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pki-overview/" title="PKI Overview" class="md-nav__link">
+      PKI Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ipv6-testing/" title="IPv6 Testing" class="md-nav__link">
+      IPv6 Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -691,92 +872,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../globus-mass-update-procedure/" title="Globus Mass Update Procedure" class="md-nav__link">
-      Globus Mass Update Procedure
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../git-software-development/" title="Git Software Development Process" class="md-nav__link">
-      Git Software Development Process
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../osg-build-tools/" title="OSG Build Tools" class="md-nav__link">
-      OSG Build Tools
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../resurrecting-epel-packages/" title="Resurrecting Epel Packages" class="md-nav__link">
-      Resurrecting Epel Packages
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../koji-mass-rebuilds/" title="Koji Mass Rebuilds" class="md-nav__link">
-      Koji Mass Rebuilds
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../create-vo-client/" title="Creating the VO Client Package" class="md-nav__link">
-      Creating the VO Client Package
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../pki-overview/" title="PKI Overview" class="md-nav__link">
-      PKI Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ipv6-testing/" title="IPv6 Testing" class="md-nav__link">
-      IPv6 Testing
+    <a href="../new-team-member/" title="New Team Member" class="md-nav__link">
+      New Team Member
     </a>
   </li>
 
@@ -1171,6 +1268,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../documentation/new-doc-area/" title="Creating a New Area" class="md-nav__link">
+      Creating a New Area
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../documentation/markdown-migration/" title="Migrating Documents to Markdown" class="md-nav__link">
       Migrating Documents to Markdown
     </a>
@@ -1272,6 +1381,30 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180205/" title="February 5, 2018" class="md-nav__link">
+      February 5, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180129/" title="January 29, 2018" class="md-nav__link">
+      January 29, 2018
+    </a>
+  </li>
+
         
           
           
@@ -1810,6 +1943,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#git-hosted-upstream-files" title="Git Hosted Upstream Files" class="md-nav__link">
+    Git Hosted Upstream Files
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1863,6 +2003,26 @@
   <a href="#upstream" title="upstream" class="md-nav__link">
     upstream
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cached-files" title="Cached files" class="md-nav__link">
+    Cached files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-repos-osg-build-1112" title="Git repos (OSG-Build 1.11.2+)" class="md-nav__link">
+    Git repos (OSG-Build 1.11.2+)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2133,6 +2293,9 @@
 <li>If you have access to a UW–Madison CSL machine, you can scp the source files directly into the AFS locations using that machine</li>
 <li>If you do not have such access, write to the osg-software list to find someone who will post the files for you</li>
 </ul>
+<h4 id="git-hosted-upstream-files">Git Hosted Upstream Files<a class="headerlink" href="#git-hosted-upstream-files" title="Permanent link">&para;</a></h4>
+<p>As of OSG-Build 1.11.2, it is possible to pull sources and spec files from a remote Git repo instead of our source cache.
+See the <a href="#upstream">upstream dir info</a> for more information.</p>
 <h3 id="revision-control-system">Revision Control System<a class="headerlink" href="#revision-control-system" title="Permanent link">&para;</a></h3>
 <p>All packages that the OSG Software Team releases are checked into our revision control system (currently Subversion but with the option to change at a later date).</p>
 <h4 id="subversion-access">Subversion Access<a class="headerlink" href="#subversion-access" title="Permanent link">&para;</a></h4>
@@ -2266,17 +2429,83 @@
 </tr>
 </tbody>
 </table>
-<p>The contents of the file match the upstream source cache path defined above, without the prefix component:</p>
+<p>and contain references to cached files, Git repos, and comments.
+which start with <code>#</code> and continue until the end of the line.
+It is useful to add the source of the upstream file into a comment.</p>
+<h6 id="cached-files">Cached files<a class="headerlink" href="#cached-files" title="Permanent link">&para;</a></h6>
+<p>To reference files in the upstream source cache, use the upstream source cache path defined above, without the prefix component:</p>
 <blockquote>
 <p><code>&lt;PACKAGE&gt;/&lt;VERSION&gt;/&lt;FILE&gt;</code></p>
 </blockquote>
-<p>In addition, the <code>.source</code> files may contain comments, which start with <code>#</code> and continue until the end of the line. It is useful to add the source of the upstream file into a comment.</p>
-<p>For example, the reference file for <code>globus-common</code>'s source tarball is named <code>epel.srpm.source</code> and might contain:</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The reference file for <code>globus-common</code>'s source tarball is named <code>epel.srpm.source</code> and contains:</p>
 <div class="codehilite"><pre><span></span>globus-common/16.4/globus-common-16.4-1.el6.src.rpm
 # Downloaded from &#39;http://dl.fedoraproject.org/pub/epel/6/SRPMS/globus-common-16.4-1.el6.src.rpm&#39;
 </pre></div>
 
 
+</div>
+<h6 id="git-repos-osg-build-1112">Git repos (OSG-Build 1.11.2+)<a class="headerlink" href="#git-repos-osg-build-1112" title="Permanent link">&para;</a></h6>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>OSG software policy requires that all Git repos used for building software have mirrors at the UW.
+Many software repos under the <a href="https://github.com/opensciencegrid">opensciencegrid GitHub organization</a> are already mirrored.
+If you are uncertain, or have a new project that you want mirrored, send email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#111;&#115;&#103;&#45;&#115;&#111;&#102;&#116;&#119;&#97;&#114;&#101;&#64;&#111;&#112;&#101;&#110;&#115;&#99;&#105;&#101;&#110;&#99;&#101;&#103;&#114;&#105;&#100;&#46;&#111;&#114;&#103;">&#111;&#115;&#103;&#45;&#115;&#111;&#102;&#116;&#119;&#97;&#114;&#101;&#64;&#111;&#112;&#101;&#110;&#115;&#99;&#105;&#101;&#110;&#99;&#101;&#103;&#114;&#105;&#100;&#46;&#111;&#114;&#103;</a>.</p>
+</div>
+<p>To reference tags in Git repos, use the following syntax (all on one line):</p>
+<blockquote>
+<p><code>type=git url=&lt;URL&gt; name=&lt;NAME&gt; tag=&lt;TAG&gt; hash=&lt;HASH&gt;</code></p>
+</blockquote>
+<p>where:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Symbol</th>
+<th align="left">Definition</th>
+<th align="left">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>&lt;URL&gt;</code></td>
+<td align="left">Location of the Git repo</td>
+<td align="left"><code>https://github.com/opensciencegrid/osg-build.git</code></td>
+</tr>
+<tr>
+<td align="left"><code>&lt;NAME&gt;</code></td>
+<td align="left">Name of the software (optional)</td>
+<td align="left"><code>osg-build</code></td>
+</tr>
+<tr>
+<td align="left"><code>&lt;TAG&gt;</code></td>
+<td align="left">Git tag to use</td>
+<td align="left"><code>v1.11.2</code></td>
+</tr>
+<tr>
+<td align="left"><code>&lt;HASH&gt;</code></td>
+<td align="left">Full 40-char Git hash of the tag</td>
+<td align="left"><code>5bcf48c442d21b1e8c93a468d884f84122f7cc9e</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>&lt;NAME&gt;</code> is optional; if not present, OSG-Build will use the last component of the URL, without the <code>.git</code> suffix.</p>
+<p>The tarball will be called <code>&lt;NAME&gt;-&lt;VERSION&gt;.tar.gz</code> where <code>&lt;VERSION&gt;</code> is <code>&lt;TAG&gt;</code> without the <code>v</code> prefix (if there is one).</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The reference file for <code>osg-build</code>'s repo is named <code>osg.github.source</code> and contains:</p>
+<div class="codehilite"><pre><span></span>type=git url=https://github.com/opensciencegrid/osg-build.git name=osg-build tag=v1.11.2 hash=5bcf48c442d21b1e8c93a468d884f84122f7cc9e
+</pre></div>
+
+
+<p>This results in a tarball named <code>osg-build-1.11.2.tar.gz</code>.</p>
+</div>
+<p>In addition, if the repository contains a file called <code>rpm/&lt;NAME&gt;.spec</code>, it will be used as the spec file for the build
+(unless overridden in the <code>osg</code> directory).</p>
+<p>OSG-Build 1.11.2 or later is required to use this feature.</p>
 <h5 id="osg">osg<a class="headerlink" href="#osg" title="Permanent link">&para;</a></h5>
 <p>The <code>osg</code> directory contains files that are owned by the OSG Software Team and that are used to create the final, released source package. It may contain a variety of development files:</p>
 <ul>
@@ -2502,7 +2731,7 @@ It may safely be removed.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ce-test-scaling/" title="CE Scale Testing" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2511,19 +2740,19 @@ It may safely be removed.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                CE Scale Testing
+                Home
               </span>
             </div>
           </a>
         
         
-          <a href="../quilt/" title="Using Quilt" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../osg-build-tools/" title="OSG Build Tools" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Using Quilt
+                OSG Build Tools
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2553,7 +2782,7 @@ It may safely be removed.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.f041762f.js"></script>
+      <script src="../../assets/javascripts/application.9fb73e57.js"></script>
       
       <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
       
