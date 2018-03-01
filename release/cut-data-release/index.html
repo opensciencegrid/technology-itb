@@ -1885,7 +1885,7 @@
 
 <p>If there are any discrepancies consult the release manager. You may have to tag packages with the <code>osg-koji</code> tool.</p>
 <h3 id="step-2-test-the-pre-release-on-the-madison-itb-site">Step 2: Test the Pre-Release on the Madison ITB site<a class="headerlink" href="#step-2-test-the-pre-release-on-the-madison-itb-site" title="Permanent link">&para;</a></h3>
-<p>Test the pre-release on the Madison IRB by following the <a href="../itb-testing/">ITB pre-release testing instructions</a>.</p>
+<p>Test the pre-release on the Madison ITB by following the <a href="../itb-testing/">ITB pre-release testing instructions</a>.</p>
 <h2 id="day-2-pushing-the-release">Day 2: Pushing the Release<a class="headerlink" href="#day-2-pushing-the-release" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1893,7 +1893,7 @@
 Do not start this process after 2 PM Eastern time unless you check with Operations (specifically Kyle Gross) first.</p>
 </div>
 <h3 id="step-1-push-from-pre-release-to-release">Step 1: Push from pre-release to release<a class="headerlink" href="#step-1-push-from-pre-release-to-release" title="Permanent link">&para;</a></h3>
-<p>This script moves the packages into release, clones releases into new version-specific release repos, locks the repos and regenerates them. Afterwards, it produces <code>*release-note*</code> files that should be used to update the release note pages. Clone it from the github repo and run the script:</p>
+<p>This script moves the packages into release, clones releases into new version-specific release repos, locks the repos and regenerates them. Afterward, it produces <code>*release-note*</code> files that should be used to update the release note pages. Clone it from the github repo and run the script:</p>
 <div class="codehilite"><pre><span></span><span class="nv">VERSIONS</span><span class="o">=</span><span class="s1">&#39;VERSION(S)&gt;&#39;</span>
 <span class="nv">REVISION</span><span class="o">=</span>&lt;REVISION&gt;
 </pre></div>
@@ -1936,7 +1936,7 @@ verify that the version of the VO Package and/or CA certificates match the versi
 <li>
 <p>The release manager writes the a release announcement for each version and sends it out.
     The announcement should mention a handful of the most important updates.
-    Due to downstream formatting issues, each major change should end at column 76 or ealier.
+    Due to downstream formatting issues, each major change should end at column 76 or earlier.
     Here is a sample, replace <code>&lt;BRACKETED TEXT&gt;</code> with the appropriate values:
     If you are only updating certificates or only updated the VO package, delete the corresponding text:</p>
 <div class="codehilite"><pre><span></span><span class="n">Subject</span><span class="o">:</span> <span class="n">Announcing</span> <span class="n">OSG</span> <span class="n">CA</span> <span class="n">Certificate</span> <span class="n">and</span> <span class="n">VO</span> <span class="n">Package</span> <span class="n">Updates</span>
@@ -1975,7 +1975,7 @@ verify that the version of the VO Package and/or CA certificates match the versi
 <li>The release manager closes the tickets marked 'Ready for Release' in the release's JIRA filter using the 'bulk change' function. Uncheck the box that reads "Send mail for this update"</li>
 </ol>
 <h2 id="day-3-update-the-itb">Day 3: Update the ITB<a class="headerlink" href="#day-3-update-the-itb" title="Permanent link">&para;</a></h2>
-<p>Now that the release has had a chance to proprogate to all the mirrors, update the Madison ITB site by following
+<p>Now that the release has had a chance to propogate to all the mirrors, update the Madison ITB site by following
 the <a href="../../infrastructure/madison-itb/#doing-yum-updates">yum update section</a> of the Madison ITB document.
 Remember, it may be advisable to stop the HTCondor daemons according to the <a href="../itb-testing/#installing-htcondor-prerelease">HTCondor pre-release testing instructions</a>.</p>
                 
