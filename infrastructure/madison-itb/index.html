@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.6.0">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.6.6">
     
     
       
@@ -44,13 +44,14 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.aa3de92b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
       
     
     
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
@@ -1010,6 +1011,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -1196,6 +1199,42 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180226/" title="February 26, 2018" class="md-nav__link">
+      February 26, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180219/" title="February 19, 2018" class="md-nav__link">
+      February 19, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180212/" title="February 12, 2018" class="md-nav__link">
+      February 12, 2018
+    </a>
+  </li>
+
         
           
           
@@ -1838,6 +1877,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -2092,9 +2133,10 @@ repository and push validated changes back to it.</p>
 <p><strong>Note:</strong></p>
 <ul>
 <li>For critical passwords, see Tim C. or other knowledgeable Madison OSG staff in person</li>
-<li>All commands below are meant to be run from the <code>osgitb</code> directory from Git</li>
+<li>All commands below are meant to be run from the top directory of your <code>osgitb</code> Git repo (e.g. on <code>osghost</code>,
+  not on the target machine)</li>
 </ul>
-<p>To run Ansible for the first time on a new machine (using the <code>root</code> password when prompted):</p>
+<p>To run Ansible for the first time for a new machine (using the <code>root</code> password for the target machine when prompted):</p>
 <div class="codehilite"><pre><span></span><span class="go">ansible-playbook secure.yml -i inventory -u root -k --ask-vault-pass -f 20 -l HOST-PATTERN</span>
 <span class="go">ansible-playbook site.yml -i inventory -u root -k -f 20 -l HOST-PATTERN</span>
 </pre></div>
@@ -2103,7 +2145,7 @@ repository and push validated changes back to it.</p>
 <p>The <code>HOST-PATTERN</code> can be a glob-like pattern or a regular expression that matches host names in the inventory file; see
 Ansible documentation for details.</p>
 <p>After initial successful runs of both playbooks, subsequent runs should replace the <code>-u root -k</code> part with <code>-bK</code> to use
-your own login and <code>sudo</code>.  For example:</p>
+your own login and <code>sudo</code> <em>on the target machine</em>.  For example:</p>
 <div class="codehilite"><pre><span></span><span class="go">ansible-playbook secure.yml -i inventory -bK --ask-vault-pass -f 20 -l HOST-PATTERN</span>
 <span class="go">ansible-playbook site.yml -i inventory -bK -f 20 [ -l HOST-PATTERN ]</span>
 </pre></div>
@@ -2120,14 +2162,17 @@ your own login and <code>sudo</code>.  For example:</p>
 <ol>
 <li>Ask Mat to get new certificates — be sure to think about <code>http</code>, <code>rsv</code>, and other service certificates</li>
 <li>Wait for Mat to tell you that the new certificates are in <code>/p/condor/home/certificates</code></li>
-<li><code>scp -p</code> the certificate(s) (<code>*cert.pem*</code> and <code>*key.pem</code>) to your home directory on <code>osghost</code> or whatever machine you use for Ansible</li>
+<li><code>scp -p</code> the certificate(s) (<code>*cert.pem*</code> and <code>*key.pem</code>) to your home directory on <code>osghost</code> or whatever machine you use for Ansible
+   Note that if you are renewing a certificate, only the <code>*cert.pem</code> will be updated and the <code>*key.pem</code> will remain the same.</li>
 <li>Find the corresponding certificate location(s) in the Ansible <code>roles/certs/files</code> directory</li>
 <li><code>cp -p</code> the certificate files over the top of the existing Ansible ones (or create new, equivalent paths)</li>
-<li>Run <code>ansible-vault encrypt FILE(S)</code> to encrypt the files — get the Ansible vault password from Tim C. if you need it</li>
+<li>Run <code>ansible-vault encrypt FILE(S)</code> to encrypt the files — get the Ansible vault password from Tim C. if you need it
+   Note that only the <code>*key.pem</code> files need to be encrypted, as the <code>*cert.pem</code> files are meant to be public.
+   If the (unencrypted) <code>*key.pem</code> file is not getting updated, there is no need to re-encrypt a new copy.</li>
 <li>Verify permissions, contents (you can <code>cat</code> the encrypted files), etc.</li>
 <li>Apply the files with something like <code>ansible-playbook secure.yml -i inventory -bK -f 20 -t certs</code></li>
 <li>Commit changes (now or after applying)</li>
-<li>Push changes to origin</li>
+<li>Push changes to origin (<code>gitolite@git.chtc.wisc.edu:osgitb</code>)</li>
 </ol>
 <h4 id="doing-yum-updates">Doing yum updates<a class="headerlink" href="#doing-yum-updates" title="Permanent link">&para;</a></h4>
 <ol>
@@ -2369,7 +2414,7 @@ then reboot the now-installed machine.  The whole process typically takes 15–2
       
     </div>
     
-      <script src="../../assets/javascripts/application.9fb73e57.js"></script>
+      <script src="../../assets/javascripts/application.02434462.js"></script>
       
       <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
       

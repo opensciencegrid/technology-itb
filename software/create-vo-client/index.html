@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.6.0">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.6.6">
     
     
       
@@ -44,13 +44,14 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.aa3de92b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
       
     
     
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
@@ -433,6 +434,8 @@
     </nav>
   
 </li>
+      
+      
       
       
       
@@ -1138,6 +1141,42 @@
 
 
   <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180226/" title="February 26, 2018" class="md-nav__link">
+      February 26, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180219/" title="February 19, 2018" class="md-nav__link">
+      February 19, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180212/" title="February 12, 2018" class="md-nav__link">
+      February 12, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../meetings/2018/TechArea20180205/" title="February 5, 2018" class="md-nav__link">
       February 5, 2018
     </a>
@@ -1706,6 +1745,8 @@
       
       
       
+      
+      
     </ul>
   
 </nav>
@@ -1761,7 +1802,7 @@
 
 <ul>
 <li>In a separate directory, unpack the <em>old</em> vo-client tarball (from the upstream source cache)</li>
-<li>diff the two directories, and compare the changes to the changelog posted at <a href="https://twiki.opensciencegrid.org/bin/view/Operations/PackageV44">https://twiki.opensciencegrid.org/bin/view/Operations/PackageV44</a> (replace '44' with the current version)</li>
+<li>diff the two directories, and compare the changes to the expected changes listed in the JIRA ticket for this VO Client package release</li>
 </ul>
 <!-- -->
 
@@ -1809,7 +1850,7 @@
 <li><code>upstream/release_tarball.source</code> - This file contains the relative path of the tarball within the <a href="../rpm-development-guide#upstream-source-cache">upstream source cache</a>. Since the tarball file name will change with every new RPM version, this file has to be changed accordingly.</li>
 </ul>
 <h2 id="rpm-building">RPM building<a class="headerlink" href="#rpm-building" title="Permanent link">&para;</a></h2>
-<p>After installing the <a href="https://twiki.opensciencegrid.org/bin/view/SoftwareTeam/VDTRPMBuildBox">osg-build tools</a>, check out a clean copy from svn, then:</p>
+<p>After installing the <a href="../osg-build-tools">osg-build tools</a>, check out a clean copy from svn, then:</p>
 <ul>
 <li><code>osg-build prebuild .</code></li>
 <li>Once there are no errors, run <code>osg-build koji . --scratch</code> This can be done without making any permanent change.</li>
@@ -1889,7 +1930,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.9fb73e57.js"></script>
+      <script src="../../assets/javascripts/application.02434462.js"></script>
       
       <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
       
