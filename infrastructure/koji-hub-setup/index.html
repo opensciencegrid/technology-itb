@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.6.6">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.7.2">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
       
     
     
@@ -93,8 +93,8 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
       <a href="#notes-on-koji-hub-setup" tabindex="1" class="md-skip">
@@ -703,6 +703,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../policy/service-changes-2018/" title="Service Changes 2018" class="md-nav__link">
+      Service Changes 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../policy/gums-retire/" title="GUMS Retirement" class="md-nav__link">
       GUMS Retirement
     </a>
@@ -1171,6 +1183,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../koji-user-management/" title="Koji User Management" class="md-nav__link">
+      Koji User Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../madison-itb/" title="Madison ITB" class="md-nav__link">
       Madison ITB
     </a>
@@ -1356,6 +1380,66 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180416/" title="April 16, 2018" class="md-nav__link">
+      April 16, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180409/" title="April 9, 2018" class="md-nav__link">
+      April 9, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180402/" title="April 2, 2018" class="md-nav__link">
+      April 2, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180312/" title="March 12, 2018" class="md-nav__link">
+      March 12, 2018
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2018/TechArea20180305/" title="March 5, 2018" class="md-nav__link">
+      March 5, 2018
+    </a>
+  </li>
+
         
           
           
@@ -2293,12 +2377,8 @@ export OPENSSL_ALLOW_PROXY_CERTS
 <p>The user must use RFC proxies and must have a version of the koji client of 1.6.0-6.osg or newer.</p>
 <h2 id="procedures">Procedures<a class="headerlink" href="#procedures" title="Permanent link">&para;</a></h2>
 <h3 id="user-cert-switch">User cert switch<a class="headerlink" href="#user-cert-switch" title="Permanent link">&para;</a></h3>
-<p>The following steps need to be taken for someone replacing their user cert:</p>
-<ul>
-<li>An admin should log in to the database and update the <code>users</code> table with their new CN.</li>
-<li>The user should import their new cert into their browser and rerun <code>osg-koji setup</code> to fix their <code>client.crt</code>.</li>
-<li>If the user gets a Python stack trace when connecting to <code>koji.chtc.wisc.edu</code> via their browser, they should clear their cookies.</li>
-</ul>
+<p>This procedure is now documented on the
+<a href="../koji-user-management#handling-user-cert-changes-renaming-a-user">user management page</a>.</p>
 <h3 id="adding-cas-for-user-authentication">Adding CAs for user authentication<a class="headerlink" href="#adding-cas-for-user-authentication" title="Permanent link">&para;</a></h3>
 <p>Since our Koji instance uses certs for auth, we specify which CAs we trust for signing user certs. The CA certs for user auth are concatenated together in the file <code>/etc/pki/tls/certs/allowed-cas-for-users.crt</code>. A comment line before the <code>BEGIN CERTIFICATE</code> line is used to name the file the cert comes from. We take the certs from the <code>osg-ca-certs</code> repository.</p>
 <p>For example, when I added the CERN CAs to the bundle, I installed osg-ca-certs onto a Fermicloud VM, copied <code>/etc/grid-security/certificates/CERN-TCA.pem</code> (which signed user certs) and <code>CERN-Root.pem</code> (which signed <code>CERN-TCA.pem</code>) to <code>koji.chtc.wisc.edu</code>, catted them to the end of the <code>allowed-cas-for-users.crt</code> file, edited the file to add comments before the certs, and restarted <code>httpd</code>.</p>
@@ -2358,7 +2438,11 @@ export OPENSSL_ALLOW_PROXY_CERTS
 </pre></div>
 
 
-<p>To see the list of users, go to the <a href="https://koji.chtc.wisc.edu/koji/users">Koji web site</a>.</p>
+<p>To see the list of users:</p>
+<div class="codehilite"><pre><span></span><span class="gp">[you@client ~]$</span> koji search user <span class="s2">&quot;*&quot;</span>
+</pre></div>
+
+
 <h3 id="renewing-host-and-service-certs">Renewing host and service certs<a class="headerlink" href="#renewing-host-and-service-certs" title="Permanent link">&para;</a></h3>
 <p>Certs and keys are stored in <code>/p/condor/home/certificates/...</code></p>
 <p>To obtain renewed certificates, use <a href="https://opensciencegrid.github.io/docs/security/certificate-management/#osg-pki-command-line-clients.md">the OSG PKI commandline clients</a> or the web interface at <a href="https://oim.opensciencegrid.org/oim/certificaterequesthost">https://oim.opensciencegrid.org/oim/certificaterequesthost</a>.</p>
@@ -2461,6 +2545,8 @@ export OPENSSL_ALLOW_PROXY_CERTS
               
               
                 
+
+
               
             </article>
           </div>
@@ -2524,7 +2610,7 @@ export OPENSSL_ALLOW_PROXY_CERTS
       
     </div>
     
-      <script src="../../assets/javascripts/application.02434462.js"></script>
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
       <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
       
