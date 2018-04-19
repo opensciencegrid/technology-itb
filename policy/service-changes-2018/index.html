@@ -1864,18 +1864,18 @@
 <p>As you may have heard, the Open Science Grid (OSG) is undergoing some changes to its fabric of services.
 Some services will be retired, most services will be migrated with little planned effect on sites,
 and some services will be migrated with greater effect on sites.
-This document is intended to guide OSG Site Administrators through these changes.
+This document is intended to guide OSG site administrators through these changes.
 The following sections list various OSG services and whether or not site administrator action is required.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There will be announcements prior to retirement or migration of any OSG service.</p>
+<p>There will be individual announcements prior to retirement or migration of any OSG service.</p>
 </div>
-<p>The OSG Technology team will be holding <a href="#office-hours">office hours</a> for any questions or comments about these service 
-changes.</p>
+<p>The OSG Technology team will be holding office hours for any questions or comments about these service 
+changes; see the <a href="#office-hours">end of the page</a> for details.</p>
 <h2 id="osg-ca">OSG CA<a class="headerlink" href="#osg-ca" title="Permanent link">&para;</a></h2>
 <p>The OSG CA service offers certificate request, renewal, and revocation through the <a href="#myosg-and-oim">OIM</a> web interface, 
-the OIM REST API, and the <code>osg-pki-tools</code>.
-This service will be retired but since the OSG CA will remain in the OSG CA distribution,
+the OIM REST API, and the <code>osg-pki-tools</code> command-line tool.
+This service will be retired but, because the OSG CA files will remain in the list of CAs distributed by the OSG,
 your OSG-issued certificates will be valid until they expire.
 Therefore, to extend the window for transitioning to any new CA service, we have the following recommendations:</p>
 <div class="admonition info">
@@ -1907,7 +1907,7 @@ Therefore, to extend the window for transitioning to any new CA service, we have
   LHC users should continue to request their user certificates from CERN.</li>
 </ul>
 <p>New processes for requesting host, service, and user certificates against the aforementioned CAs are forthcoming.</p>
-<p>The exact date for the retiremnt of the OSG CA service will be announced.
+<p>The exact date for the retirement of the OSG CA service will be announced.
 If you experience any problems with the OSG CA service, please contact us at
 <a href="mailto:help@opensciencegrid.org">help@opensciencegrid.org</a>.</p>
 <h2 id="software-repository">Software Repository<a class="headerlink" href="#software-repository" title="Permanent link">&para;</a></h2>
@@ -1946,8 +1946,8 @@ If you experience any problems with the OSG Software repository, please contact 
 <h2 id="voms-admin-server">VOMS Admin Server<a class="headerlink" href="#voms-admin-server" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://voms.opensciencegrid.org:8443/voms/osg/user/home.action">OSG VOMS</a> service is used to sign VOMS attributes
 for members of the OSG VO and can respond to queries for a list of VO members.
-The <a href="../../policy/voms-admin-retire">retirement ofVOMS Admin Server</a> has been planned for quite some time so the OSG VOMS 
-servers will be retired.</p>
+The <a href="../../policy/voms-admin-retire">retirement of VOMS Admin Server</a> (and therefore VOMS servers), has been planned for quite
+some time so the OSG VOMS servers will be retired.</p>
 <div class="admonition info">
 <p class="admonition-title">Action item</p>
 <p>If your site accepts OSG jobs, transition your hosts to 
@@ -1968,7 +1968,7 @@ If you run a service that queries MyOSG:</p>
 <p><a href="https://oim.opensciencegrid.org/oim/home">OIM</a> serves as the database for the information used by MyOSG with a web
 interface for data updates.
 The OIM web interface will be retired but we will migrate its data to a series of YAML files held in a GitHub repository.
-After OIM is retired, updates to the aforementioned data can be requested via e-mail or pull-request.
+After OIM is retired, updates to the aforementioned data can be requested via email or pull request.
 Documentation forthcoming.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1979,7 +1979,7 @@ If you experience any problems with the OSG Software repository, please contact 
 <a href="mailto:help@opensciencegrid.org">help@opensciencegrid.org</a>.</p>
 <h2 id="rsv">RSV<a class="headerlink" href="#rsv" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://my.opensciencegrid.org/rgcurrentstatus/index?summary_attrs_showservice=on&amp;summary_attrs_showrsvstatus=on&amp;summary_attrs_showfqdn=on&amp;current_status_attrs_shownc=on&amp;gip_status_attrs_showtestresults=on&amp;downtime_attrs_showpast=&amp;account_type=cumulative_hours&amp;ce_account_type=gip_vo&amp;se_account_type=vo_transfer_volume&amp;bdiitree_type=total_jobs&amp;bdii_object=service&amp;bdii_server=is-osg&amp;start_type=7daysago&amp;start_date=04%2F19%2F2018&amp;end_type=now&amp;end_date=04%2F19%2F2018&amp;all_resources=on&amp;gridtype=on&amp;gridtype_1=on&amp;active_value=1&amp;disable_value=1">central RSV service</a>
-is a monitoring tool that displays every site service in the OSG.
+is a monitoring tool that displays every service status information about OSG sites that elect to provide it.
 It will be retired since there is no longer a need to monitor OSG site status as a whole.
 If you would like to monitor your OSG services, you can access the status page of your local
 <a href="https://opensciencegrid.github.io/docs/monitoring/install-rsv/">RSV</a> instance.</p>
@@ -1993,7 +1993,7 @@ which uploads status data to the central RSV service:</p>
 
 
 </div>
-<p>The exact date for retiremnt will be announced.
+<p>The exact date for retirement of the central RSV service will be announced.
 If you experience any problems with the central RSV service, please contact us at
 <a href="mailto:help@opensciencegrid.org">help@opensciencegrid.org</a>.</p>
 <h2 id="gracc-accounting">GRACC Accounting<a class="headerlink" href="#gracc-accounting" title="Permanent link">&para;</a></h2>
@@ -2002,13 +2002,18 @@ service at this time.
 If you experience any problems with GRACC accounting, please contact us at
 <a href="mailto:help@opensciencegrid.org">help@opensciencegrid.org</a>.</p>
 <h2 id="oasis-and-cvmfs">OASIS and CVMFS<a class="headerlink" href="#oasis-and-cvmfs" title="Permanent link">&para;</a></h2>
-<p>The physical hosting location of the Stratum-0 will be moved but we do not plan any other changes.
+<p>The OASIS (OSG Application and Software Installation Service) is a service used to distribute common applications and
+software to OSG sites via CVMFS.
+The OSG hosts the CVMFS Stratum-0 that acts as the data origin server.
+The physical hosting location of the CVMFS Stratum-0 will be moved but we do not plan any other changes and do not expect
+this to affect sites.
 The exact date for moving the hosting location will be announced.
 If you experience any problems with OASIS or CVMFS, please contact us at
 <a href="mailto:help@opensciencegrid.org">help@opensciencegrid.org</a>.</p>
 <h2 id="collector">Collector<a class="headerlink" href="#collector" title="Permanent link">&para;</a></h2>
-<p>The physical hosting location of the <a href="http://collector.opensciencegrid.org/">central Collector</a> will be moved but we do
-not for plan any other changes. 
+<p>The <a href="http://collector.opensciencegrid.org/">central Collector</a>
+The physical hosting location of the central Collector will be moved but we do not for plan any other changes and do not
+expect this to affect sites. 
 The exact date for moving the hosting location will be announced. If you experience any problems with the central 
 Collector, please contact us at <a href="mailto:help@opensciencegrid.org">help@opensciencegrid.org</a>.</p>
 <h2 id="office-hours">Office Hours<a class="headerlink" href="#office-hours" title="Permanent link">&para;</a></h2>
