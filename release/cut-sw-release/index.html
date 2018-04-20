@@ -2415,7 +2415,12 @@ Do not start this process after 2 PM Eastern time unless you check with Operatio
 </pre></div>
 
 
-<p>Ask Tim Theisen, Brian Lin, or someone with privileges on the <code>opensciencegrid.org</code> repo servers to upload the tarballs with the following procedure:</p>
+<p>Upload the tarballs with the following procedure:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you do not have access to the tarball repository at UNL (osgcollab@hcc-osg-software.unl.edu),
+please forward your public SSH key to Derek Weitzel.</p>
+</div>
 <h4 id="on-a-cs-machine_1">On a CS machine<a class="headerlink" href="#on-a-cs-machine_1" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="nv">NON_UPCOMING_VERSIONS</span><span class="o">=</span><span class="s2">&quot;&lt;NON-UPCOMING VERSION(S)&gt;&quot;</span>
 </pre></div>
@@ -2433,7 +2438,7 @@ ssh osgcollab@hcc-osg-software.unl.edu bin/mk-sims.sh
     <span class="nv">major_ver</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ver</span><span class="p">%.*</span><span class="si">}</span><span class="s2">&quot;</span>
     ssh osgcollab@hcc-osg-software.unl.edu <span class="s2">&quot;cd /usr/local/repo/tarball-install; ls -l </span><span class="nv">$major_ver</span><span class="s2">/*latest*&quot;</span>
 <span class="k">done</span>
-<span class="c1"># verify the symlinks are correct</span>
+<span class="c1"># verify the &quot;latest&quot; symlinks point to the version(s) just installed</span>
 </pre></div>
 
 
