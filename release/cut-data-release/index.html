@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.7.2">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.7.3">
     
     
       
@@ -2019,7 +2019,7 @@ docker-osg-wn-scripts/update-all docker-osg-wn
 <h3 id="step-3-verify-the-vo-package-andor-ca-certificates">Step 3: Verify the VO Package and/or CA certificates<a class="headerlink" href="#step-3-verify-the-vo-package-andor-ca-certificates" title="Permanent link">&para;</a></h3>
 <p>Wait for the <a href="https://repo.opensciencegrid.org/cadist/">CA certificates</a> to be updated.
 It may take a while for the updates to reach the mirror used to update the web site.
-The repository is checked every 10 minutes for updated CA certificates.
+The repository is checked hourly for updated CA certificates.
 Once the web page is updated, run the following command to update the VO Package and/or CA certificates in the tarball installations and
 verify that the version of the VO Package and/or CA certificates match the version that was promoted to release.</p>
 <div class="codehilite"><pre><span></span>/p/vdt/workspace/tarball-client/current/amd64_rhel6/osgrun osg-update-data
