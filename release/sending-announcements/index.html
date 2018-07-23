@@ -1533,49 +1533,50 @@ The <code>osg-notify</code> tool handles these notifications.</p>
 </ul>
 </li>
 <li>Disable any HTTP proxies<ul>
-<li>Look in the environment for the following environment variable and unset them if present.<ul>
-<li>HTTP_PROXY, HTTPS_PROXY, http_proxy, https_proxy.</li>
+<li>Look in the environment for the following environment variables and unset them if present.<ul>
+<li><code>HTTP_PROXY</code>, <code>HTTPS_PROXY</code>, <code>http_proxy</code>, <code>https_proxy</code></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>Ensure that the machine can send email.</p>
-<ul>
+<li>Ensure that the machine can send email.<ul>
 <li>A fermicloud VM will need additional configuration to send email. Firewall rules prevent sending email directly.<ul>
-<li>
-<p>Update postfix to relay through FermiLab's official mail server</p>
-<p><code>bash
-echo "transport_maps = hash:/etc/postfix/transport" &gt;&gt; /etc/postfix/main.cf</code></p>
-<p><code>bash
-echo "*   smtp:smtp.fnal.gov" &gt;&gt; /etc/postfix/transport</code></p>
-<p><code>bash
-postmap hash:/etc/postfix/transport
-postfix reload</code></p>
-</li>
+<li>Update postfix to relay through FermiLab's official mail server</li>
 </ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Ensure that you can lookup contacts in the topology database</p>
-<ul>
-<li>
-<p>Use the <code>osg-topology</code> tool to list the contacts</p>
-<p><code>bash
-cd topology
-PYTHONPATH=src python bin/osg-topology --cert publicCert.pem --key privateKey.pem list-resource-contacts</code></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>If the contacts include email addresses, this is working properly</li>
-<li>If you type your password incorrectly, the authentication will silently fail and you won't get email addresses</li>
-</ul>
-</div>
 </li>
 </ul>
 </li>
 </ol>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;transport_maps = hash:/etc/postfix/transport&quot;</span> &gt;&gt; /etc/postfix/main.cf
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;*   smtp:smtp.fnal.gov&quot;</span> &gt;&gt; /etc/postfix/transport
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>postmap hash:/etc/postfix/transport
+postfix reload
+</pre></div>
+
+
+<ol>
+<li>Ensure that you can lookup contacts in the topology database<ul>
+<li>Use the <code>osg-topology</code> tool to list the contacts</li>
+</ul>
+</li>
+</ol>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> topology
+<span class="nv">PYTHONPATH</span><span class="o">=</span>src python bin/osg-topology --cert publicCert.pem --key privateKey.pem list-resource-contacts
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>    !!! note
+        -   If the contacts include email addresses, this is working properly
+        -   If you type your password incorrectly, the authentication will silently fail and you won&#39;t get email addresses
+</pre></div>
+
+
 <h2 id="sending-the-announcement">Sending the announcement<a class="headerlink" href="#sending-the-announcement" title="Permanent link">&para;</a></h2>
 <p>Use the osg-notify tool to send the announcement. Here are the options that you need.</p>
 <div class="codehilite"><pre><span></span>-   `--dry-run` - Use this option until you are ready to actually send the message
