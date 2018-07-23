@@ -697,13 +697,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" title="Introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
     Prerequisites
   </a>
@@ -1445,13 +1438,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" title="Introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
     Prerequisites
   </a>
@@ -1492,118 +1478,149 @@
                 
                 
                 <h1 id="sending-announcements">Sending Announcements<a class="headerlink" href="#sending-announcements" title="Permanent link">&para;</a></h1>
-<p>This document describes the procedure for sending Security and Release
-Announcements.</p>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>The Release and Security Teams need to send out announcement about various events (releases, security advisories, planned changes, etc).
-The <code>osg-notify</code> tool handles these notifications.</p>
+<p>Various OSG teams need to send out announcement about various events (releases, security advisories, planned changes,
+etc).
+This page describes how to send announcements using the <code>osg-notify</code> tool.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>To send announcements, the following conditions must be met.</p>
+<p>To send announcements, the following conditions must be met:</p>
 <ul>
-<li>The machine must have an internet address listed in the <a href="https://mxtoolbox.com/SuperTool.aspx?action=spf%3aopensciencegrid.org&amp;run=toolpage">SPF Record</a> for opensciencegrid.org</li>
-<li>The machine must have the proper software installed</li>
-<li>No http proxy</li>
-<li>A properly configured Mail Transport Agent</li>
-<li>A valid OSG User certificate to lookup contacts in the topology database</li>
-<li>(Optional) A GPG Key to sign the announcement</li>
+<li>A host with an IP address listed in the
+    <a href="https://mxtoolbox.com/SuperTool.aspx?action=spf%3aopensciencegrid.org&amp;run=toolpage">SPF Record</a></li>
+<li>A sufficiently modern Linux operating system.
+    This procedure has been tested on a FermiCloud Scientific Linux 7 VM and my Linux Mint 18.3 laptop.
+    It is known not to work on a FermiCloud Scientific Linux 6 VM.</li>
+<li>A valid OSG user certificate to lookup contacts in the topology database</li>
+<li><strong>(Required for security announcements)</strong> A GPG Key to sign the announcement</li>
 </ul>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Choose a machine.<ul>
-<li>Make sure the the internet address is listed in the  <a href="https://mxtoolbox.com/SuperTool.aspx?action=spf%3aopensciencegrid.org&amp;run=toolpage">SPF Record</a> for opensciencegrid.org</li>
-<li>This procedure has been tested on a fermicloud Scientific Linux 7 VM and my Linux Mint 18.3 laptop.</li>
-<li>It is known not to work on a fermicloud Scientific 6 VM.</li>
-<li>Any sufficiently modern Linux will do.</li>
-</ul>
+<li>
+<p>Install the pre-requisites:</p>
+<ul>
+<li>
+<p>Enterprise Linux 7 (first, enable
+    <a href="https://opensciencegrid.org/docs/common/yum/#install-the-epel-repositories">EPEL</a>)</p>
+<div class="codehilite"><pre><span></span><span class="go">yum install git python-requests python-gnupg</span>
+</pre></div>
+
+
 </li>
-<li>Install the software<ul>
-<li>Enterprise Linux 7<ul>
-<li>Enable the EPEL repository</li>
-<li>yum install git python-requests python-gnupg</li>
-</ul>
-</li>
-<li>Ubuntu<ul>
-<li>apt install git python-requests python-gnupg</li>
-</ul>
-</li>
-<li>Common<ul>
-<li>git clone <a href="https://github.com/opensciencegrid/topology.git">https://github.com/opensciencegrid/topology.git</a></li>
-</ul>
+<li>
+<p>Ubuntu</p>
+<div class="codehilite"><pre><span></span><span class="go">apt install git python-requests python-gnupg</span>
+</pre></div>
+
+
 </li>
 </ul>
 </li>
-<li>Disable any HTTP proxies<ul>
-<li>Look in the environment for the following environment variables and unset them if present.<ul>
-<li><code>HTTP_PROXY</code>, <code>HTTPS_PROXY</code>, <code>http_proxy</code>, <code>https_proxy</code></li>
-</ul>
+<li>
+<p>Install the OSG tools:</p>
+<div class="codehilite"><pre><span></span><span class="go">git clone https://github.com/opensciencegrid/topology.git</span>
+</pre></div>
+
+
 </li>
-</ul>
+<li>
+<p>Disable any HTTP proxies by looking in the environment for the following variables and unset them if present:</p>
+<div class="codehilite"><pre><span></span><span class="go">env | grep -i &#39;https*_proxy&#39;</span>
+<span class="go">unset HTTPS_PROXY HTTP_PROXY https_proxy http_proxy</span>
+</pre></div>
+
+
 </li>
-<li>Ensure that the machine can send email.<ul>
-<li>A fermicloud VM will need additional configuration to send email. Firewall rules prevent sending email directly.<ul>
-<li>Update postfix to relay through FermiLab's official mail server</li>
-</ul>
+<li>
+<p>If you are on a FermiCloud VM, update <code>postfix</code> to relay through FermiLab's official mail server:</p>
+<div class="codehilite"><pre><span></span><span class="go">echo &quot;transport_maps = hash:/etc/postfix/transport&quot; &gt;&gt; /etc/postfix/main.cf</span>
+<span class="go">echo &quot;*   smtp:smtp.fnal.gov&quot; &gt;&gt; /etc/postfix/transport</span>
+<span class="go">postmap hash:/etc/postfix/transport</span>
+<span class="go">postfix reload</span>
+</pre></div>
+
+
 </li>
-</ul>
+<li>
+<p>Ensure that you can lookup contacts in the topology database by using the <code>osg-topology</code> tool to list the contacts:</p>
+<div class="codehilite"><pre><span></span><span class="go">cd topology</span>
+<span class="go">PYTHONPATH=src python bin/osg-topology --cert publicCert.pem \</span>
+<span class="go">    --key privateKey.pem list-resource-contacts</span>
+</pre></div>
+
+
+<p>If the contacts include email addresses, this is working properly.
+If you type your password incorrectly, the authentication will silently fail and you won't get email addresses</p>
 </li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;transport_maps = hash:/etc/postfix/transport&quot;</span> &gt;&gt; /etc/postfix/main.cf
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;*   smtp:smtp.fnal.gov&quot;</span> &gt;&gt; /etc/postfix/transport
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>postmap hash:/etc/postfix/transport
-postfix reload
-</pre></div>
-
-
-<ol>
-<li>Ensure that you can lookup contacts in the topology database<ul>
-<li>Use the <code>osg-topology</code> tool to list the contacts</li>
-</ul>
-</li>
-</ol>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> topology
-<span class="nv">PYTHONPATH</span><span class="o">=</span>src python bin/osg-topology --cert publicCert.pem --key privateKey.pem list-resource-contacts
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>    !!! note
-        -   If the contacts include email addresses, this is working properly
-        -   If you type your password incorrectly, the authentication will silently fail and you won&#39;t get email addresses
-</pre></div>
-
-
 <h2 id="sending-the-announcement">Sending the announcement<a class="headerlink" href="#sending-the-announcement" title="Permanent link">&para;</a></h2>
-<p>Use the osg-notify tool to send the announcement. Here are the options that you need.</p>
-<div class="codehilite"><pre><span></span>-   `--dry-run` - Use this option until you are ready to actually send the message
--   `--cert file` - File that contains your OSG User Certificate
--   `--key file` - File that contains your Private Key for your OSG User Certificate
--   `--no-sign` - Don&#39;t GPG sign the message (release only)
--   `--type production` - Not a test message
--   `--message file` - File containing your message
--   `--subject &quot;The Subject&quot; - The subject of your message
--   `--recipients &quot;me@me.com you@you.com&quot; - Recipients, must have at least one
--   `--oim-recipients resources` - Select contact associated with resources
--   `--oim-contact-type administrative&#39; - `administrative` for release announcement, `security` for security announcements
-</pre></div>
-
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Security announcements must be signed.</p>
-<div class="codehilite"><pre><span></span>-   `--sign` - GPG sign the message
--   `--sign-id KeyID` - The ID of the Key used for singing
-</pre></div>
-
-
+<p>Use the <code>osg-notify</code> tool to send the announcement using the relevant options from the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--dry-run</code></td>
+<td>Use this option until you are ready to actually send the message</td>
+</tr>
+<tr>
+<td><code>--cert &lt;FILE&gt;</code></td>
+<td>File that contains your OSG User Certificate</td>
+</tr>
+<tr>
+<td><code>--key &lt;FILE&gt;</code></td>
+<td>File that contains your Private Key for your OSG User Certificate</td>
+</tr>
+<tr>
+<td><code>--no-sign</code></td>
+<td>Don't GPG sign the message (release only)</td>
+</tr>
+<tr>
+<td><code>--type production</code></td>
+<td>Not a test message</td>
+</tr>
+<tr>
+<td><code>--message &lt;FILE&gt;</code></td>
+<td>File containing your message</td>
+</tr>
+<tr>
+<td><code>--subject &lt;EMAIL SUBJECT&gt;</code></td>
+<td>The subject of your message</td>
+</tr>
+<tr>
+<td><code>--recipients &lt;LIST OF EMAILS&gt;</code></td>
+<td>(optional) List of recipient email addresses, must have at least one</td>
+</tr>
+<tr>
+<td><code>--oim-recipients resources</code></td>
+<td>Select contact associated with resources</td>
+</tr>
+<tr>
+<td><code>--oim-contact-type &lt;TYPE&gt;</code></td>
+<td>Replacing <code>&lt;TYPE&gt;</code> with <code>administrative</code> for release announcements or  <code>security</code> for security announcements</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Security requirements</p>
+<p>Security announcements must be signed using the following options:</p>
+<ul>
+<li><code>--sign</code>: GPG sign the message</li>
+<li><code>--sign-id &lt;KEYID&gt;</code>: The ID of the key used for singing</li>
+</ul>
 </div>
 <p>For release announcements use the following command:</p>
-<div class="codehilite"><pre><span></span><span class="nv">PYTHONPATH</span><span class="o">=</span>src python bin/osg-notify --cert your-cert.pem --key your-key.pem --no-sign --type production --message message-file --subject <span class="s1">&#39;Your fine subject&#39;</span> --recipients <span class="s2">&quot;osg-general@opensciencegrid.org osg-operations@opensciencegrid.org osg-sites@opensciencegrid.org vdt-discuss@opensciencegrid.org&quot;</span> --oim-recipients resources --oim-contact-type administrative
+<div class="codehilite"><pre><span></span><span class="go">PYTHONPATH=src python bin/osg-notify --cert your-cert.pem --key your-key.pem \</span>
+<span class="go">    --no-sign --type production --message message-file</span>
+<span class="go">    --subject &#39;&lt;EMAIL SUBJECT&gt;&#39; \</span>
+<span class="go">    --recipients &quot;osg-general@opensciencegrid.org osg-operations@opensciencegrid.org osg-sites@opensciencegrid.org vdt-discuss@opensciencegrid.org&quot; \</span>
+<span class="go">    --oim-recipients resources --oim-contact-type administrative</span>
 </pre></div>
+
+
+<p>Replacing <code>&lt;EMAIL SUBJECT&gt;</code> with an appropriate subject for your announcement.</p>
                 
                   
                 
