@@ -1539,10 +1539,10 @@ The <code>osg-notify</code> tool handles these notifications.</p>
 </li>
 </ul>
 </li>
-<li>Ensure that the machine can send email.<ul>
 <li>
-<p>A fermicloud VM will need additional configuration to send email. Firewall rules prevent sending email directly.</p>
+<p>Ensure that the machine can send email.</p>
 <ul>
+<li>A fermicloud VM will need additional configuration to send email. Firewall rules prevent sending email directly.<ul>
 <li>
 <p>Update postfix to relay through FermiLab's official mail server</p>
 <p><code>bash
@@ -1551,14 +1551,20 @@ echo "transport_maps = hash:/etc/postfix/transport" &gt;&gt; /etc/postfix/main.c
 echo "*   smtp:smtp.fnal.gov" &gt;&gt; /etc/postfix/transport</code></p>
 <p><code>bash
 postmap hash:/etc/postfix/transport
-postfix reload</code>
-5.  Ensure that you can lookup contacts in the topology database
-    -   Use the <code>osg-topology</code> tool to list the contacts
-        <code>bash
-        cd topology
-        PYTHONPATH=src python bin/osg-topology --cert publicCert.pem --key privateKey.pem list-resource-contacts</code></p>
+postfix reload</code></p>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Ensure that you can lookup contacts in the topology database</p>
+<ul>
+<li>
+<p>Use the <code>osg-topology</code> tool to list the contacts</p>
+<p><code>bash
+cd topology
+PYTHONPATH=src python bin/osg-topology --cert publicCert.pem --key privateKey.pem list-resource-contacts</code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -1587,9 +1593,12 @@ postfix reload</code>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Security announcements must be signed.
-    -   <code>--sign</code> - GPG sign the message
-    -   <code>--sign-id KeyID</code> - The ID of the Key used for singing</p>
+<p>Security announcements must be signed.</p>
+<div class="codehilite"><pre><span></span>-   `--sign` - GPG sign the message
+-   `--sign-id KeyID` - The ID of the Key used for singing
+</pre></div>
+
+
 </div>
 <p>For release announcements use the following command:</p>
 <div class="codehilite"><pre><span></span><span class="nv">PYTHONPATH</span><span class="o">=</span>src python bin/osg-notify --cert your-cert.pem --key your-key.pem --no-sign --type production --message message-file --subject <span class="s1">&#39;Your fine subject&#39;</span> --recipients <span class="s2">&quot;osg-general@opensciencegrid.org osg-operations@opensciencegrid.org osg-sites@opensciencegrid.org vdt-discuss@opensciencegrid.org&quot;</span> --oim-recipients resources --oim-contact-type administrative
