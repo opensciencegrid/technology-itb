@@ -1893,55 +1893,7 @@ If you not local to Madison, consult the release manager for the designated pers
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>dotest <span class="o">()</span> <span class="o">{</span>
-    <span class="nv">file</span><span class="o">=</span><span class="nv">$dir</span>/<span class="nv">$client</span>-<span class="nv">$ver</span>-1.<span class="nv">$rhel</span>.<span class="nv">$arch</span>.tar.gz
-    <span class="k">if</span> <span class="o">[</span> -e <span class="nv">$file</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="nb">echo</span> <span class="s2">&quot;Testing </span><span class="nv">$client</span><span class="s2">-</span><span class="nv">$ver</span><span class="s2">-1.</span><span class="nv">$rhel</span><span class="s2">.</span><span class="nv">$arch</span><span class="s2">...&quot;</span>
-        <span class="nv">size</span><span class="o">=</span><span class="k">$(</span>du -m <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="p">|</span> cut -f <span class="m">1</span><span class="k">)</span>
-        <span class="k">if</span> <span class="o">[</span> <span class="nv">$size</span> -gt <span class="nv">$max_size</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-            <span class="nb">echo</span> -e <span class="s2">&quot;\e[1;33mWARNING: </span><span class="nv">$client</span><span class="s2">-</span><span class="nv">$ver</span><span class="s2">-1.</span><span class="nv">$rhel</span><span class="s2">.</span><span class="nv">$arch</span><span class="s2"> is too big. Check with release manager.\e[0m&quot;</span>
-        <span class="k">fi</span>
-        mkdir -p <span class="nv">$rhel</span>-<span class="nv">$arch</span>
-        <span class="nb">pushd</span> <span class="nv">$rhel</span>-<span class="nv">$arch</span>
-        tar xzf ../<span class="nv">$file</span>
-        <span class="nv">$client</span>/osg/osg-post-install
-        <span class="nv">$client</span>/osgrun osg-ca-manage setupCA --url osg
-        <span class="nv">$client</span>/osgrun osg-update-vos
-        <span class="nb">popd</span>
-        rm -rf <span class="nv">$rhel</span>-<span class="nv">$arch</span>
-    <span class="k">else</span>
-        <span class="nb">echo</span> -e <span class="s2">&quot;\e[1;31mERROR: </span><span class="nv">$client</span><span class="s2">-</span><span class="nv">$ver</span><span class="s2">-1.</span><span class="nv">$rhel</span><span class="s2">.</span><span class="nv">$arch</span><span class="s2"> tarball is missing.\e[0m&quot;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
-
-<span class="nb">pushd</span> /tmp
-
-<span class="k">for</span> ver in <span class="nv">$NON_UPCOMING_VERSIONS</span><span class="p">;</span> <span class="k">do</span>
-    <span class="nv">major_version</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ver</span><span class="p">%.*</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="nv">clients</span><span class="o">=</span><span class="s2">&quot;osg-wn-client&quot;</span>
-    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$major_version</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;3.4&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="nv">clients</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$clients</span><span class="s2"> osg-afs-client&quot;</span>
-    <span class="k">fi</span>
-    <span class="k">for</span> client in <span class="nv">$clients</span><span class="p">;</span> <span class="k">do</span>
-        <span class="nv">rhels</span><span class="o">=</span><span class="s2">&quot;el6 el7&quot;</span>
-        <span class="k">for</span> rhel in <span class="nv">$rhels</span><span class="p">;</span> <span class="k">do</span>
-            <span class="nv">max_size</span><span class="o">=</span><span class="m">28</span>
-            <span class="k">if</span> <span class="o">[</span> <span class="nv">$rhel</span> <span class="o">=</span> <span class="s2">&quot;el7&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-                <span class="nv">max_size</span><span class="o">=</span><span class="m">33</span>
-            <span class="k">fi</span>
-            <span class="nv">archs</span><span class="o">=</span><span class="s2">&quot;x86_64&quot;</span>
-            <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$major_version</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;3.3&quot;</span> -a <span class="nv">$rhel</span> <span class="o">=</span> <span class="s2">&quot;el6&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-                <span class="nv">archs</span><span class="o">=</span><span class="s2">&quot;i386 </span><span class="nv">$archs</span><span class="s2">&quot;</span>
-            <span class="k">fi</span>
-            <span class="k">for</span> arch in <span class="nv">$archs</span><span class="p">;</span> <span class="k">do</span>
-                <span class="nv">dir</span><span class="o">=</span>tarballs/<span class="nv">$major_version</span>/<span class="nv">$arch</span>
-                dotest
-            <span class="k">done</span>
-        <span class="k">done</span>
-    <span class="k">done</span>
-<span class="k">done</span>
-
-<span class="nb">popd</span>
+<div class="codehilite"><pre><span></span>./1-verify-tarballs <span class="nv">$NON_UPCOMING_VERSIONS</span>
 </pre></div>
 
 
@@ -2070,22 +2022,19 @@ docker-osg-wn-scripts/update-all docker-osg-wn
 
 </li>
 <li>
-<p>The release manager uses the <a href="https://opensciencegrid.org/operations/services/sending-announcements/">osg-notify tool</a> to send the release announcement.</p>
+<p>The release manager uses the <a href="https://opensciencegrid.org/operations/services/sending-announcements/">osg-notify tool</a> to send the release announcement using the following command:</p>
+<p><code>console
+PYTHONPATH=src python bin/osg-notify --cert your-cert.pem --key your-key.pem \
+    --no-sign --type production --message message-file
+    --subject '&lt;EMAIL SUBJECT&gt;' \
+    --recipients "osg-general@opensciencegrid.org osg-operations@opensciencegrid.org osg-sites@opensciencegrid.org vdt-discuss@opensciencegrid.org" \
+    --oim-recipients resources --oim-contact-type administrative</code></p>
+<p>Replace <code>&lt;EMAIL SUBJECT&gt;</code> with an appropriate subject for your announcement.</p>
 </li>
-</ol>
-<p>For release announcements use the following command:</p>
-<div class="codehilite"><pre><span></span><span class="go">PYTHONPATH=src python bin/osg-notify --cert your-cert.pem --key your-key.pem \</span>
-<span class="go">    --no-sign --type production --message message-file</span>
-<span class="go">    --subject &#39;&lt;EMAIL SUBJECT&gt;&#39; \</span>
-<span class="go">    --recipients &quot;osg-general@opensciencegrid.org osg-operations@opensciencegrid.org osg-sites@opensciencegrid.org vdt-discuss@opensciencegrid.org&quot; \</span>
-<span class="go">    --oim-recipients resources --oim-contact-type administrative</span>
-</pre></div>
-
-
-<p>Replacing <code>&lt;EMAIL SUBJECT&gt;</code> with an appropriate subject for your announcement.</p>
-<ol>
-<li>The release manager closes the tickets marked 'Ready for Release' in the release's JIRA filter using the 'bulk change' function.
-    Also set the Fix Versions field to the appropriate value(s) and uncheck the box that reads "Send mail for this update"</li>
+<li>
+<p>The release manager closes the tickets marked 'Ready for Release' in the release's JIRA filter using the 'bulk change' function.
+    Also set the Fix Versions field to the appropriate value(s) and uncheck the box that reads "Send mail for this update"</p>
+</li>
 </ol>
 <h2 id="day-3-update-the-itb">Day 3: Update the ITB<a class="headerlink" href="#day-3-update-the-itb" title="Permanent link">&para;</a></h2>
 <p>Now that the release has had a chance to propogate to all the mirrors, update the Madison ITB site by following
