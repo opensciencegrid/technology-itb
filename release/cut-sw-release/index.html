@@ -801,18 +801,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../release-schedule/" title="Release Schedule" class="md-nav__link">
-      Release Schedule
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../new-release-series/" title="New Release Series" class="md-nav__link">
       New Release Series
     </a>
@@ -2087,9 +2075,20 @@ docker-osg-wn-scripts/update-all docker-osg-wn
 
 </li>
 <li>
-<p>The release manager emails the announcement to <code>vdt-discuss@opensciencegrid.org</code></p>
+<p>The release manager uses the <a href="https://opensciencegrid.org/operations/services/sending-announcements/">osg-notify tool</a> to send the release announcement.</p>
 </li>
-<li>The release manager asks the GOC to distribute the announcement by <a href="https://ticket.opensciencegrid.org/goc/other">opening a ticket</a></li>
+</ol>
+<p>For release announcements use the following command:</p>
+<div class="codehilite"><pre><span></span><span class="go">PYTHONPATH=src python bin/osg-notify --cert your-cert.pem --key your-key.pem \</span>
+<span class="go">    --no-sign --type production --message message-file</span>
+<span class="go">    --subject &#39;&lt;EMAIL SUBJECT&gt;&#39; \</span>
+<span class="go">    --recipients &quot;osg-general@opensciencegrid.org osg-operations@opensciencegrid.org osg-sites@opensciencegrid.org vdt-discuss@opensciencegrid.org&quot; \</span>
+<span class="go">    --oim-recipients resources --oim-contact-type administrative</span>
+</pre></div>
+
+
+<p>Replacing <code>&lt;EMAIL SUBJECT&gt;</code> with an appropriate subject for your announcement.</p>
+<ol>
 <li>The release manager closes the tickets marked 'Ready for Release' in the release's JIRA filter using the 'bulk change' function.
     Also set the Fix Versions field to the appropriate value(s) and uncheck the box that reads "Send mail for this update"</li>
 </ol>
