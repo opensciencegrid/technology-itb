@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
     
     
       
@@ -44,25 +44,29 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+    
       <link rel="stylesheet" href="../../css/itb.css">
     
       <link rel="stylesheet" href="../../css/extra.css">
+    
+    
+      
     
     
   </head>
@@ -363,6 +367,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../software/container-development-guide/" title="Container Development Guide" class="md-nav__link">
+      Container Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../software/repository-management/" title="Repository Management" class="md-nav__link">
       Repository Management
     </a>
@@ -477,6 +493,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../software/requesting-tokens/" title="How to Request Tokens" class="md-nav__link">
+      How to Request Tokens
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -586,8 +614,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../release-policy/" title="Release Policy" class="md-nav__link">
-      Release Policy
+    <a href="../announce-rft-packages/" title="Ready for Testing Announcements" class="md-nav__link">
+      Ready for Testing Announcements
     </a>
   </li>
 
@@ -817,54 +845,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#testing-edg-mkgridmap" title="Testing edg-mkgridmap" class="md-nav__link">
-    Testing edg-mkgridmap
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testing-gums" title="Testing GUMS" class="md-nav__link">
-    Testing GUMS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#voms-admin-server" title="VOMS Admin Server" class="md-nav__link">
-    VOMS Admin Server
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-and-configure-voms-admin-server" title="Install and configure voms-admin-server" class="md-nav__link">
-    Install and configure voms-admin-server
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-up-test_vo-and-add-yourself-as-an-admin" title="Set up TEST_VO and add yourself as an admin" class="md-nav__link">
-    Set up TEST_VO and add yourself as an admin
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testing-the-web-ui" title="Testing the web UI" class="md-nav__link">
-    Testing the web UI
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -878,8 +858,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xrootd-plugins" title="XRootD Plugins" class="md-nav__link">
-    XRootD Plugins
+  <a href="#hdfs" title="HDFS" class="md-nav__link">
+    HDFS
   </a>
   
     <nav class="md-nav">
@@ -888,6 +868,13 @@
           <li class="md-nav__item">
   <a href="#hadoop-name-node-installation" title="Hadoop name node installation" class="md-nav__link">
     Hadoop name node installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-configuration" title="Edit Configuration" class="md-nav__link">
+    Edit Configuration
   </a>
   
 </li>
@@ -913,8 +900,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#on-the-name-node_1" title="On the name node" class="md-nav__link">
+    On the name node
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xrootd-plugins" title="XRootD Plugins" class="md-nav__link">
+    XRootD Plugins
+  </a>
   
 </li>
       
@@ -949,6 +950,246 @@
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         Policy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/gridftp-gsi-migration/" title="GridFTP and GSI Migration" class="md-nav__link">
+      GridFTP and GSI Migration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/campus-cyberinfrastructure/" title="Campus Cyberinfrastructure" class="md-nav__link">
+      Campus Cyberinfrastructure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/cream-support/" title="CREAM-CE Support" class="md-nav__link">
+      CREAM-CE Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/release-series/" title="Release Series Support" class="md-nav__link">
+      Release Series Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/globus-toolkit/" title="Globus Toolkit Support" class="md-nav__link">
+      Globus Toolkit Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/external-oasis-repos/" title="OASIS Repository Mirroring" class="md-nav__link">
+      OASIS Repository Mirroring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/flexible-release-model/" title="Flexible Release Model" class="md-nav__link">
+      Flexible Release Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/software-release/" title="Software Release Policy" class="md-nav__link">
+      Software Release Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/container-release/" title="Container Release Policy" class="md-nav__link">
+      Container Release Policy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/community-testing/" title="Community Testing" class="md-nav__link">
+      Community Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/comanage-instructions-user/" title="Registering in COManage" class="md-nav__link">
+      Registering in COManage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../policy/comanage-instructions-admin/" title="Approving COManage Registrations" class="md-nav__link">
+      Approving COManage Registrations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/writing-documentation/" title="Writing Documentation" class="md-nav__link">
+      Writing Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/reviewing-documentation/" title="Reviewing Documentation" class="md-nav__link">
+      Reviewing Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/style-guide/" title="Markdown Style Guide" class="md-nav__link">
+      Markdown Style Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/new-doc-area/" title="Creating a New Area" class="md-nav__link">
+      Creating a New Area
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Historical Transitions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Historical Transitions
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1007,212 +1248,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../policy/release-series/" title="Release Series Support" class="md-nav__link">
-      Release Series Support
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../policy/globus-toolkit/" title="Globus Toolkit Support" class="md-nav__link">
-      Globus Toolkit Support
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../policy/external-oasis-repos/" title="OASIS Repository Mirroring" class="md-nav__link">
-      OASIS Repository Mirroring
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../policy/flexible-release-model/" title="Flexible Release Model" class="md-nav__link">
-      Flexible Release Model
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Infrastructure
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Infrastructure
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../infrastructure/koji-restore-recipe/" title="Koji Restore Recipe" class="md-nav__link">
-      Koji Restore Recipe
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../infrastructure/koji-hub-setup/" title="Koji-Hub Setup" class="md-nav__link">
-      Koji-Hub Setup
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../infrastructure/koji-inf-overview/" title="Koji Infrastructure Overview" class="md-nav__link">
-      Koji Infrastructure Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../infrastructure/koji-policy-writing/" title="Koji Policy Writing" class="md-nav__link">
-      Koji Policy Writing
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../infrastructure/koji-user-management/" title="Koji User Management" class="md-nav__link">
-      Koji User Management
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../infrastructure/madison-itb/" title="Madison ITB" class="md-nav__link">
-      Madison ITB
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      Documentation
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Documentation
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../documentation/writing-documentation/" title="Writing Documentation" class="md-nav__link">
-      Writing Documentation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../documentation/reviewing-documentation/" title="Reviewing Documentation" class="md-nav__link">
-      Reviewing Documentation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../documentation/style-guide/" title="Markdown Style Guide" class="md-nav__link">
-      Markdown Style Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../documentation/new-doc-area/" title="Creating a New Area" class="md-nav__link">
-      Creating a New Area
+    <a href="../../projects/sha2-support/" title="SHA-2 Support" class="md-nav__link">
+      SHA-2 Support
     </a>
   </li>
 
@@ -1244,82 +1281,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
     <label class="md-nav__link" for="nav-7">
-      Historical Information
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Historical Information
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../infrastructure/koji-initial-install/" title="Koji Initial Install" class="md-nav__link">
-      Koji Initial Install
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
-      Historical Transitions
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        Historical Transitions
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../projects/sha2-support/" title="SHA-2 Support" class="md-nav__link">
-      SHA-2 Support
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
       Meetings
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
+      <label class="md-nav__title" for="nav-7">
         Meetings
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1331,8 +1296,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20181015/" title="October 15, 2018" class="md-nav__link">
-      October 15, 2018
+    <a href="../../meetings/2020/TechArea20200810/" title="August 10, 2020" class="md-nav__link">
+      August 10, 2020
     </a>
   </li>
 
@@ -1343,8 +1308,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20181008/" title="October 8, 2018" class="md-nav__link">
-      October 8, 2018
+    <a href="../../meetings/2020/TechArea20200803/" title="August 3, 2020" class="md-nav__link">
+      August 3, 2020
     </a>
   </li>
 
@@ -1355,8 +1320,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20181001/" title="October 1, 2018" class="md-nav__link">
-      October 1, 2018
+    <a href="../../meetings/2020/TechArea20200727/" title="July 27, 2020" class="md-nav__link">
+      July 27, 2020
     </a>
   </li>
 
@@ -1367,8 +1332,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180924/" title="September 24, 2018" class="md-nav__link">
-      September 24, 2018
+    <a href="../../meetings/2020/TechArea20200720/" title="July 20, 2020" class="md-nav__link">
+      July 20, 2020
     </a>
   </li>
 
@@ -1379,8 +1344,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180917/" title="September 17, 2018" class="md-nav__link">
-      September 17, 2018
+    <a href="../../meetings/2020/TechArea20200713/" title="July 13, 2020" class="md-nav__link">
+      July 13, 2020
     </a>
   </li>
 
@@ -1391,8 +1356,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180910/" title="September 10, 2018" class="md-nav__link">
-      September 10, 2018
+    <a href="../../meetings/2020/TechArea20200706/" title="July 6, 2020" class="md-nav__link">
+      July 6, 2020
     </a>
   </li>
 
@@ -1403,8 +1368,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180827/" title="August 27, 2018" class="md-nav__link">
-      August 27, 2018
+    <a href="../../meetings/2020/TechArea20200629/" title="June 29, 2020" class="md-nav__link">
+      June 29, 2020
     </a>
   </li>
 
@@ -1415,8 +1380,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180820/" title="August 20, 2018" class="md-nav__link">
-      August 20, 2018
+    <a href="../../meetings/2020/TechArea20200622/" title="June 22, 2020" class="md-nav__link">
+      June 22, 2020
     </a>
   </li>
 
@@ -1427,8 +1392,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180813/" title="August 13, 2018" class="md-nav__link">
-      August 13, 2018
+    <a href="../../meetings/2020/TechArea20200615/" title="June 15, 2020" class="md-nav__link">
+      June 15, 2020
     </a>
   </li>
 
@@ -1439,8 +1404,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180806/" title="August 6, 2018" class="md-nav__link">
-      August 6, 2018
+    <a href="../../meetings/2020/TechArea20200608/" title="June 8, 2020" class="md-nav__link">
+      June 8, 2020
     </a>
   </li>
 
@@ -1451,8 +1416,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180730/" title="July 30, 2018" class="md-nav__link">
-      July 30, 2018
+    <a href="../../meetings/2020/TechArea20200601/" title="June 1, 2020" class="md-nav__link">
+      June 1, 2020
     </a>
   </li>
 
@@ -1463,8 +1428,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180723/" title="July 23, 2018" class="md-nav__link">
-      July 23, 2018
+    <a href="../../meetings/2020/TechArea20200518/" title="May 18, 2020" class="md-nav__link">
+      May 18, 2020
     </a>
   </li>
 
@@ -1475,8 +1440,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180716/" title="July 16, 2018" class="md-nav__link">
-      July 16, 2018
+    <a href="../../meetings/2020/TechArea20200511/" title="May 11, 2020" class="md-nav__link">
+      May 11, 2020
     </a>
   </li>
 
@@ -1487,8 +1452,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180702/" title="July 2, 2018" class="md-nav__link">
-      July 2, 2018
+    <a href="../../meetings/2020/TechArea20200504/" title="May 4, 2020" class="md-nav__link">
+      May 4, 2020
     </a>
   </li>
 
@@ -1499,8 +1464,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180625/" title="June 25, 2018" class="md-nav__link">
-      June 25, 2018
+    <a href="../../meetings/2020/TechArea20200427/" title="April 27, 2020" class="md-nav__link">
+      April 27, 2020
     </a>
   </li>
 
@@ -1511,8 +1476,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180618/" title="June 18, 2018" class="md-nav__link">
-      June 18, 2018
+    <a href="../../meetings/2020/TechArea20200420/" title="April 20, 2020" class="md-nav__link">
+      April 20, 2020
     </a>
   </li>
 
@@ -1523,8 +1488,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180611/" title="June 11, 2018" class="md-nav__link">
-      June 11, 2018
+    <a href="../../meetings/2020/TechArea20200413/" title="April 13, 2020" class="md-nav__link">
+      April 13, 2020
     </a>
   </li>
 
@@ -1535,8 +1500,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180604/" title="June 4, 2018" class="md-nav__link">
-      June 4, 2018
+    <a href="../../meetings/2020/TechArea20200406/" title="April 6, 2020" class="md-nav__link">
+      April 6, 2020
     </a>
   </li>
 
@@ -1547,8 +1512,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180529/" title="May 29, 2018" class="md-nav__link">
-      May 29, 2018
+    <a href="../../meetings/2020/TechArea20200330/" title="March 30, 2020" class="md-nav__link">
+      March 30, 2020
     </a>
   </li>
 
@@ -1559,8 +1524,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180514/" title="May 14, 2018" class="md-nav__link">
-      May 14, 2018
+    <a href="../../meetings/2020/TechArea20200323/" title="March 23, 2020" class="md-nav__link">
+      March 23, 2020
     </a>
   </li>
 
@@ -1571,8 +1536,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180507/" title="May 7, 2018" class="md-nav__link">
-      May 7, 2018
+    <a href="../../meetings/2020/TechArea20200316/" title="March 16, 2020" class="md-nav__link">
+      March 16, 2020
     </a>
   </li>
 
@@ -1583,8 +1548,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180430/" title="April 30, 2018" class="md-nav__link">
-      April 30, 2018
+    <a href="../../meetings/2020/TechArea20200309/" title="March 9, 2020" class="md-nav__link">
+      March 9, 2020
     </a>
   </li>
 
@@ -1595,8 +1560,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180423/" title="April 23, 2018" class="md-nav__link">
-      April 23, 2018
+    <a href="../../meetings/2020/TechArea20200302/" title="March 2, 2020" class="md-nav__link">
+      March 2, 2020
     </a>
   </li>
 
@@ -1607,8 +1572,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180416/" title="April 16, 2018" class="md-nav__link">
-      April 16, 2018
+    <a href="../../meetings/2020/TechArea20200224/" title="February 24, 2020" class="md-nav__link">
+      February 24, 2020
     </a>
   </li>
 
@@ -1619,8 +1584,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180409/" title="April 9, 2018" class="md-nav__link">
-      April 9, 2018
+    <a href="../../meetings/2020/TechArea20200217/" title="February 17, 2020" class="md-nav__link">
+      February 17, 2020
     </a>
   </li>
 
@@ -1631,8 +1596,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180402/" title="April 2, 2018" class="md-nav__link">
-      April 2, 2018
+    <a href="../../meetings/2020/TechArea20200210/" title="February 10, 2020" class="md-nav__link">
+      February 10, 2020
     </a>
   </li>
 
@@ -1643,8 +1608,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180312/" title="March 12, 2018" class="md-nav__link">
-      March 12, 2018
+    <a href="../../meetings/2020/TechArea20200203/" title="February 3, 2020" class="md-nav__link">
+      February 3, 2020
     </a>
   </li>
 
@@ -1655,8 +1620,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180305/" title="March 5, 2018" class="md-nav__link">
-      March 5, 2018
+    <a href="../../meetings/2020/TechArea20200127/" title="January, 27 2020" class="md-nav__link">
+      January, 27 2020
     </a>
   </li>
 
@@ -1667,8 +1632,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180226/" title="February 26, 2018" class="md-nav__link">
-      February 26, 2018
+    <a href="../../meetings/2020/TechArea20200113/" title="January, 13 2020" class="md-nav__link">
+      January, 13 2020
     </a>
   </li>
 
@@ -1679,8 +1644,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180219/" title="February 19, 2018" class="md-nav__link">
-      February 19, 2018
+    <a href="../../meetings/2020/TechArea20200106/" title="January, 6 2020" class="md-nav__link">
+      January, 6 2020
     </a>
   </li>
 
@@ -1691,8 +1656,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180212/" title="February 12, 2018" class="md-nav__link">
-      February 12, 2018
+    <a href="../../meetings/2019/TechArea20191216/" title="December, 16 2019" class="md-nav__link">
+      December, 16 2019
     </a>
   </li>
 
@@ -1703,8 +1668,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180205/" title="February 5, 2018" class="md-nav__link">
-      February 5, 2018
+    <a href="../../meetings/2019/TechArea20191209/" title="December, 9 2019" class="md-nav__link">
+      December, 9 2019
     </a>
   </li>
 
@@ -1715,8 +1680,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180129/" title="January 29, 2018" class="md-nav__link">
-      January 29, 2018
+    <a href="../../meetings/2019/TechArea20191202/" title="December, 2 2019" class="md-nav__link">
+      December, 2 2019
     </a>
   </li>
 
@@ -1727,8 +1692,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180122/" title="January 22, 2018" class="md-nav__link">
-      January 22, 2018
+    <a href="../../meetings/2019/TechArea20191125/" title="November, 25 2019" class="md-nav__link">
+      November, 25 2019
     </a>
   </li>
 
@@ -1739,8 +1704,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180108/" title="January 8, 2018" class="md-nav__link">
-      January 8, 2018
+    <a href="../../meetings/2019/TechArea20191118/" title="November, 18 2019" class="md-nav__link">
+      November, 18 2019
     </a>
   </li>
 
@@ -1751,8 +1716,488 @@
 
 
   <li class="md-nav__item">
-    <a href="../../meetings/2018/TechArea20180102/" title="January 2, 2018" class="md-nav__link">
-      January 2, 2018
+    <a href="../../meetings/2019/TechArea20191111/" title="November, 11 2019" class="md-nav__link">
+      November, 11 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20191104/" title="November, 4 2019" class="md-nav__link">
+      November, 4 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20191028/" title="October, 28 2019" class="md-nav__link">
+      October, 28 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20191021/" title="October, 21 2019" class="md-nav__link">
+      October, 21 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20191014/" title="October, 14 2019" class="md-nav__link">
+      October, 14 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20191007/" title="October, 7 2019" class="md-nav__link">
+      October, 7 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190930/" title="September, 30 2019" class="md-nav__link">
+      September, 30 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190923/" title="September, 23 2019" class="md-nav__link">
+      September, 23 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190916/" title="September, 16 2019" class="md-nav__link">
+      September, 16 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190909/" title="September, 9 2019" class="md-nav__link">
+      September, 9 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190826/" title="August, 26 2019" class="md-nav__link">
+      August, 26 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190819/" title="August, 19 2019" class="md-nav__link">
+      August, 19 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190812/" title="August, 12 2019" class="md-nav__link">
+      August, 12 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190805/" title="August, 5 2019" class="md-nav__link">
+      August, 5 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190729/" title="July 29, 2019" class="md-nav__link">
+      July 29, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190722/" title="July 22, 2019" class="md-nav__link">
+      July 22, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190708/" title="July 8, 2019" class="md-nav__link">
+      July 8, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190701/" title="July 1, 2019" class="md-nav__link">
+      July 1, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190624/" title="June 24, 2019" class="md-nav__link">
+      June 24, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190617/" title="June 17, 2019" class="md-nav__link">
+      June 17, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190610/" title="June 10, 2019" class="md-nav__link">
+      June 10, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190603/" title="June 3, 2019" class="md-nav__link">
+      June 3, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190528/" title="May 28, 2019" class="md-nav__link">
+      May 28, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190513/" title="May 13, 2019" class="md-nav__link">
+      May 13, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190506/" title="May 6, 2019" class="md-nav__link">
+      May 6, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190429/" title="April 29, 2019" class="md-nav__link">
+      April 29, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190422/" title="April 22, 2019" class="md-nav__link">
+      April 22, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190415/" title="April 15, 2019" class="md-nav__link">
+      April 15, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190408/" title="April 8, 2019" class="md-nav__link">
+      April 8, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190401/" title="April 1, 2019" class="md-nav__link">
+      April 1, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190325/" title="March 25, 2019" class="md-nav__link">
+      March 25, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190311/" title="March 11, 2019" class="md-nav__link">
+      March 11, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190304/" title="March 4, 2019" class="md-nav__link">
+      March 4, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190225/" title="February 25, 2019" class="md-nav__link">
+      February 25, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190218/" title="February 18, 2019" class="md-nav__link">
+      February 18, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190211/" title="February 11, 2019" class="md-nav__link">
+      February 11, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190204/" title="February 4, 2019" class="md-nav__link">
+      February 4, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190128/" title="January 28, 2019" class="md-nav__link">
+      January 28, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190122/" title="January 22, 2019" class="md-nav__link">
+      January 22, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190114/" title="January 14, 2019" class="md-nav__link">
+      January 14, 2019
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../meetings/2019/TechArea20190107/" title="January 7, 2019" class="md-nav__link">
+      January 7, 2019
     </a>
   </li>
 
@@ -1927,54 +2372,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#testing-edg-mkgridmap" title="Testing edg-mkgridmap" class="md-nav__link">
-    Testing edg-mkgridmap
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testing-gums" title="Testing GUMS" class="md-nav__link">
-    Testing GUMS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#voms-admin-server" title="VOMS Admin Server" class="md-nav__link">
-    VOMS Admin Server
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-and-configure-voms-admin-server" title="Install and configure voms-admin-server" class="md-nav__link">
-    Install and configure voms-admin-server
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#set-up-test_vo-and-add-yourself-as-an-admin" title="Set up TEST_VO and add yourself as an admin" class="md-nav__link">
-    Set up TEST_VO and add yourself as an admin
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#testing-the-web-ui" title="Testing the web UI" class="md-nav__link">
-    Testing the web UI
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1988,8 +2385,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#xrootd-plugins" title="XRootD Plugins" class="md-nav__link">
-    XRootD Plugins
+  <a href="#hdfs" title="HDFS" class="md-nav__link">
+    HDFS
   </a>
   
     <nav class="md-nav">
@@ -1998,6 +2395,13 @@
           <li class="md-nav__item">
   <a href="#hadoop-name-node-installation" title="Hadoop name node installation" class="md-nav__link">
     Hadoop name node installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-configuration" title="Edit Configuration" class="md-nav__link">
+    Edit Configuration
   </a>
   
 </li>
@@ -2023,8 +2427,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#on-the-name-node_1" title="On the name node" class="md-nav__link">
+    On the name node
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xrootd-plugins" title="XRootD Plugins" class="md-nav__link">
+    XRootD Plugins
+  </a>
   
 </li>
       
@@ -2229,9 +2647,9 @@ KeepAlive On
 </li>
 <li>
 <p>Edit cvmfs configuration (<code>/etc/cvmfs/default.local</code>) to point to replica server.</p>
-<div class="codehilite"><pre><span></span><span class="n">CVMFS_SERVER_URL</span><span class="o">=</span><span class="s">&quot;http://10.128.3.97:8000/cvmfs/@fqrn@&quot;</span>
-<span class="n">CVMFS_REPOSITORIES</span><span class="o">=</span><span class="s">&quot;test.cvmfs-stratum-0.novalocal&quot;</span>
-<span class="n">CVMFS_HTTP_PROXY</span><span class="o">=</span><span class="n">DIRECT</span>
+<div class="codehilite"><pre><span></span>CVMFS_SERVER_URL=&quot;http://10.128.3.97:8000/cvmfs/@fqrn@&quot;
+CVMFS_REPOSITORIES=&quot;test.cvmfs-stratum-0.novalocal&quot;
+CVMFS_HTTP_PROXY=DIRECT
 </pre></div>
 
 
@@ -2339,10 +2757,16 @@ KeepAlive On
 <li>Check <code>/var/lib/gratia/tmp/gratiafiles/</code> for a <code>subdir.condor_...</code> directory and verify that there are 200 xml jobs and the cpus/wall times are appropriate (either PT0S or PT1M).</li>
 </ul>
 <h2 id="gsi-openssh">GSI OpenSSH<a class="headerlink" href="#gsi-openssh" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fermicloud policy forbids running the GSI OpenSSH server.
+You will have to test that part locally.</p>
+</div>
 <p>To test a fresh installation:</p>
 <ol>
 <li>Spin up two VM's and set up the EPEL/OSG repos on both of them.</li>
-<li>Choose one of the VM's, it will be the server VM. Consult these <a href="https://www.opensciencegrid.org/docs/other/gsissh/">instructions</a> to set up the server.</li>
+<li>Choose one of the VM's, it will be the server VM. The hostname of this machine will be referenced below as the <code>&lt;SERVER HOSTNAME&gt;</code>
+    Consult these <a href="https://www.opensciencegrid.org/docs/other/gsissh/">instructions</a> to set up the server.</li>
 <li>
 <p>From the other VM (client):</p>
 <ol>
@@ -2358,21 +2782,21 @@ KeepAlive On
 </li>
 <li>
 <p>Connect to the server:</p>
-<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> gsissh -p <span class="m">2222</span> <span style="color:red">&lt;server hostname&gt;</span>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> gsissh -p <span class="m">2222</span> &lt;SERVER HOSTNAME&gt;
 </pre></div>
 
 
 </li>
 <li>
 <p>Copy a test file to the server:</p>
-<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> gsiscp -p <span class="m">2222</span> testfile <span style="color:red">&lt;server hostname&gt;</span>:/tmp
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> gsiscp -p <span class="m">2222</span> testfile &lt;SERVER HOSTNAME&gt;:/tmp
 </pre></div>
 
 
 </li>
 <li>
 <p>Connect to the server via SFTP and grab files:</p>
-<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> gsisftp -P <span class="m">2222</span> <span style="color:red">&lt;server hostname&gt;</span>
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> gsisftp -P <span class="m">2222</span> &lt;SERVER HOSTNAME&gt;
 <span class="gp">user@host $</span> <span class="nb">cd</span> /tmp
 <span class="gp">user@host $</span> get testfile
 </pre></div>
@@ -2536,56 +2960,9 @@ vo-client rpms installed and that your X.509 certificate is in your home directo
 VO that you have membership in, run the following <code>voms-proxy-init -voms [VO]</code> where <code>[VO]</code> is 
 the appropriate VO (e.g. osg, cms, etc.).  You should be able to generate a voms-proxy for that
 VO without errors.</p>
-<h3 id="testing-edg-mkgridmap">Testing <code>edg-mkgridmap</code><a class="headerlink" href="#testing-edg-mkgridmap" title="Permanent link">&para;</a></h3>
-<p>Log on to a system with <code>edg-mkgridmap</code> installed.  Make sure you have the correct vo-client rpms 
-installed (vo-client-edgmkgridmap).  Run <code>edg-mkgridmap</code> and check the log output for errors.<br />
-There will be some errors so compare your errors with the errors on previous vo-package tickets to
-make sure no new errors have appeared.</p>
-<h3 id="testing-gums">Testing GUMS<a class="headerlink" href="#testing-gums" title="Permanent link">&para;</a></h3>
-<p>Log on to a system with a working GUMS install.  Make sure that you have the correct vo-client 
-rpms (osg-gums-config) installed.  </p>
-<ol>
-<li>Make a backup of <code>/etc/gums/gums.config</code> </li>
-<li>Copy the mysql database information from <code>/etc/gums/gums.config</code> to <code>/etc/gums/gums.config.template</code></li>
-<li>Copy <code>/etc/gums/gums.config.template</code> to <code>/etc/gums/gums.config</code></li>
-<li>Start the <code>tomcat6</code> service </li>
-<li>Go to the GUMS interface (e.g. https://my.host:8443/gums)</li>
-<li>Go to the Update VO members page and click on the <code>update VO members</code> button</li>
-<li>Once completed, there will probably be some errors.</li>
-<li>Compare errors to errors on prior vo package update tickets and make sure no new errors have occurred. </li>
-</ol>
-<h2 id="voms-admin-server">VOMS Admin Server<a class="headerlink" href="#voms-admin-server" title="Permanent link">&para;</a></h2>
-<h3 id="install-and-configure-voms-admin-server">Install and configure voms-admin-server<a class="headerlink" href="#install-and-configure-voms-admin-server" title="Permanent link">&para;</a></h3>
-<p>Install and configure voms-admin-server with this <a href="../voms-install.sh">voms-install.sh</a> script, entering <code>osg-testing</code> when prompted for the <code>REPO</code> and your own e-mail address when prompted for <code>EMAIL_FROM</code>.</p>
-<h3 id="set-up-test_vo-and-add-yourself-as-an-admin">Set up TEST_VO and add yourself as an admin<a class="headerlink" href="#set-up-test_vo-and-add-yourself-as-an-admin" title="Permanent link">&para;</a></h3>
-<p>To add a test VO (named TEST_VO) and add yourself as an admin, use the following script, replacing the <code>USER_EMAIL</code>, <code>USER_CERT_SUBJECT</code>, and <code>USER_COMMON_NAME</code> variables with your own:</p>
-<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
-
-<span class="nv">VO_NAME</span><span class="o">=</span><span class="s2">&quot;TEST_VO&quot;</span>
-<span class="nv">TOMCAT_PORT</span><span class="o">=</span><span class="s2">&quot;8443&quot;</span>
-<span class="nv">USER_EMAIL</span><span class="o">=</span><span class="s2">&quot;YOUR_EMAIL&quot;</span>
-<span class="nv">USER_CERT_SUBJECT</span><span class="o">=</span><span class="s2">&quot;YOUR CERT DN&quot;</span>
-<span class="nv">USER_CERT_ISSUER</span><span class="o">=</span><span class="s2">&quot;/DC=com/DC=DigiCert-Grid/O=DigiCert Grid/CN=DigiCert Grid CA-1&quot;</span>
-<span class="nv">USER_COMMON_NAME</span><span class="o">=</span><span class="s2">&quot;YOUR CERT CN&quot;</span>
-
-voms-admin --vo <span class="nv">$VO_NAME</span> --host <span class="nv">$HOSTNAME</span> --nousercert create-user <span class="se">\</span>
-    <span class="s2">&quot;</span><span class="nv">$USER_CERT_SUBJECT</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$USER_CERT_ISSUER</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$USER_COMMON_NAME</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$USER_EMAIL</span><span class="s2">&quot;</span>
-
-voms-admin --vo <span class="nv">$VO_NAME</span> --host <span class="nv">$HOSTNAME</span> --nousercert assign-role <span class="se">\</span>
-    /<span class="nv">$VO_NAME</span> VO-Admin <span class="s2">&quot;</span><span class="nv">$USER_CERT_SUBJECT</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="nv">$USER_CERT_ISSUER</span><span class="s2">&quot;</span>
-
-<span class="nb">echo</span> web ui: https://<span class="nv">$HOSTNAME</span>:<span class="nv">$TOMCAT_PORT</span>/voms/<span class="nv">$VO_NAME</span>
-</pre></div>
-
-
-<h3 id="testing-the-web-ui">Testing the web UI<a class="headerlink" href="#testing-the-web-ui" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Add/suspend/restore/delete a user (using your e-mail address for contact)</li>
-<li>Verify e-mail receipt of suspension message</li>
-</ol>
 <h2 id="xrootd-voms-testing">XRootD VOMS Testing<a class="headerlink" href="#xrootd-voms-testing" title="Permanent link">&para;</a></h2>
 <p>This section is intended for OSG Software/Release teams to gather information on testing vomsxrd/xrootd-voms-plugin package. Original plugin named <a href="http://gganis.github.io/vomsxrd/">vomsxrd</a>, similar to lcmaps that extracts information for authorization within xrootd of a proxy's voms extension.</p>
-<p>You need an <a href="https://www.opensciencegrid.org/docs/data/install-xrootd/">xrootd server installation</a></p>
+<p>You need an <a href="https://www.opensciencegrid.org/docs/data/xrootd/install-storage-element/">xrootd server installation</a></p>
 <p>In the xrootd server yum install the following packages:</p>
 <ul>
 <li>xrootd</li>
@@ -2633,66 +3010,99 @@ sec.protocol /usr/lib64 gsi -ca:1 -crl:3
 </pre></div>
 
 
-<h2 id="xrootd-plugins">XRootD Plugins<a class="headerlink" href="#xrootd-plugins" title="Permanent link">&para;</a></h2>
+<h2 id="hdfs">HDFS<a class="headerlink" href="#hdfs" title="Permanent link">&para;</a></h2>
 <h3 id="hadoop-name-node-installation">Hadoop name node installation<a class="headerlink" href="#hadoop-name-node-installation" title="Permanent link">&para;</a></h3>
 <p>Use the following script with option 1:</p>
-<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nb">set</span> -e
+<div class="codehilite"><pre><span></span>#!/bin/bash
+set -e
 
-<span class="k">select</span> NODETYPE in namenode datanode gridftp<span class="p">;</span> <span class="k">do</span>
-  <span class="o">[[</span> <span class="nv">$NODETYPE</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">break</span>
-<span class="k">done</span>
-<span class="k">case</span> <span class="nv">$NODETYPE</span> in
-  namenode <span class="o">)</span> <span class="nv">NAMENODE</span><span class="o">=</span><span class="nv">$HOSTNAME</span> <span class="p">;;</span>
-         * <span class="o">)</span> <span class="nb">read</span> -p <span class="s1">&#39;hostname for NAMENODE? &#39;</span> NAMENODE <span class="p">;;</span>
-<span class="k">esac</span>
-<span class="nb">echo</span> <span class="nv">NODETYPE</span><span class="o">=</span><span class="nv">$NODETYPE</span>
-<span class="nb">echo</span> <span class="nv">NAMENODE</span><span class="o">=</span><span class="nv">$NAMENODE</span>
-<span class="nb">read</span> -p <span class="s1">&#39;ok? [y/N] &#39;</span> ok
-<span class="k">case</span> <span class="nv">$ok</span> in
-  y*<span class="p">|</span>Y*<span class="o">)</span> <span class="p">;;</span>  <span class="c1"># ok</span>
-      *<span class="o">)</span> <span class="nb">exit</span> <span class="p">;;</span>
-<span class="k">esac</span>
-<span class="c1">#yum install --enablerepo=osg-minefield osg-se-hadoop-$NODETYPE</span>
-yum install osg-se-hadoop-<span class="nv">$NODETYPE</span>
-<span class="k">case</span> <span class="nv">$NODETYPE</span> in
-  namenode<span class="p">|</span>datanode <span class="o">)</span>
-    mkdir -p /data/<span class="o">{</span>hadoop,scratch,checkpoint<span class="o">}</span>
+select NODETYPE in namenode datanode gridftp; do
+  [[ $NODETYPE ]] &amp;&amp; break
+done
+case $NODETYPE in
+  namenode ) NAMENODE=$HOSTNAME ;;
+         * ) read -p &#39;hostname for NAMENODE? &#39; NAMENODE ;;
+esac
+echo NODETYPE=$NODETYPE
+echo NAMENODE=$NAMENODE
+read -p &#39;ok? [y/N] &#39; ok
+case $ok in
+  y*|Y*) ;;  # ok
+      *) exit ;;
+esac
+#yum install --enablerepo=osg-minefield osg-se-hadoop-$NODETYPE
+yum install osg-se-hadoop-$NODETYPE
+case $NODETYPE in
+  namenode|datanode )
+    mkdir -p /data/{hadoop,scratch,checkpoint}
     chown -R hdfs:hdfs /data
-    sed -i s/NAMENODE/<span class="nv">$NAMENODE</span>/ /etc/hadoop/conf.osg/<span class="o">{</span>core,hdfs<span class="o">}</span>-site.xml
-    cp /etc/hadoop/conf.osg/<span class="o">{</span>core,hdfs<span class="o">}</span>-site.xml /etc/hadoop/conf/
+    sed -i s/NAMENODE/$NAMENODE/ /etc/hadoop/conf.osg/{core,hdfs}-site.xml
+    cp /etc/hadoop/conf.osg/{core,hdfs}-site.xml /etc/hadoop/conf/
     touch /etc/hosts_exclude
-    <span class="p">;;</span>
-  gridftp <span class="o">)</span>
+    ;;
+  gridftp )
     ln -snf conf.osg /etc/hadoop/conf
-    sed -i s/NAMENODE/<span class="nv">$NAMENODE</span>/ /etc/hadoop/conf.osg/<span class="o">{</span>core,hdfs<span class="o">}</span>-site.xml
-    <span class="nb">echo</span> <span class="s2">&quot;hadoop-fuse-dfs# /mnt/hadoop fuse server=</span><span class="nv">$NAMENODE</span><span class="s2">,port=9000,rdbuffer=131072,allow_other 0 0&quot;</span> &gt;&gt; /etc/fstab
+    sed -i s/NAMENODE/$NAMENODE/ /etc/hadoop/conf.osg/{core,hdfs}-site.xml
+    echo &quot;hadoop-fuse-dfs# /mnt/hadoop fuse server=$NAMENODE,port=9000,rdbuffer=131072,allow_other 0 0&quot; &gt;&gt; /etc/fstab
     mkdir /mnt/hadoop
     mount /mnt/hadoop
     cp -v /etc/redhat-release /mnt/hadoop/test-file
-    sed -i <span class="s1">&#39;/globus_mapping/s/^# *//&#39;</span> /etc/grid-security/gsi-authz.conf
+    sed -i &#39;/globus_mapping/s/^# *//&#39; /etc/grid-security/gsi-authz.conf
     sed -i s/yourgums.yourdomain/gums.fnal.gov/ /etc/lcmaps.db
     mkdir /mnt/hadoop/fnalgrid
     useradd fnalgrid -g fnalgrid
     chown fnalgrid:fnalgrid /mnt/hadoop/fnalgrid
     service globus-gridftp-server start
-    <span class="k">if</span> <span class="nb">type</span> -t globus-url-copy &gt;/dev/null<span class="p">;</span> <span class="k">then</span>
-      globus-url-copy file:////bin/bash  gsiftp://<span class="nv">$HOSTNAME</span>/mnt/hadoop/fnalgrid/first_test
-    <span class="k">else</span>
-      <span class="nb">echo</span> globus-url-copy not installed
-    <span class="k">fi</span>
-    <span class="p">;;</span>
-<span class="k">esac</span>
-<span class="k">case</span> <span class="nv">$NODETYPE</span> in
-  namenode <span class="o">)</span> su - hdfs -c <span class="s2">&quot;hadoop namenode -format&quot;</span> <span class="p">;;</span>
-<span class="k">esac</span>
-service hadoop-hdfs-<span class="nv">$NODETYPE</span> start
+    if type -t globus-url-copy &gt;/dev/null; then
+      globus-url-copy file:////bin/bash  gsiftp://$HOSTNAME/mnt/hadoop/fnalgrid/first_test
+    else
+      echo globus-url-copy not installed
+    fi
+    ;;
+esac
+case $NODETYPE in
+  namenode ) su - hdfs -c &quot;hadoop namenode -format&quot; ;;
+esac
+service hadoop-hdfs-$NODETYPE start
 </pre></div>
 
 
+<h3 id="edit-configuration">Edit Configuration<a class="headerlink" href="#edit-configuration" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Edit /etc/hadoop/conf/hdfs-site.xml<ul>
+<li>set dfs.replication to 1   </li>
+<li>set dfs.replication.min to 1</li>
+</ul>
+</li>
+</ol>
 <h3 id="hadoop-data-node-installation">Hadoop data node installation<a class="headerlink" href="#hadoop-data-node-installation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Run same script as before but with option number 2.</li>
+</ol>
+<h3 id="gridftp-installation">GridFTP installation<a class="headerlink" href="#gridftp-installation" title="Permanent link">&para;</a></h3>
+<p>Run same as script but with option number 3.</p>
+<h3 id="on-the-name-node">On the name node<a class="headerlink" href="#on-the-name-node" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="gp">[root@fermicloud092 ~]#</span> hdfs dfs -ls /test-file
+<span class="go">Found 1 items</span>
+<span class="go">-rw-r--r--   2 root root          0 2014-07-21 15:57 /test-file</span>
+</pre></div>
+
+
+<h3 id="on-the-name-node_1">On the name node<a class="headerlink" href="#on-the-name-node_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="gp">[root@]#</span> hadoop fs -mkdir /matyas
+<span class="gp">[root@]#</span> hadoop fs -chown matyas /matyas
+<span class="gp">[root@]#</span> hdfs dfsadmin -setSpaceQuota 123k /matyas
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="gp">user@host $</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/tmp/blob <span class="nv">bs</span><span class="o">=</span><span class="m">4096</span> <span class="nv">count</span><span class="o">=</span><span class="m">10000</span>
+<span class="gp">user@host $</span> kx509<span class="p">;</span> voms-proxy-init -noregen -voms fermilab
+<span class="gp">user@host $</span> globus-url-copy -vb file:///tmp/blob gsiftp://<span class="sb">`</span>hostname -f<span class="sb">`</span>/mnt/hadoop/matyas
+</pre></div>
+
+
+<h2 id="xrootd-plugins">XRootD Plugins<a class="headerlink" href="#xrootd-plugins" title="Permanent link">&para;</a></h2>
+<ol>
 <li>
 <p>Install xrootd-server:</p>
 <div class="codehilite"><pre><span></span>yum install xrootd-server
@@ -2708,16 +3118,6 @@ service hadoop-hdfs-<span class="nv">$NODETYPE</span> start
 
 </li>
 </ol>
-<h3 id="gridftp-installation">GridFTP installation<a class="headerlink" href="#gridftp-installation" title="Permanent link">&para;</a></h3>
-<p>Run same as script but with option number.</p>
-<h3 id="on-the-name-node">On the name node<a class="headerlink" href="#on-the-name-node" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="gp">[root@fermicloud092 ~]#</span> hdfs dfs -ls /test-file
-<span class="go">Found 1 items</span>
-<span class="go">-rw-r--r--   2 root root          0 2014-07-21 15:57 /test-file</span>
-</pre></div>
-
-
-<p>This means your hadoop is working.</p>
 <p>Modify the file <code>/etc/xrootd/xrootd-clustered.cfg</code> to look like this:</p>
 <div class="codehilite"><pre><span></span>xrd.port 1094
 
@@ -2760,9 +3160,9 @@ oss.space default_stage /opt/xrootd_cache
 
 
 <p>Create file <code>/etc/xrootd/storage.xml</code> and place this:</p>
-<div class="codehilite"><pre><span></span><span class="nt">&lt;storage-mapping&gt;</span>
-<span class="nt">&lt;lfn-to-pfn</span> <span class="na">protocol=</span><span class="s">&quot;hadoop&quot;</span> <span class="na">destination-match=</span><span class="s">&quot;.*&quot;</span> <span class="na">path-match=</span><span class="s">&quot;.*/+tmp2/test-file&quot;</span> <span class="na">result=</span><span class="s">&quot;/test-file&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/storage-mapping&gt;</span>
+<div class="codehilite"><pre><span></span>&lt;storage-mapping&gt;
+&lt;lfn-to-pfn protocol=&quot;hadoop&quot; destination-match=&quot;.*&quot; path-match=&quot;.*/+tmp2/test-file&quot; result=&quot;/test-file&quot;/&gt;
+&lt;/storage-mapping&gt;
 </pre></div>
 
 
@@ -2809,13 +3209,13 @@ oss.space default_stage /opt/xrootd_cache
           </a>
         
         
-          <a href="../../policy/service-migrations-spring-2018/" title="Service Migrations - Spring 2018" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../policy/gridftp-gsi-migration/" title="GridFTP and GSI Migration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Service Migrations - Spring 2018
+                GridFTP and GSI Migration
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2845,12 +3245,9 @@ oss.space default_stage /opt/xrootd_cache
       
     </div>
     
-      <script src="../../assets/javascripts/application.30f6b8b1.js"></script>
+      <script src="../../assets/javascripts/application.a353778b.js"></script>
       
-      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
-      
-    
-    
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
   </body>
