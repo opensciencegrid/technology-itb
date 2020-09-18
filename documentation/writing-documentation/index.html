@@ -1676,6 +1676,18 @@
                 
                 
                 <h1 id="writing-osg-documentation">Writing OSG Documentation<a class="headerlink" href="#writing-osg-documentation" title="Permanent link">&para;</a></h1>
+<p><strong>LINKING TEST</strong></p>
+<ul>
+<li><a href="./style-guide">./ link without .md</a></li>
+<li><a href="./style-guide/">./ link with trailing /</a></li>
+<li><a href="../style-guide/">./ link with .md</a></li>
+<li><a href="../documentation/style-guide">../ link without .md</a></li>
+<li><a href="../documentation/style-guide/">../ link with trailing /</a></li>
+<li><a href="../style-guide/">../ link with .md</a></li>
+<li><a href="../../documentation/style-guide">you've gotta be kidding me link without .md</a></li>
+<li><a href="../../documentation/style-guide/">you've gotta be kidding me link with trailing /</a></li>
+<li><a href="../../documentation/style-guide.md">you've gotta be kidding me link with .md</a></li>
+</ul>
 <p>Many OSG pages are written in <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a>, built using
 <a href="http://www.mkdocs.org/">MkDocs</a>, and served via <a href="https://pages.github.com/">GitHub Pages</a>.
 To <a href="#contributing-content">contribute content</a>, submit a pull request to the relevant GitHub repository,
